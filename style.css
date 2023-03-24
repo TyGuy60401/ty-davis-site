@@ -17,6 +17,14 @@ img {
     color: #eee;
     z-index: 2;
 }
+#midmountain-desktop {
+    position: absolute;
+    z-index: 1;
+}
+#foreground-desktop {
+    position: absolute;
+    z-index: 1;
+}
 #imgContainer {
     position: relative;
     size: 100%;
@@ -29,11 +37,27 @@ img {
 #sky {
     top: 0px;
 }
-#midmountain {
-    position: absolute;
-    z-index: 1;
+@media (max-width: 1000px) {
+    .mobileImgs {
+        display: block;
+    }
+    .desktopImgs {
+        display: none;
+    }
+    #midmountain-mobile {
+        position: absolute;
+        z-index: 1;
+    }
+    #foreground-mobile {
+        position: absolute;
+        z-index: 1;
+    }
 }
-#foreground {
-    position: absolute;
-    z-index: 1;
+@media (min-width: 1000px) {
+    .mobileImgs {
+        display: none;
+    }
+    .desktopImgs {
+        display: block;
+    }
 }
