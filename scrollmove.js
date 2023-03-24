@@ -1,7 +1,7 @@
 var mountain;
 var foreground;
 var mountainStartPos = 20;
-var foregroundStartPos = 200;
+var foregroundStartPos = 20;
 function init() {
     mountain = document.getElementById("midmountain");
     foreground = document.getElementById("foreground");
@@ -15,16 +15,14 @@ function parallax() {
 
     var yPos = 0 - window.pageYOffset;
     var yPosMountain = yPos/30;
-    var yPosFore = yPos/4;
+    var yPosFore = yPos/6;
     
     mountain.style.top = mountainStartPos - yPosMountain + '%';
-    console.log(yPos);
     if (yPos > -180) {
         foreground.style.top = foregroundStartPos - yPosFore + '%';
-    } else {
-        console.log("Stop moving");
     }
 }
+
 window.onload = function() {
     init();
 }
