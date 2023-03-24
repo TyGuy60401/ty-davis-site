@@ -2,8 +2,12 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: 'Bahnschrift SemiBold';
+    position: absolute;
+    height: 100px;
+    background-color: #DFF1D8;
 }
 img {
+    position: relative;
     left: 0px;
     padding: 0px;
 }
@@ -11,9 +15,10 @@ img {
     position: absolute;
     margin-left: 5%;
     color: #eee;
+    z-index: 2;
 }
 #imgContainer {
-    position: absolute;
+    position: relative;
     size: 100%;
     padding: 0px;
     margin: 0px;
@@ -26,9 +31,9 @@ img {
 }
 #midmountain {
     position: absolute;
-    top: 200px;
+    z-index: 1;
 }
 #foreground {
     position: absolute;
-    top: 300px;
+    z-index: 1;
 }
