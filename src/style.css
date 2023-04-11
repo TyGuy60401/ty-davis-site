@@ -6,6 +6,12 @@ body {
     height: 100px;
     background-color: #DFF1D8;
 }
+#overlay p {
+    font-size: 15pt;
+}
+a {
+    color: lightblue;
+}
 img {
     position: relative;
     left: 0px;
