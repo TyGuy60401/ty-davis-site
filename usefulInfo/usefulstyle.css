@@ -1,0 +1,32 @@
+@media only screen and (max-width: 600px) {
+
+}
+@media only screen and (min-width: 600px) {
+    #useful-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: rgb(203,223,219);
+        min-height: 100vh;
+    }
+    #useful {
+        background-color: white;
+        min-width: 70vw;
+        padding-left: 30px;
+    }
+}
+#useful {
+    padding-left: 30px;
+}
+#useful a {
+    color: rgb(70,149,183);
+}
+p {
+    font-size: 14pt;
+}
+img {
+    max-width: 100%;
+}
+h3 {
+    font-size: 16pt;
+}
