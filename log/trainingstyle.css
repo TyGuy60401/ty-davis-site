@@ -1,4 +1,21 @@
+.wrapper {
+    display:grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 2fr;
+    height: 100vh;
+    width: 100%;
+}
+#header {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    height: auto;
+}
 #dateSelector {
+    grid-row-start: 2;
     font-size: 14pt;
     text-align: center;
+    color: rgb(80, 80, 80);
+    /* background-color: rgb(219, 219, 219); */
+    border-right: solid 1px rgb(160, 160, 160);
+    height: 100%;
 }
