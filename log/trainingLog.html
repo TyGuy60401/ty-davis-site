@@ -5,16 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/src/buildheader.js"></script>
+    <script src="./buildcalendar.js"></script>
+    <script type="text/html" id="calendar-div-template">
+        <table class="calendar">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </script>
     <link rel="stylesheet" href="/src/style.css">
     <link rel="stylesheet" href="./trainingstyle.css">
     <title>Ty Davis Training Log</title>
 </head>
-<body class="training" onload="buildHeader('Training Log')">
+<body class="training" onload="buildHeader('Training Log'); buildCalendar('june', 2023, 'calendar-main')">
     <div class="wrapper">
         <div id="header"><!-- This is a necessary div. Don't
             get rid of this --> </div>
         <div id="dateSelector">
             Select a date:
+            <div id="calendar-main"></div>
         </div>
     </div>
 </body>
