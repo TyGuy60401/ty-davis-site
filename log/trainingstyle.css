@@ -29,3 +29,12 @@
     border: gray solid 1px;
     border-radius: 10px;
 }
+.calendar a {
+    text-decoration: none;
+}
+.on-month {
+    color: inherit;
+}
+.off-month {
+    color: rgb(170, 170, 170);
+}
