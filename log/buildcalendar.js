@@ -19,12 +19,11 @@ function buildCalendar(divID, useOtherDate=null) {
     tableHead.setAttribute('colspan', '7');
 
     let monthInput = document.createElement("input");
-    monthInput.setAttribute("style", "width:4em;");
+    monthInput.setAttribute("style", "text-align:left;width:5em;");
     monthInput.setAttribute("placeholder", "Month");
     monthInput.setAttribute("id", divID + "-month-input");
 
     let yearInput = document.createElement("input");
-    yearInput.setAttribute("style", "width:4em;");
     yearInput.setAttribute("placeholder", "Year");
     yearInput.setAttribute("type", "number");
     yearInput.setAttribute("id", divID + "-year-input");
@@ -72,7 +71,8 @@ function buildCalendar(divID, useOtherDate=null) {
             } else {
                 classString = "off-month";
             }
-            cell.innerHTML = "<a href='#' class='" + classString + "'>" + dayNum + "</a>";
+            let fileString = day.getFullYear().toString() + '-' + (day.getMonth() + 1).toString().padStart(2,'0') + '-' + dayNum.toString().padStart(2, '0');
+            cell.innerHTML = "<a href='#' class='" + classString + "' onclick=\"buildLog('" + fileString + "')\">" + dayNum + "</a>";
 
             day.setDate(dayNum + 1);
         }

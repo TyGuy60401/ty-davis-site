@@ -35,6 +35,19 @@
     justify-content: start;
     align-items: center;
 }
+.calendar input {
+    width: 4em;
+    border: none;
+    border-bottom: 1px solid rgb(160, 160, 160);
+}
+.calendar input:focus {
+    outline: none;
+    /* border: none; */
+    border-bottom: 2px solid rgb(120, 120, 120);
+}
+.calendar button {
+    margin-left: 5px;
+}
 .calendar td {
     min-width: 25px;
 }
