@@ -1,14 +1,24 @@
-function buildCalendar(month, year, divID) {
+function buildCalendar(divID) {
     let calendarTableDiv = document.querySelector('#calendar-div-template');
     let parentDiv = document.querySelector('#'+divID);
     parentDiv.innerHTML = calendarTableDiv.innerHTML;
     let calendarTable = parentDiv.firstElementChild;
+    console.log(calendarTable);
     
-    let day = new Date(2023, 2, 12);
+    let day = new Date();
     let currentMonth = day.getMonth();
     day.setDate(1);
     dayOfWeek = day.getDay();
     day.setDate(1-dayOfWeek);
+    
+    let numRows = 5;
+    day.setDate(day.getDate() + 35);
+    if (day.getMonth() == currentMonth) {
+        numRows = 6;
+        console.log("We need another row ... 1")
+    }
+    day.setDate(day.getDate() - 35);
+    
     let dayNum;
     let classString;
 
