@@ -1,7 +1,7 @@
 .wrapper {
     display: grid;
     grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 5fr;
     height: 100vh;
     width: 100%;
 }
@@ -9,6 +9,12 @@
     grid-column-start: 1;
     grid-column-end: 4;
     height: auto;
+}
+#log-main {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    display: flex;
+    flex-direction: column;
 }
 #dateSelector {
     grid-row-start: 2;
@@ -19,7 +25,7 @@
     border-right: solid 1px rgb(160, 160, 160);
     height: 100%;
     min-width: 240px;
-    max-width: 20vw;
+    /* max-width: 20vw; */
     display: flex;
     flex-direction: column;
     justify-content: start;
