@@ -4,6 +4,7 @@
     grid-template-columns: 1fr 5fr;
     height: 100vh;
     width: 100%;
+    background-color: rgb(203,223,219);
 }
 #header {
     grid-column-start: 1;
@@ -17,12 +18,15 @@
     flex-direction: column;
 }
 #dateSelector {
+    padding-top: 20px;
     grid-row-start: 2;
     font-size: 14pt;
     text-align: center;
     color: rgb(80, 80, 80);
-    /* background-color: rgb(219, 219, 219); */
+    background-color: white;
     border-right: solid 1px rgb(160, 160, 160);
+    border-left: solid 1px rgb(170, 170, 170);
+    margin-left: 30px;
     height: 100%;
     min-width: 240px;
     /* max-width: 20vw; */
@@ -38,8 +42,12 @@
     border: gray solid 1px;
     border-radius: 10px;
 }
+.calendar a:hover {
+    text-decoration: underline;
+}
 .calendar a {
     text-decoration: none;
+    border-radius: 10px;
 }
 .on-month {
     color: inherit;
