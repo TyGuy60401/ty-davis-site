@@ -1,10 +1,39 @@
-.wrapper {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr 5fr;
-    min-height: 100vh;
-    width: 100%;
-    background-color: rgb(203,223,219);
+@media only screen and (max-width: 600px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    #log-main {
+        border-top: 1px solid rgb(160, 160, 160);
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+    #dateSelector {
+        background-color: rgb(203, 223, 219);
+    }
+}
+@media only screen and (min-width: 600px) {
+    .wrapper {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr 5fr;
+        min-height: 100vh;
+        width: 100%;
+        background-color: rgb(203,223,219);
+    }
+    #dateSelector {
+        border-right: solid 1px rgb(160, 160, 160);
+        border-left: solid 1px rgb(160, 160, 160);
+        margin-left: 30px;
+    }
+    #log-main {
+        border-right: solid 1px rgb(160, 160, 160);
+        border-left: solid 1px rgb(160, 160, 160);
+        width: 80%;
+
+    }
+
 }
 #header {
     grid-column-start: 1;
@@ -21,9 +50,6 @@
     flex-direction: column;
     align-items: center;
     background-color: white;
-    border-right: solid 1px rgb(160, 160, 160);
-    border-left: solid 1px rgb(160, 160, 160);
-    width: 80%;
     min-height: calc(100% - 20px);
     margin: auto;
     max-width: 700px;
@@ -61,9 +87,6 @@
     text-align: center;
     color: rgb(80, 80, 80);
     background-color: white;
-    border-right: solid 1px rgb(160, 160, 160);
-    border-left: solid 1px rgb(160, 160, 160);
-    margin-left: 30px;
     min-height: calc(100% - 20px);
     min-width: 240px;
     /* max-width: 20vw; */
