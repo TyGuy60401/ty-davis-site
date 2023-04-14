@@ -12,7 +12,7 @@ function timeStringFromSeconds(seconds) {
     let sec = seconds % 60
     let secString = (Math.round(sec * 100) / 100).toString();
     if (hour == 0) {
-        return min + ':' + secString
+        return min + ':' + secString.padStart(5, '0');
     } else {
         return hour + ':' + min.toString().padStart(2, '0') + ':' + secString;
     }
