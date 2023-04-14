@@ -13,6 +13,7 @@
 }
 #log-main {
     padding-top: 20px;
+    padding-left: 10px;
     grid-row-start: 2;
     grid-column-start: 2;
     display: flex;
@@ -26,6 +27,20 @@
     margin: auto;
     max-width: 700px;
 }
+#log-main h2 {
+    margin-bottom: 0px;
+}
+#log-main h4 {
+    margin: -12px 0px;
+    padding: none;
+    color: gray;
+}
+#log-main p {
+    text-decoration: bold;
+    color: rgb(61, 61, 61);
+}
+
+
 #dateSelector {
     padding-top: 20px;
     grid-row-start: 2;
@@ -44,6 +59,7 @@
     justify-content: start;
     align-items: center;
 }
+
 .calendar input {
     width: 4em;
     border: none;
@@ -69,6 +85,7 @@
 }
 .calendar a {
     text-decoration: none;
+    font-weight: bold;
     border-radius: 10px;
 }
 .on-month {

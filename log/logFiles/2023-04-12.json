@@ -1,8 +1,10 @@
 {
-    "distance": 4.95,
-    "time": "0:34:32",
-    "pace": "7:14",
-    "type": "Pre-meet",
-    "description": "This was a good run",
-    "title": "Bryan Clay - Pre-meet"
+    "run1": {
+        "distance": 4.95,
+        "time": "0:34:32",
+        "pace": "7:14",
+        "type": "Pre-meet",
+        "description": "I just took this one nice and easy and did a quick 3 on old post, and then finished off on the track with some hurdle ritual. Need to do a better job of getting my mind in the right spot for the race, so that's my job for the next 24 hours.",
+        "title": "Bryan Clay - Pre-meet"
+    }
 }
