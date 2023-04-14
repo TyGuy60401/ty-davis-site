@@ -1,4 +1,4 @@
-selectedDay = new Date(1970, 1, 1);
+selectedDay = new Date(2001, 5, 4);
 function buildCalendar(divID, useOtherDate=null) {
     let parentDiv = document.querySelector('#'+divID);
     let day;
