@@ -2,6 +2,7 @@ selectedDay = new Date(1970, 1, 1);
 function buildCalendar(divID, useOtherDate=null) {
     let parentDiv = document.querySelector('#'+divID);
     let day;
+    let todayString = new Date().toDateString();
 
     if (useOtherDate == 'true') {
         let monthVal = document.querySelector('#' + divID + '-month-input').value;
@@ -78,10 +79,16 @@ function buildCalendar(divID, useOtherDate=null) {
                 classString = "off-month";
             }
             let fileString = day.getFullYear().toString() + '-' + (day.getMonth() + 1).toString().padStart(2,'0') + '-' + dayNum.toString().padStart(2, '0');
-            cell.innerHTML = "<a href='#' class='" + classString + "' onclick=\"buildLog('" + fileString + "')\">" + dayNum + "</a>";
             if (day.toDateString() == selectedDay.toDateString()) {
                 cell.setAttribute('class', 'selected');
             }
+            let cellInnerHTML;
+            if (day.toDateString() == todayString) {
+                cellInnerHTML = "<i>" + dayNum + "</i>";
+            } else {
+                cellInnerHTML = dayNum;
+            }
+            cell.innerHTML = "<a href='#' class='" + classString + "' onclick=\"buildLog('" + fileString + "')\">" + cellInnerHTML + "</a>";
 
             day.setDate(dayNum + 1);
         }
