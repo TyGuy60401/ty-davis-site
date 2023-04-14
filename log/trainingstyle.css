@@ -14,6 +14,7 @@
 #log-main {
     padding-top: 20px;
     padding-left: 10px;
+    padding-right: 10px;
     grid-row-start: 2;
     grid-column-start: 2;
     display: flex;
@@ -38,6 +39,18 @@
 #log-main p {
     text-decoration: bold;
     color: rgb(61, 61, 61);
+}
+.stats-div {
+    display: flex;
+    /* margin-left: -10px; */
+    width: 80%;
+    border: rgb(170, 170, 170) solid 1px;
+    border-radius: 20px;
+    /* min-height: 40px; */
+    align-self: center;
+    padding: 15px;
+    flex-flow: row;
+    gap: 10px;
 }
 
 
@@ -75,6 +88,8 @@
 }
 .calendar td {
     min-width: 25px;
+    background-color: white;
+    border-radius: 100px;
 }
 .calendar {
     border: gray solid 1px;

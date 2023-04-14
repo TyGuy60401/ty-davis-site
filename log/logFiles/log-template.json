@@ -1,0 +1,16 @@
+{
+    "run1": {
+        "title": "",
+        "type": "pre-meet | shake out | workout | long run | race | distance | cross train",
+        "total-time": "",
+        "race-time": "",
+        "total-distance": 0,
+        "volume": "",
+        "avg-pace": "",
+        "description": "",
+        "splits": {
+            "400m": "",
+            "1 mi": ""
+        }
+    }
+}

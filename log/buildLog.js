@@ -13,16 +13,27 @@ function buildLog(dateString) {
             
             // Let's get some info
             let titleData = thisRun['title'];
-            let descriptionData = thisRun['description'];
-            let distanceData = thisRun['distance'];
-            let timeData = thisRun['time'];
-            let paceData = thisRun['pace'];
             let typeData = thisRun['type'];
+            let totalTimeData = thisRun['total-time'];
+            let raceTimeDate = thisRun['race-time'];
+            let totalDistanceData = thisRun['total-distance'];
+            let volumeData = thisRun['volume'];
+            let avgPaceData = thisRun['avg-pace'];
+            let descriptionData = thisRun['description'];
+            let splitsData = thisRun['splits'];
 
             // Show the title:
             let title = document.createElement('h2');
             title.innerHTML = titleData;
             logMain.appendChild(title);
+
+            // Show the stats
+            let statsDiv = document.createElement('div');
+            statsDiv.setAttribute('class', 'stats-div');
+            logMain.appendChild(statsDiv);
+            // Popluate the stats div
+            statsDiv.appendChild(addStat("<b>Distance: </b>" + totalDistanceData.toString() + "mi"));
+            statsDiv.appendChild(addStat("<b>Time: </b>" + totalTimeData));
 
             // Show the description:
             let description = document.createElement('p');
@@ -49,4 +60,9 @@ function dateFromDateString(dateString) {
     }
     let day = new Date(nums[0], nums[1]-1, nums[2])
     return day;
+}
+function addStat(statString) {
+    let stat = document.createElement('div');
+    stat.innerHTML = statString;
+    return stat;
 }
