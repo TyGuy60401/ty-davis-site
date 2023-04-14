@@ -2,7 +2,7 @@ body {
     width: 100%;
     margin: 0px;
     padding: 0px;
-    font-family: 'Bahnschrift SemiBold';
+    font-family: 'Bahnschrift Light', 'Bahnschrift', 'Bahnschrift SemiBold';
     position: absolute;
     height: 100px;
 }
@@ -20,6 +20,9 @@ body .training {
     flex-wrap: nowrap;
     gap: 10px;
     align-items: baseline;
+    /* border-bottom: 8px solid white; */
+    z-index: 1;
+    box-shadow: 0px 4px 8px rgb(106, 117, 114);
 }
 #links-list {
     flex-grow: 1;
