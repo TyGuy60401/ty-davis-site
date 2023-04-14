@@ -1,4 +1,8 @@
 function buildLog(dateString) {
+    dateNums = dateString.split('-');
+    selectedDay = new Date(dateNums[0], dateNums[1] - 1, dateNums[2]);
+    selectedDay.setHours(0, 0, 0, 0);
+    buildCalendar('calendar-main', selectedDay.toDateString());
     let logMain = document.querySelector('#log-main');
     logMain.innerHTML = "";
     $.getJSON("./logFiles/" + dateString + ".json", function (data) {
@@ -19,6 +23,7 @@ function buildLog(dateString) {
             let totalDistanceData = thisRun['total-distance'];
             let volumeData = thisRun['volume'];
             let avgPaceData = thisRun['avg-pace'];
+            let elevationData = thisRun['elevation'];
             let descriptionData = thisRun['description'];
             let splitsData = thisRun['splits'];
 
@@ -31,16 +36,22 @@ function buildLog(dateString) {
             let statsDiv = document.createElement('div');
             statsDiv.setAttribute('class', 'stats-div');
             logMain.appendChild(statsDiv);
-            // Popluate the stats div
-            statsDiv.appendChild(addStat("<b>Distance: </b>" + totalDistanceData.toString() + "mi"));
-            statsDiv.appendChild(addStat("<b>Time: </b>" + totalTimeData));
+            // Popluate the stats div with general stats
+            statsDiv.append(addStat("<b>Distance: </b>", totalDistanceData, "mi"));
+            statsDiv.append(addStat("<b>Time: </b>", totalTimeData));
+            // Put the pace data in if there is no pace data:
+            if (avgPaceData == null) {
+                let totalTimeSeconds = secondsFromTimeString(totalTimeData);
+                avgPaceData = timeStringFromSeconds(totalTimeSeconds / totalDistanceData);
+            }
+            statsDiv.append(addStat("<b>Pace: </b>", avgPaceData));
+            statsDiv.append(addStat("<b>Elevation: </b>", elevationData, "ft"));
 
             // Show the description:
             let description = document.createElement('p');
             description.innerHTML = descriptionData;
             logMain.appendChild(description);
         }
-        // console.log(data);
 
 
 
@@ -49,7 +60,7 @@ function buildLog(dateString) {
         noLogMessage = document.createElement('h3');
         noLogMessage.innerHTML = "There is no training log file for this date.";
         logMain.appendChild(noLogMessage);
-        console.log('error');
+        console.log('File not found');
     });
 }
 function dateFromDateString(dateString) {
@@ -61,8 +72,11 @@ function dateFromDateString(dateString) {
     let day = new Date(nums[0], nums[1]-1, nums[2])
     return day;
 }
-function addStat(statString) {
+function addStat(leadString, statString, trailString="") {
+    if (statString == null) {
+        return "";
+    }
     let stat = document.createElement('div');
-    stat.innerHTML = statString;
+    stat.innerHTML = leadString + statString + trailString;
     return stat;
 }

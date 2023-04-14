@@ -1,13 +1,16 @@
+selectedDay = new Date(1970, 1, 1);
 function buildCalendar(divID, useOtherDate=null) {
     let parentDiv = document.querySelector('#'+divID);
     let day;
 
-    if (useOtherDate != null) {
+    if (useOtherDate == 'true') {
         let monthVal = document.querySelector('#' + divID + '-month-input').value;
         let yearVal = document.querySelector('#' + divID + '-year-input').value;
         day = new Date(Date.parse(monthVal + ' 1 ' + yearVal));
-    } else {
+    } else if (useOtherDate == null) {
         day = new Date();
+    } else {
+        day = new Date(Date.parse(useOtherDate));
     }
 
     parentDiv.innerHTML = "<table class='calendar'></table>";
@@ -62,17 +65,23 @@ function buildCalendar(divID, useOtherDate=null) {
 
     let dayNum;
     let classString;
+    let dayMonth;
     for (var i=0, row; row = calendarTable.rows[i]; i++) {
         for (var j=0, cell; cell = row.cells[j]; j++) {
             dayNum = day.getDate();
+            dayMonth = day.getMonth();
+            day.setHours(0, 0, 0, 0);
 
-            if (day.getMonth() == currentMonth) {
+            if (dayMonth == currentMonth) {
                 classString = "on-month";
             } else {
                 classString = "off-month";
             }
             let fileString = day.getFullYear().toString() + '-' + (day.getMonth() + 1).toString().padStart(2,'0') + '-' + dayNum.toString().padStart(2, '0');
             cell.innerHTML = "<a href='#' class='" + classString + "' onclick=\"buildLog('" + fileString + "')\">" + dayNum + "</a>";
+            if (day.toDateString() == selectedDay.toDateString()) {
+                cell.setAttribute('class', 'selected');
+            }
 
             day.setDate(dayNum + 1);
         }
