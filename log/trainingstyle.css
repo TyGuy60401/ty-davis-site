@@ -30,8 +30,9 @@
     #log-main {
         border-right: solid 1px rgb(160, 160, 160);
         border-left: solid 1px rgb(160, 160, 160);
+        max-height: 0px;
         width: 80%;
-
+        overflow-y: auto;
     }
 
 }
@@ -60,6 +61,10 @@
 #log-main h2 {
     margin-bottom: 5px;
 }
+#log-main h3 {
+    margin: 0px 0px;
+    font-size: 16pt;
+}
 #log-main h4 {
     margin: -12px 0px;
     padding: none;
@@ -71,15 +76,44 @@
 }
 .stats-div {
     display: flex;
-    /* margin-left: -10px; */
     width: 80%;
     border: rgb(170, 170, 170) solid 1px;
     border-radius: 20px;
-    /* min-height: 40px; */
     align-self: center;
     padding: 15px;
     flex-flow: row;
     gap: 10px;
+}
+.splits-div {
+    margin-left: 4%;
+    border: rgb(170, 170, 170) solid 1px;
+    padding: 15px;
+    border-radius: 20px;
+}
+.splits-table {
+    border-collapse: collapse;
+}
+.splits-table tr:nth-child(even) {
+    background-color: rgb(220, 220, 220);
+}
+.splits-table td {
+    padding-right: 10px;
+}
+.splits-table th {
+    text-align: left;
+    font-size: 18pt;
+}
+.splits-table td.num {
+    padding-right: 5px;
+    padding-left: 10px;
+    font-size: 8pt;
+}
+.splits-table td.dist {
+    font-weight: bolder;
+}
+.splits-table td.time {
+    min-width: 4em;
+    text-align: center;
 }
 
 

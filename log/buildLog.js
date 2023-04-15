@@ -43,7 +43,7 @@ function buildLog(dateString) {
             // Put the pace data in if there is no pace data:
             if (avgPaceData == null) {
                 let totalTimeSeconds = secondsFromTimeString(totalTimeData);
-                avgPaceData = timeStringFromSeconds(totalTimeSeconds / totalDistanceData);
+                avgPaceData = timeStringFromSeconds(totalTimeSeconds / totalDistanceData, 0);
             }
             statsDiv.append(addStat("<b>Pace: </b>", avgPaceData));
             statsDiv.append(addStat("<b>Elevation: </b>", elevationData, "ft"));
@@ -60,6 +60,45 @@ function buildLog(dateString) {
             let description = document.createElement('p');
             description.innerHTML = descriptionData;
             logMain.appendChild(description);
+
+            // Show the splits:
+            if (splitsData != null) {
+                let splitsDiv = document.createElement('div');
+                let splitsTable = document.createElement('table');
+                let splitsTitle = document.createElement('h3');
+
+                splitsTitle.innerHTML = "Splits:";
+                splitsDiv.appendChild(splitsTitle);
+
+                splitsDiv.setAttribute('class', 'splits-div');
+                splitsTable.setAttribute('class', 'splits-table');
+                logMain.appendChild(splitsDiv);
+                splitsDiv.appendChild(splitsTable);
+                $.each(splitsData, function(key, val) {
+                    // Split the key string up
+                    let num = key.split('-')[0];
+                    let dist = key.split('-')[1];
+
+                    let row = splitsTable.insertRow();
+                    let splitNum = row.insertCell();
+                    let splitDist = row.insertCell();
+                    let splitTime = row.insertCell();
+
+                    splitNum.setAttribute('class', 'num');
+                    splitDist.setAttribute('class', 'dist');
+                    splitTime.setAttribute('class', 'time');
+
+                    splitNum.innerHTML = num;
+                    splitDist.innerHTML = dist;
+
+                    if (typeof(val) == "number") {
+                        splitTime.innerHTML = val.toFixed(2);
+                        splitTime.innerHTML = timeStringFromSeconds(val, 1);
+                    } else {
+                        splitTime.innerHTML = val;
+                    }
+                });
+            }
         }
 
 
