@@ -81,8 +81,20 @@
     border-radius: 20px;
     align-self: center;
     padding: 15px;
-    flex-flow: row;
+    gap: 15px;
+    flex-flow: column;
+}
+.general-stats {
     gap: 10px;
+    display: flex;
+    flex-flow: row;
+}
+.race-div {
+    align-items: baseline;
+    gap: 10px;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
 }
 .splits-div {
     margin-left: 4%;

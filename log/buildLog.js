@@ -19,9 +19,9 @@ function buildLog(dateString) {
             let titleData = thisRun['title'];
             let typeData = thisRun['type'];
             let totalTimeData = thisRun['total-time'];
-            let raceTimeDate = thisRun['race-time'];
             let totalDistanceData = thisRun['total-distance'];
-            let volumeData = thisRun['volume'];
+            let volumeDistanceData = thisRun['volume-distance'];
+            let volumeTimeData = thisRun['volume-time'];
             let avgPaceData = thisRun['avg-pace'];
             let elevationData = thisRun['elevation'];
             let resultsData = thisRun['results-link'];
@@ -35,18 +35,30 @@ function buildLog(dateString) {
 
             // Show the stats
             let statsDiv = document.createElement('div');
+            let generalStatsDiv = document.createElement('div');
             statsDiv.setAttribute('class', 'stats-div');
+            generalStatsDiv.setAttribute('class', 'general-stats');
             logMain.appendChild(statsDiv);
+            statsDiv.appendChild(generalStatsDiv);
             // Popluate the stats div with general stats
-            statsDiv.append(addStat("<b>Distance: </b>", totalDistanceData, "mi"));
-            statsDiv.append(addStat("<b>Time: </b>", totalTimeData));
+            generalStatsDiv.append(addStat("Distance: ", totalDistanceData, "mi"));
+            generalStatsDiv.append(addStat("Time: ", totalTimeData));
+
             // Put the pace data in if there is no pace data:
             if (avgPaceData == null) {
                 let totalTimeSeconds = secondsFromTimeString(totalTimeData);
                 avgPaceData = timeStringFromSeconds(totalTimeSeconds / totalDistanceData, 0);
             }
-            statsDiv.append(addStat("<b>Pace: </b>", avgPaceData));
-            statsDiv.append(addStat("<b>Elevation: </b>", elevationData, "ft"));
+            generalStatsDiv.append(addStat("Pace: ", avgPaceData));
+            generalStatsDiv.append(addStat("Elevation: ", elevationData, "ft"));
+            if (typeData == "race") {
+                let raceDiv = document.createElement('div');
+                raceDiv.setAttribute('class', 'race-div');
+                raceDiv.innerHTML = "<h3>Race:</h3>";
+                statsDiv.appendChild(raceDiv);
+                raceDiv.append(addStat("Distance: ", volumeDistanceData));
+                raceDiv.append(addStat("Time: ", volumeTimeData));
+            }
 
             // Show the link to the results
             if (resultsData != null) {
@@ -100,10 +112,6 @@ function buildLog(dateString) {
                 });
             }
         }
-
-
-
-
     }).fail( function() {
         noLogMessage = document.createElement('h3');
         noLogMessage.innerHTML = "There is no training log file for this date.";
@@ -125,6 +133,6 @@ function addStat(leadString, statString, trailString="") {
         return "";
     }
     let stat = document.createElement('div');
-    stat.innerHTML = leadString + statString + trailString;
+    stat.innerHTML = '<b>' + leadString + '</b>' + statString + trailString;
     return stat;
 }
