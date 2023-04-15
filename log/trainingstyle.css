@@ -54,6 +54,9 @@
     margin: auto;
     max-width: 700px;
 }
+#log-main a {
+    color: gray;
+}
 #log-main h2 {
     margin-bottom: 5px;
 }

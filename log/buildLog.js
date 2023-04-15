@@ -24,6 +24,7 @@ function buildLog(dateString) {
             let volumeData = thisRun['volume'];
             let avgPaceData = thisRun['avg-pace'];
             let elevationData = thisRun['elevation'];
+            let resultsData = thisRun['results-link'];
             let descriptionData = thisRun['description'];
             let splitsData = thisRun['splits'];
 
@@ -46,6 +47,14 @@ function buildLog(dateString) {
             }
             statsDiv.append(addStat("<b>Pace: </b>", avgPaceData));
             statsDiv.append(addStat("<b>Elevation: </b>", elevationData, "ft"));
+
+            // Show the link to the results
+            if (resultsData != null) {
+                let results = document.createElement('a');
+                results.setAttribute('href', resultsData);
+                results.innerHTML = "Results";
+                logMain.appendChild(results);
+            }
 
             // Show the description:
             let description = document.createElement('p');
