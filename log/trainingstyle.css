@@ -80,6 +80,7 @@
     display: flex;
     flex-flow: row;
     gap: 5px;
+    align-self: center;
 }
 .stats-div {
     display: flex;

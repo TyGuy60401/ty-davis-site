@@ -119,6 +119,7 @@ function buildLog(dateString) {
         let navDiv = document.createElement('div');
         navDiv.setAttribute('class', 'nav-div');
         let dateElement = document.createElement('h4');
+        dateElement.setAttribute('style', 'width:8em;text-align:center;')
         dateElement.innerHTML = dateFromDateString(dateString).toDateString();
 
         let yearString = selectedDay.getFullYear().toString();
