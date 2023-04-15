@@ -6,11 +6,6 @@ function buildLog(dateString) {
     let logMain = document.querySelector('#log-main');
     logMain.innerHTML = "";
     $.getJSON("./logFiles/" + dateString + ".json", function (data) {
-        logMain.setAttribute('style', 'align-items: start;');
-        // Show the date:
-        let dateElement = document.createElement('h4');
-        dateElement.innerHTML = dateFromDateString(dateString).toDateString();
-        logMain.appendChild(dateElement);
 
         for (let run in data) {
             let thisRun = data[run];
@@ -113,10 +108,42 @@ function buildLog(dateString) {
             }
         }
     }).fail( function() {
+
         noLogMessage = document.createElement('h3');
         noLogMessage.innerHTML = "There is no training log file for this date.";
         logMain.appendChild(noLogMessage);
         console.log('File not found');
+    }).complete( function() {
+        logMain.setAttribute('style', 'align-items: start;');
+        // Show the nav div:
+        let navDiv = document.createElement('div');
+        navDiv.setAttribute('class', 'nav-div');
+        let dateElement = document.createElement('h4');
+        dateElement.innerHTML = dateFromDateString(dateString).toDateString();
+
+        let yearString = selectedDay.getFullYear().toString();
+        let monthString = (selectedDay.getMonth() + 1).toString().padStart(2, '0');
+        let dayString;
+        let prevButton = document.createElement('input');
+        prevButton.type = "button";
+        prevButton.defaultValue = "<<";
+        prevButton.onclick = function () {
+            dayString = (selectedDay.getDate() - 1).toString().padStart(2, '0');
+            buildLog(yearString + '-' + monthString + '-' + dayString);
+        }
+        let nextButton = document.createElement('input');
+        nextButton.type = "button";
+        nextButton.defaultValue = ">>";
+        nextButton.onclick = function () {
+            dayString = (selectedDay.getDate() + 1).toString().padStart(2, '0');
+            buildLog(yearString + '-' + monthString + '-' + dayString);
+        }
+
+        navDiv.appendChild(prevButton);
+        navDiv.append(dateElement);
+        navDiv.appendChild(nextButton);
+        logMain.appendChild(navDiv);
+
     });
 }
 function dateFromDateString(dateString) {

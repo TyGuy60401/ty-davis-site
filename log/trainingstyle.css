@@ -59,6 +59,7 @@
     color: gray;
 }
 #log-main h2 {
+    margin-top: 5px;
     margin-bottom: 5px;
 }
 #log-main h3 {
@@ -66,13 +67,19 @@
     font-size: 16pt;
 }
 #log-main h4 {
-    margin: -12px 0px;
+    margin: 0px 0px;
     padding: none;
     color: gray;
 }
 #log-main p {
     text-decoration: bold;
     color: rgb(61, 61, 61);
+}
+.nav-div {
+    order: -1;
+    display: flex;
+    flex-flow: row;
+    gap: 5px;
 }
 .stats-div {
     display: flex;
@@ -163,9 +170,17 @@
     background-color: white;
     border-radius: 4px;
 }
+.calendar td.today {
+    font-style: italic;
+    text-decoration: underline;
+    color: rgb(70, 149, 183);
+}
 .calendar td.selected {
     background-color: gray;
     color: white;
+}
+.calendar td.selected.today {
+    color:rgb(198, 230, 243);
 }
 .calendar {
     border: gray solid 1px;
