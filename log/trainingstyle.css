@@ -36,6 +36,9 @@
     }
 
 }
+input, textarea {
+    font-family: inherit;
+}
 #header {
     grid-column-start: 1;
     grid-column-end: 4;
@@ -74,6 +77,14 @@
 #log-main p {
     text-decoration: bold;
     color: rgb(61, 61, 61);
+}
+#log-main input[type=button] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: gray;
+    border: none;
+    border-radius: 5px;
+    color: white;
 }
 .nav-div {
     order: -1;
@@ -173,7 +184,7 @@
 }
 .calendar td.today {
     font-style: italic;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     color: rgb(70, 149, 183);
 }
 .calendar td.selected {
