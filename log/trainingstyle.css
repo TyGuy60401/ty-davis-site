@@ -82,9 +82,15 @@ input, textarea {
     appearance: none;
     -webkit-appearance: none;
     background-color: gray;
+    font-weight: bold;
     border: none;
     border-radius: 5px;
     color: white;
+}
+#log-main input[type=button]:hover {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: rgb(160, 160, 160);
 }
 .nav-div {
     order: -1;
@@ -173,6 +179,16 @@ input, textarea {
     outline: none;
     /* border: none; */
     border-bottom: 2px solid rgb(120, 120, 120);
+}
+.calendar input[type=button] {
+    border-radius: 5px;
+    appearance: none;
+    width: auto;
+    border: none;
+    background-color: rgb(220, 220, 220);
+}
+.calendar input[type=button]:active {
+    background-color: rgb(190, 190, 190);
 }
 .calendar button {
     margin-left: 5px;

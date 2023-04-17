@@ -32,9 +32,12 @@ function buildCalendar(divID, useOtherDate=null) {
     yearInput.setAttribute("type", "number");
     yearInput.setAttribute("id", divID + "-year-input");
 
-    let calendarButton = document.createElement("button");
-    calendarButton.innerHTML = "Go";
-    calendarButton.setAttribute("onclick", "buildCalendar('" + divID + "', 'true')")
+    let calendarButton = document.createElement("input");
+    calendarButton.type = "button";
+    calendarButton.defaultValue = "Go";
+    calendarButton.onclick = function () {
+        buildCalendar(divID, "true");
+    }
 
     monthInput.value = day.toLocaleString('default', { month: 'long'});
     yearInput.value = day.toLocaleString('default', {year: 'numeric'});

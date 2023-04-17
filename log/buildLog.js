@@ -59,6 +59,8 @@ function buildLog(dateString) {
             if (resultsData != null) {
                 let results = document.createElement('a');
                 results.setAttribute('href', resultsData);
+                results.setAttribute('target', '_blank');
+                results.setAttribute('rel', 'noopener noreferrer');
                 results.innerHTML = "Results";
                 logMain.appendChild(results);
             }
