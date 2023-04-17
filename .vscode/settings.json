@@ -1,6 +1,7 @@
 {
     "editor.wordWrap": "off",
     "[json]": {
-        "diffEditor.wordWrap": "inherit"
+        "diffEditor.wordWrap": "inherit",
+        "editor.wordWrap": "on"
     }
 }
