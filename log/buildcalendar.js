@@ -84,7 +84,8 @@ function buildCalendar(divID, useOtherDate=null) {
             }
             let cellInnerHTML;
             if (day.toDateString() == todayString) {
-                cell.setAttribute('style', 'font-style:italic;text-decoration:underline;')
+                cell.getAttribute('class')
+                cell.setAttribute('class', cell.getAttribute('class') + ' today');
             }
             cell.innerHTML = "<a href='#' class='" + classString + "' onclick=\"buildLog('" + fileString + "')\">" + dayNum + "</a>";
 

@@ -30,10 +30,14 @@
     #log-main {
         border-right: solid 1px rgb(160, 160, 160);
         border-left: solid 1px rgb(160, 160, 160);
+        max-height: 0px;
         width: 80%;
-
+        overflow-y: auto;
     }
 
+}
+input, textarea {
+    font-family: inherit;
 }
 #header {
     grid-column-start: 1;
@@ -58,10 +62,15 @@
     color: gray;
 }
 #log-main h2 {
+    margin-top: 5px;
     margin-bottom: 5px;
 }
+#log-main h3 {
+    margin: 0px 0px;
+    font-size: 16pt;
+}
 #log-main h4 {
-    margin: -12px 0px;
+    margin: 0px 0px;
     padding: none;
     color: gray;
 }
@@ -69,17 +78,73 @@
     text-decoration: bold;
     color: rgb(61, 61, 61);
 }
+#log-main input[type=button] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: gray;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+.nav-div {
+    order: -1;
+    display: flex;
+    flex-flow: row;
+    gap: 5px;
+    align-self: center;
+}
 .stats-div {
     display: flex;
-    /* margin-left: -10px; */
     width: 80%;
     border: rgb(170, 170, 170) solid 1px;
     border-radius: 20px;
-    /* min-height: 40px; */
     align-self: center;
     padding: 15px;
-    flex-flow: row;
+    gap: 15px;
+    flex-flow: column;
+}
+.general-stats {
     gap: 10px;
+    display: flex;
+    flex-flow: row;
+}
+.race-div {
+    align-items: baseline;
+    gap: 10px;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+}
+.splits-div {
+    margin-left: 4%;
+    border: rgb(170, 170, 170) solid 1px;
+    padding: 15px;
+    border-radius: 20px;
+}
+.splits-table {
+    border-collapse: collapse;
+}
+.splits-table tr:nth-child(even) {
+    background-color: rgb(220, 220, 220);
+}
+.splits-table td {
+    padding-right: 10px;
+}
+.splits-table th {
+    text-align: left;
+    font-size: 18pt;
+}
+.splits-table td.num {
+    padding-right: 5px;
+    padding-left: 10px;
+    font-size: 8pt;
+}
+.splits-table td.dist {
+    font-weight: bolder;
+}
+.splits-table td.time {
+    min-width: 4em;
+    text-align: center;
 }
 
 
@@ -117,9 +182,17 @@
     background-color: white;
     border-radius: 4px;
 }
+.calendar td.today {
+    font-style: italic;
+    /* text-decoration: underline; */
+    color: rgb(70, 149, 183);
+}
 .calendar td.selected {
     background-color: gray;
     color: white;
+}
+.calendar td.selected.today {
+    color:rgb(198, 230, 243);
 }
 .calendar {
     border: gray solid 1px;

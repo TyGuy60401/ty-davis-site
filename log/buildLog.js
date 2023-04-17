@@ -6,11 +6,6 @@ function buildLog(dateString) {
     let logMain = document.querySelector('#log-main');
     logMain.innerHTML = "";
     $.getJSON("./logFiles/" + dateString + ".json", function (data) {
-        logMain.setAttribute('style', 'align-items: start;');
-        // Show the date:
-        let dateElement = document.createElement('h4');
-        dateElement.innerHTML = dateFromDateString(dateString).toDateString();
-        logMain.appendChild(dateElement);
 
         for (let run in data) {
             let thisRun = data[run];
@@ -19,9 +14,9 @@ function buildLog(dateString) {
             let titleData = thisRun['title'];
             let typeData = thisRun['type'];
             let totalTimeData = thisRun['total-time'];
-            let raceTimeDate = thisRun['race-time'];
             let totalDistanceData = thisRun['total-distance'];
-            let volumeData = thisRun['volume'];
+            let volumeDistanceData = thisRun['volume-distance'];
+            let volumeTimeData = thisRun['volume-time'];
             let avgPaceData = thisRun['avg-pace'];
             let elevationData = thisRun['elevation'];
             let resultsData = thisRun['results-link'];
@@ -35,18 +30,30 @@ function buildLog(dateString) {
 
             // Show the stats
             let statsDiv = document.createElement('div');
+            let generalStatsDiv = document.createElement('div');
             statsDiv.setAttribute('class', 'stats-div');
+            generalStatsDiv.setAttribute('class', 'general-stats');
             logMain.appendChild(statsDiv);
+            statsDiv.appendChild(generalStatsDiv);
             // Popluate the stats div with general stats
-            statsDiv.append(addStat("<b>Distance: </b>", totalDistanceData, "mi"));
-            statsDiv.append(addStat("<b>Time: </b>", totalTimeData));
+            generalStatsDiv.append(addStat("Distance: ", totalDistanceData, "mi"));
+            generalStatsDiv.append(addStat("Time: ", totalTimeData));
+
             // Put the pace data in if there is no pace data:
             if (avgPaceData == null) {
                 let totalTimeSeconds = secondsFromTimeString(totalTimeData);
-                avgPaceData = timeStringFromSeconds(totalTimeSeconds / totalDistanceData);
+                avgPaceData = timeStringFromSeconds(totalTimeSeconds / totalDistanceData, 0);
             }
-            statsDiv.append(addStat("<b>Pace: </b>", avgPaceData));
-            statsDiv.append(addStat("<b>Elevation: </b>", elevationData, "ft"));
+            generalStatsDiv.append(addStat("Pace: ", avgPaceData));
+            generalStatsDiv.append(addStat("Elevation: ", elevationData, "ft"));
+            if (typeData == "race") {
+                let raceDiv = document.createElement('div');
+                raceDiv.setAttribute('class', 'race-div');
+                raceDiv.innerHTML = "<h3>Race:</h3>";
+                statsDiv.appendChild(raceDiv);
+                raceDiv.append(addStat("Distance: ", volumeDistanceData));
+                raceDiv.append(addStat("Time: ", volumeTimeData));
+            }
 
             // Show the link to the results
             if (resultsData != null) {
@@ -60,16 +67,84 @@ function buildLog(dateString) {
             let description = document.createElement('p');
             description.innerHTML = descriptionData;
             logMain.appendChild(description);
+
+            // Show the splits:
+            if (splitsData != null) {
+                let splitsDiv = document.createElement('div');
+                let splitsTable = document.createElement('table');
+                let splitsTitle = document.createElement('h3');
+
+                splitsTitle.innerHTML = "Splits:";
+                splitsDiv.appendChild(splitsTitle);
+
+                splitsDiv.setAttribute('class', 'splits-div');
+                splitsTable.setAttribute('class', 'splits-table');
+                logMain.appendChild(splitsDiv);
+                splitsDiv.appendChild(splitsTable);
+                $.each(splitsData, function(key, val) {
+                    // Split the key string up
+                    let num = key.split('-')[0];
+                    let dist = key.split('-')[1];
+
+                    let row = splitsTable.insertRow();
+                    let splitNum = row.insertCell();
+                    let splitDist = row.insertCell();
+                    let splitTime = row.insertCell();
+
+                    splitNum.setAttribute('class', 'num');
+                    splitDist.setAttribute('class', 'dist');
+                    splitTime.setAttribute('class', 'time');
+
+                    splitNum.innerHTML = num;
+                    splitDist.innerHTML = dist;
+
+                    if (typeof(val) == "number") {
+                        splitTime.innerHTML = val.toFixed(2);
+                        splitTime.innerHTML = timeStringFromSeconds(val, 1);
+                    } else {
+                        splitTime.innerHTML = val;
+                    }
+                });
+            }
         }
-
-
-
-
     }).fail( function() {
+
         noLogMessage = document.createElement('h3');
         noLogMessage.innerHTML = "There is no training log file for this date.";
         logMain.appendChild(noLogMessage);
         console.log('File not found');
+    }).complete( function() {
+        logMain.setAttribute('style', 'align-items: start;');
+        // Show the nav div:
+        let navDiv = document.createElement('div');
+        navDiv.setAttribute('class', 'nav-div');
+        let dateElement = document.createElement('h4');
+        dateElement.setAttribute('style', 'width:8em;text-align:center;')
+        dateElement.innerHTML = dateFromDateString(dateString).toDateString();
+
+        let yearString = selectedDay.getFullYear().toString();
+        let monthString = (selectedDay.getMonth() + 1).toString().padStart(2, '0');
+        let dayString;
+        let prevButton = document.createElement('input');
+        prevButton.type = "button";
+        prevButton.defaultValue = "<<";
+        prevButton.onclick = function () {
+            dayString = (selectedDay.getDate() - 1).toString().padStart(2, '0');
+            buildLog(yearString + '-' + monthString + '-' + dayString);
+        }
+        let nextButton = document.createElement('input');
+        nextButton.type = "button";
+        nextButton.defaultValue = ">>";
+        nextButton.onclick = function () {
+            dayString = (selectedDay.getDate() + 1).toString().padStart(2, '0');
+            buildLog(yearString + '-' + monthString + '-' + dayString);
+        }
+
+        navDiv.appendChild(prevButton);
+        navDiv.append(dateElement);
+        navDiv.appendChild(nextButton);
+        logMain.appendChild(navDiv);
+
     });
 }
 function dateFromDateString(dateString) {
@@ -86,6 +161,6 @@ function addStat(leadString, statString, trailString="") {
         return "";
     }
     let stat = document.createElement('div');
-    stat.innerHTML = leadString + statString + trailString;
+    stat.innerHTML = '<b>' + leadString + '</b>' + statString + trailString;
     return stat;
 }
