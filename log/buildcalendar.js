@@ -22,8 +22,18 @@ function buildCalendar(divID, useOtherDate=null) {
     let tableHead = document.createElement("th");
     tableHead.setAttribute('colspan', '7');
 
-    let monthInput = document.createElement("input");
-    monthInput.setAttribute("style", "text-align:left;width:5em;");
+    let monthInput = document.createElement("select");
+    // Add all of the months
+    let monthsArray = ["January", "February", "March", "April",
+                       "May", "June", "July", "August",
+                       "September", "October", "November", "December"];
+    for (const monthString in monthsArray) {
+        monthOption = document.createElement("option");
+        monthOption.value = monthsArray[monthString];
+        monthOption.innerHTML = monthsArray[monthString];
+        monthInput.appendChild(monthOption);
+    }
+    // monthInput.setAttribute("style", "text-align:left;width:5em;");
     monthInput.setAttribute("placeholder", "Month");
     monthInput.setAttribute("id", divID + "-month-input");
 
