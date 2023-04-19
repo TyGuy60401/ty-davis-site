@@ -89,13 +89,21 @@ function buildLog(dateString) {
                     let dist = key.split('-')[1];
 
                     let row = splitsTable.insertRow();
+                    if (num == 'set') {
+                        let setBreakCell = row.insertCell();
+                        setBreakCell.className = 'dist';
+                        setBreakCell.innerHTML = "Set Break";
+                        setBreakCell.colSpan = 3;
+                        setBreakCell.style = "text-align: center;"
+                        return;
+                    }
                     let splitNum = row.insertCell();
                     let splitDist = row.insertCell();
                     let splitTime = row.insertCell();
 
-                    splitNum.setAttribute('class', 'num');
-                    splitDist.setAttribute('class', 'dist');
-                    splitTime.setAttribute('class', 'time');
+                    splitNum.className = 'num';
+                    splitDist.className = 'dist';
+                    splitTime.className = 'time';
 
                     splitNum.innerHTML = num;
                     splitDist.innerHTML = dist;

@@ -1,10 +1,21 @@
 {
     "run1": {
-        "title": "Maybe last sub-t reset of the season",
+        "title": "Maybe last sub-T reset of the season",
         "total-distance": 13.3,
         "total-time": "1:35:14",
         "volume-distance": "9600m",
         "type": "workout",
-        "description": "Good workout with the goal to feel nice and relaxed. 2km sub-threshold repeats at 6:20 (5:04 pace) and the whole group seemed to feel pretty relaxed about the whole thing. "
+        "description": "Good workout with the goal to feel nice and relaxed. 2km sub-threshold repeats at 6:20 (5:04 pace) then we finished with some 400s and the whole group seemed to feel pretty relaxed about the whole thing. We got back to Beus pond today and that's got to be the first time in a long time that we were able to work out there because of the crazy snow. It was nice to be back, there's a specific vibe to the workouts there that I certainly missed. I'm excited to be back in business once again.",
+        "splits": {
+            "1-2km": "6:24",
+            "2-2km": "6:20",
+            "3-2km": "6:19",
+            "4-2km": "6:20",
+            "set": "",
+            "5-400m": "64.3",
+            "6-400m": "64.0",
+            "7-400m": "64.5",
+            "8-400m": "63.9"
+        }
     }
 }
