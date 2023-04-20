@@ -1,0 +1,21 @@
+{
+    "run1": {
+        "title": "Layton High Steeple Work",
+        "total-distance": 9.26,
+        "total-time": "1:14:19",
+        "volume-distance": "5200m",
+        "type": "workout",
+        "description": "Had to head down to Layton High School for the workout today and it was way colder than I expected. I was only in a short sleeve shirt and the wind was bad and it almost started snowing, but when the workout started I ended up being okay.<br>The workout went great! We did some 800s over the hurdles today and every interval we did, except for the last 2 400s, was completely over hurdles. I feel like that's gonna help us a lot in the future.<br>The last 2 400s I had spikes on and my calves got so tight, don't know what that was but I was still able to finish relatively quick.",
+        "splits": {
+            "1-400m": "1:11.3", 
+            "2-800m": "2:24.2",
+            "3-800m": "2:23.2",
+            "4-800m": "2:21.9",
+            "5-800m": "2:22.2",
+            "6-400m": "1:06.7",
+            "7-400m": "1:06.2",
+            "8-400m": "1:01.8",
+            "9-400m": "1:04.1"
+        }
+    }
+}
