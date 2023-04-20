@@ -109,7 +109,7 @@ input, textarea {
     align-self: center;
     padding: 15px;
     gap: 15px;
-    flex-flow: column;
+    flex-flow: wrap column;
 }
 .general-stats {
     gap: 10px;
@@ -173,6 +173,17 @@ input, textarea {
     align-items: center;
 }
 
+#calendar-main {
+    min-height: 220px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+#calendar-main .month-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
 .calendar input {
     width: 4em;
     border: none;
@@ -183,7 +194,7 @@ input, textarea {
     /* border: none; */
     border-bottom: 2px solid rgb(120, 120, 120);
 }
-.calendar input[type=button] {
+#calendar-main input[type=button] {
     border-radius: 5px;
     appearance: none;
     width: auto;

@@ -104,5 +104,30 @@ function buildCalendar(divID, useOtherDate=null) {
 
             day.setDate(dayNum + 1);
         }
+
     }
+    let buttonsDiv = document.createElement('div');
+    buttonsDiv.className = 'month-buttons';
+    parentDiv.appendChild(buttonsDiv);
+
+    let lastMonthButton = document.createElement('input');
+    lastMonthButton.type = "button";
+    day.setMonth(day.getMonth() - 2);
+    let prevMonthString = day.toDateString();
+    lastMonthButton.defaultValue = day.toLocaleString('default', { month: 'long'}) + " <";
+    lastMonthButton.onclick = function () { 
+        buildCalendar(divID, prevMonthString);
+    };
+    buttonsDiv.appendChild(lastMonthButton);
+
+    let nextMonthButton = document.createElement('input');
+    nextMonthButton.type = "button";
+    day.setMonth(day.getMonth() + 2);
+    let nextMonthString = day.toDateString();
+    nextMonthButton.defaultValue = "> " + day.toLocaleString('default', { month: 'long'});
+    nextMonthButton.onclick = function () {
+        buildCalendar(divID, day.toDateString());
+    }
+
+    buttonsDiv.appendChild(nextMonthButton);
 }
