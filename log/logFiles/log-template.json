@@ -2,6 +2,7 @@
     "run1": {
         "title": "",
         "type": "pre-meet | shake out | workout | long run | race | distance | cross train",
+        "workout-type": "tempo | sustained | 1000s | 400s | 4-1-1-4 | steeple",
         "total-time": "",
         "total-distance": 0,
         "volume-distance": "",
