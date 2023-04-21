@@ -20,7 +20,7 @@ function buildCalendar(divID, useOtherDate=null) {
     let currentMonth = day.getMonth();
     
     let tableHead = document.createElement("th");
-    tableHead.setAttribute('colspan', '7');
+    tableHead.colSpan = 7;
 
     let monthInput = document.createElement("select");
     // Add all of the months
@@ -33,14 +33,13 @@ function buildCalendar(divID, useOtherDate=null) {
         monthOption.innerHTML = monthsArray[monthString];
         monthInput.appendChild(monthOption);
     }
-    // monthInput.setAttribute("style", "text-align:left;width:5em;");
-    monthInput.setAttribute("placeholder", "Month");
-    monthInput.setAttribute("id", divID + "-month-input");
+    monthInput.placeholder = "Month";
+    monthInput.id = divID + "-month-input";
 
     let yearInput = document.createElement("input");
-    yearInput.setAttribute("placeholder", "Year");
-    yearInput.setAttribute("type", "number");
-    yearInput.setAttribute("id", divID + "-year-input");
+    yearInput.placeholder = "Year";
+    yearInput.type = "number";
+    yearInput.id = divID + "-year-input";
 
     let calendarButton = document.createElement("input");
     calendarButton.type = "button";
@@ -133,7 +132,7 @@ function buildCalendar(divID, useOtherDate=null) {
     let nextMonthString = day.toDateString();
     nextMonthButton.defaultValue = "> " + day.toLocaleString('default', { month: 'long'});
     nextMonthButton.onclick = function () {
-        buildCalendar(divID, day.toDateString());
+        buildCalendar(divID, nextMonthString);
     }
 
     buttonDivRight.appendChild(nextMonthButton);
