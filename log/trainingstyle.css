@@ -184,6 +184,16 @@ input, textarea {
     justify-content: center;
     gap: 10px;
 }
+.month-buttons-left {
+    display: flex;
+    justify-content: end;
+    width: 50%;
+}
+.month-buttons-right {
+    display: flex;
+    justify-content: start;
+    width: 50%;
+}
 .calendar input {
     width: 4em;
     border: none;

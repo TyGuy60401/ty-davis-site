@@ -106,9 +106,16 @@ function buildCalendar(divID, useOtherDate=null) {
         }
 
     }
+    // Adding the month nav buttons
     let buttonsDiv = document.createElement('div');
+    let buttonDivLeft = document.createElement('div');
+    let buttonDivRight = document.createElement('div');
     buttonsDiv.className = 'month-buttons';
+    buttonDivLeft.className = 'month-buttons-left';
+    buttonDivRight.className = 'month-buttons-right';
     parentDiv.appendChild(buttonsDiv);
+    buttonsDiv.appendChild(buttonDivLeft);
+    buttonsDiv.appendChild(buttonDivRight);
 
     let lastMonthButton = document.createElement('input');
     lastMonthButton.type = "button";
@@ -118,7 +125,7 @@ function buildCalendar(divID, useOtherDate=null) {
     lastMonthButton.onclick = function () { 
         buildCalendar(divID, prevMonthString);
     };
-    buttonsDiv.appendChild(lastMonthButton);
+    buttonDivLeft.appendChild(lastMonthButton);
 
     let nextMonthButton = document.createElement('input');
     nextMonthButton.type = "button";
@@ -129,5 +136,5 @@ function buildCalendar(divID, useOtherDate=null) {
         buildCalendar(divID, day.toDateString());
     }
 
-    buttonsDiv.appendChild(nextMonthButton);
+    buttonDivRight.appendChild(nextMonthButton);
 }
