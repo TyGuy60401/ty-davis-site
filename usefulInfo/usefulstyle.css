@@ -7,7 +7,8 @@
         flex-direction: row;
         justify-content: center;
         background-color: rgb(203,223,219);
-        min-height: 100vh;
+        min-height: calc(100vh - 80.88px);
+        /* min-height: calc(100vh - 100px); */
     }
     #useful {
         background-color: white;
@@ -16,12 +17,21 @@
         min-width: 70vw;
         padding-left: 30px;
     }
+    #content {
+        padding: 0px;
+        margin: 0px 0px;
+        width: 40vw;
+    }
 }
 #useful {
     padding-left: 30px;
+    padding-right: 30px;
 }
 #useful a {
     color: rgb(70,149,183);
+}
+h1 {
+    max-width: 400px;
 }
 p {
     font-size: 14pt;
