@@ -34,9 +34,6 @@
         width: 80%;
         overflow-y: auto;
     }
-    img.portfolio-img {
-        width: 300px;
-    }
 
 }
 input, textarea {
