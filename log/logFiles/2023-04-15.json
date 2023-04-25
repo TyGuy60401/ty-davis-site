@@ -1,7 +1,7 @@
 {
     "run1": {
         "title": "Adamson Fam Long Run",
-        "type": "long run",
+        "type": "long-run",
         "total-time": "1:39:26",
         "total-distance": 14.42,
         "elevation": 1430,

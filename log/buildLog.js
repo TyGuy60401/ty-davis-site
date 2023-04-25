@@ -31,8 +31,8 @@ function buildLog(dateString) {
             // Show the stats
             let statsDiv = document.createElement('div');
             let generalStatsDiv = document.createElement('div');
-            statsDiv.setAttribute('class', 'stats-div');
-            generalStatsDiv.setAttribute('class', 'general-stats');
+            statsDiv.className = 'stats-div';
+            generalStatsDiv.className = 'general-stats';
             logMain.appendChild(statsDiv);
             statsDiv.appendChild(generalStatsDiv);
             // Popluate the stats div with general stats
@@ -48,7 +48,7 @@ function buildLog(dateString) {
             generalStatsDiv.append(addStat("Elevation: ", elevationData, "ft"));
             if (typeData == "race") {
                 let raceDiv = document.createElement('div');
-                raceDiv.setAttribute('class', 'race-div');
+                raceDiv.className = 'race-div';
                 raceDiv.innerHTML = "<h3>Race:</h3>";
                 statsDiv.appendChild(raceDiv);
                 raceDiv.append(addStat("Distance: ", volumeDistanceData));
@@ -58,9 +58,9 @@ function buildLog(dateString) {
             // Show the link to the results
             if (resultsData != null) {
                 let results = document.createElement('a');
-                results.setAttribute('href', resultsData);
-                results.setAttribute('target', '_blank');
-                results.setAttribute('rel', 'noopener noreferrer');
+                results.href = resultsData;
+                results.target = '_blank';
+                results.rel = 'noopener noreferrer';
                 results.innerHTML = "Results";
                 logMain.appendChild(results);
             }
@@ -79,8 +79,8 @@ function buildLog(dateString) {
                 splitsTitle.innerHTML = "Splits:";
                 splitsDiv.appendChild(splitsTitle);
 
-                splitsDiv.setAttribute('class', 'splits-div');
-                splitsTable.setAttribute('class', 'splits-table');
+                splitsDiv.className = 'splits-div';
+                splitsTable.className = 'splits-table';
                 logMain.appendChild(splitsDiv);
                 splitsDiv.appendChild(splitsTable);
                 $.each(splitsData, function(key, val) {
@@ -118,18 +118,18 @@ function buildLog(dateString) {
             }
         }
     }).fail( function() {
-
         noLogMessage = document.createElement('h3');
         noLogMessage.innerHTML = "There is no training log file for this date.";
         logMain.appendChild(noLogMessage);
         console.log('File not found');
+
     }).complete( function() {
         logMain.setAttribute('style', 'align-items: start;');
         // Show the nav div:
         let navDiv = document.createElement('div');
-        navDiv.setAttribute('class', 'nav-div');
+        navDiv.className = 'nav-div';
         let dateElement = document.createElement('h4');
-        dateElement.setAttribute('style', 'width:8em;text-align:center;')
+        dateElement.style = 'width:8em; text-align:center;';
         dateElement.innerHTML = dateFromDateString(dateString).toDateString();
 
         let yearString = selectedDay.getFullYear().toString();
