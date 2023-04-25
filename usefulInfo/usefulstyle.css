@@ -17,15 +17,6 @@
         min-width: 70vw;
         padding-left: 30px;
     }
-    #content {
-        padding: 0px;
-        margin: 0px 0px;
-        width: 40vw;
-    }
-    img.portfolio-img {
-        width: 400px;
-        box-shadow: 10px 10px 10px rgb(170, 170, 170);
-    }
 }
 #useful {
     padding-left: 30px;
