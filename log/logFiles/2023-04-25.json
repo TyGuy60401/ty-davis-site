@@ -1,0 +1,19 @@
+{
+    "run1": {
+        "title": "Steeple Fartlek",
+        "total-distance": 9.0,
+        "total-time": "1:03:14",
+        "volume-distance": "4960m",
+        "type": "workout",
+        "workout-type": "steeple fartlek",
+        "description": "This was a bit of an odd workout. Our track is under construction so we could only use about half of it. We found ourselves running 200m over hurldes at elevation steeple pace, and then ~180m on turf back to the start. We did 6 laps the first rep and then 4 laps the second rep. <br><br> After that we just finished with a couple of 400s over hurdles and called it a day.",
+        "splits": {
+            "1-2280m": "7:12",
+            "2-1480m": "4:40",
+            "set": "",
+            "3-400m": "69",
+            "4-400m": "72",
+            "5-400m": "63"
+        }
+    }
+}
