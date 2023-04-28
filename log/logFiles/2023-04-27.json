@@ -1,0 +1,20 @@
+{
+    "run1": {
+        "title": "Talley in da workout?",
+        "total-distance": 9.01,
+        "total-time": "1:05:41",
+        "type": "workout",
+        "workout-type": "pre-meet",
+        "splits": {
+            "1-200m": "33.1",
+            "2-200m": "34.1",
+            "3-200m": "32.4",
+            "4-200m": "32.3",
+            "5-200m": "33.3",
+            "6-200m": "32.8",
+            "7-200m": "33.4",
+            "8-200m": "30.8"
+        },
+        "description": "Just some super chill 200s a couple of days out from the Pocatello meet. Coach Talley did them with us and he did a real good job of staying right on pace with us. He even lead the last 200m in a 30. Getting ready for the week! 😈"
+    }
+}
