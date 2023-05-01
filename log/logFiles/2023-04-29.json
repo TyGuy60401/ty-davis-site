@@ -1,0 +1,24 @@
+{
+    "run1": {
+        "title": "Bengal Invite Steeplechase",
+        "total-distance": 4,
+        "total-time": "21:28",
+        "volume-distance": "3000m",
+        "volume-time": "9:06.19",
+        "type": "race",
+        "description": "Bronson and Jamison were set as pacers for me and it was good to get out there and run hard. I wasn't as strong as I should've been on laps 5 and 6, but I was able to finish kinda stronger and make it a good effort. Converts to an 8:54 but probably won't quite get me into regionals quite yet. I didn't feel 100% on the line, so I'm excited to go at it again when I'm not tired from finals in a couple of weeks."
+    },
+    "run2": {
+        "title": "Bengal Invite 800m",
+        "total-distance": 4,
+        "total-time": "27:00",
+        "volume-distance": "800m",
+        "volume-time": "1:56.86",
+        "type": "race",
+        "description": "This was a fun chance to just go for it and run hard. I outkicked Kevin and won my heat, so that's fun!",
+        "splits": {
+            "1-400m": "58.8",
+            "2-400m": "58"
+        }
+    }
+}
