@@ -5,5 +5,12 @@
         "total-distance": 4.07,
         "total-time": "28:12",
         "type": "distance"
+    },
+    "run2": {
+        "title": "Waterfall talk",
+        "description": "Tanner kept going off about why we had to get to the end of pipe. Everyone was excited for him. The legs felt alright today, just got to keep my mind on conference next week.",
+        "total-distance": 8.91,
+        "total-time": "1:03:54",
+        "type": "distance"
     }
 }

@@ -1,0 +1,18 @@
+{
+    "run1": {
+        "title": "Once a laker",
+        "type": "workout",
+        "workout-type": "steeple ladder",
+        "total-distance": 9.42,
+        "total-time": "1:14:02",
+        "volume-distance": "3800m",
+        "description": "Went to Bonneville High's track for some steeple work and it was super windy as we were warming up. Luckily, the wind died down to about 10mph and we were just fine over the hurdles during our workout. Did a nice steeple ladder and it went really well. Volume was pretty low because we don't want to wear ourselves out before next week.",
+        "splits": {
+            "1-400m": "72",
+            "2-800m": "2:24",
+            "3-1200m": "3:31",
+            "4-800m": "2:22",
+            "5-600m": "1:38"
+        }
+    }
+}

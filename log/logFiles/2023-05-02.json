@@ -1,0 +1,26 @@
+{
+    "run1": {
+        "title": "Broken track 800s",
+        "type": "workout",
+        "workout-type": "800s",
+        "total-time": "1:24:39",
+        "total-distance": 11.13,
+        "volume-distance": "4800m",
+        "description": "Just did some cruise 800s and I was feeling good out there today. We were supposed to hit 2:28 but we worked it down a little bit. Getting excited for next week.",
+        "splits": {
+            "1-800m": "2:29",
+            "2-800m": "2:27",
+            "3-800m": "2:27",
+            "4-800m": "2:26",
+            "5-800m": "2:26",
+            "6-800m": "2:26",
+            "7-800m": "2:26",
+            "8-800m": "2:25",
+            "set": "",
+            "9-400m": "67",
+            "10-400m": "67",
+            "11-400m": "66",
+            "12-400m": "65"
+        }
+    }
+}
