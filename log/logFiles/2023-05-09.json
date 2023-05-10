@@ -1,0 +1,19 @@
+{
+    "run1": {
+        "title": "It's Trish's birthday",
+        "total-distance": 7.41,
+        "total-time": "59:37",
+        "type": "workout",
+        "workout-type": "steeple pre-meet",
+        "description": "Happy birthday Trish! Today we did a small workout. A few 400s over hurdles and then a few 200s flat. Just getting the body ready for conference. I can't wait till we have a full track again.",
+        "splits": {
+            "1-400m": "71.5",
+            "2-400m": "74.3",
+            "3-400m": "70.6",
+            "4-400m": "71.3",
+            "5-400m": "72.0",
+            "6-200m": "33.5",
+            "7-200m": "33.6"
+        }
+    }
+}
