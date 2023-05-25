@@ -1,0 +1,27 @@
+{
+    "run1": {
+        "title": "Big Sky Outdoor 5k",
+        "type": "race",
+        "total-distance": "8.5",
+        "total-time": "1:00:03",
+        "volume-distance": "5km",
+        "volume-time": "14:42",
+        "results-link": "http://rapidresultslive.com/2023/BIGSKY/230513F014.htm",
+        "description": "After how the steeple went yesterday I really wanted to run better in this 5000m, so I decided to start off right with the lead pack. I was in probably 6-8 place for the first 2200m, but the pace was hot and I couldn't hang. They were definitely on pace for a big PR, but my legs were still pretty tired from the steeple yesterday, and I started to drop back. I ended up in no-mans-land for almost the rest of the race until about 600m to go. A big pack came up on my side and I was able to kick it back into gear. I finished with the fastest last lap of the whole field in 60.4.<br><br> Unfortunately I was 9th place, so just one spot out of scoring, but that'll definitely be different next year.",
+        "splits": {
+            "1-200m": "33.6",
+            "2-400m": "68.7",
+            "3-400m": "67.7",
+            "4-400m": "69.2",
+            "5-400m": "70.2",
+            "6-400m": "70.4",
+            "7-400m": "73.9",
+            "8-400m": "74.6",
+            "9-400m": "74.1",
+            "10-400m": "75.5",
+            "12-400m": "74.8",
+            "13-400m": "69.2",
+            "14-400m": "60.4"
+        }
+    }
+}

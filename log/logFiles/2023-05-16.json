@@ -1,0 +1,27 @@
+{
+    "run1": {
+        "title": "Morning run with Trish",
+        "type": "distance",
+        "total-distance": 4.75,
+        "total-time": "40:00",
+        "description": "Nice little morning run with Trish. We went up to where our apartment will be when we move in a few weeks from now. We then jumped right up to pipe from Mount Ogden golf course. There was a decent amount of elevation gain, but it wasn't too bad. We enjoyed the downhill on the way back.",
+        "elevation": 400
+    },
+    "run2": {
+        "title": "Mile repeats for regionals",
+        "type": "workout",
+        "workout-type": "mile-repeats",
+        "total-distance": 10.74,
+        "total-time": "1:16:33",
+        "volume-distance": "5mi",
+        "description": "I probably went a little harder than I should've. The chances that I make regionals are unfortunately pretty low, but I still have a chance. It was nice to get out here and just run really hard. Coach wanted us to step it down a little slower than we did, and after that 3rd one he told us not to go much faster. Running fast is fun though. Hopefully I get in.",
+        "splits": {
+            "1-1mi": "5:01",
+            "2-1mi": "4:53",
+            "3-1mi": "4:42",
+            "4-1mi": "4:40",
+            "5-800m": "2:23",
+            "6-800m": "2:21"
+        }
+    }
+}

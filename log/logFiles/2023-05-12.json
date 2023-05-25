@@ -1,0 +1,22 @@
+{
+    "run1": {
+        "title": "Big Sky Outdoor Steeplechase",
+        "type": "race",
+        "total-distance": 5.75,
+        "total-time": "37:45",
+        "volume-distance": "3000m",
+        "volume-time": "9:19",
+        "results-link": "https://rapidresultslive.com/2023/BIGSKY/230512F018.htm",
+        "description": "Ran hard but it wasn't the best. This was probably our chance to qualify for regionals depending on how everyone else in the region runs this weekend. The bobcats started the race off with a 36 second 230 split, which is about 32 through the 200m. We weren't expecting them to go out that fast, but it was the right move for them. I stayed back and tried to run pace, but it was super windy and there wasn't much that I could've done. Unfortunately they got a big lead on us early and it was too hard to make it up. Bronson and I caught one Montana State kid in the last 500m or so. It was still a good run, but I wish it had just gone a little differently. <br><br>5th place in the conference, I'm not too upset about that.",
+        "splits": {
+            "1-230m": "38.4",
+            "2-396m": "73.2",
+            "3-396m": "73.2",
+            "4-396m": "74.4",
+            "5-396m": "75.6",
+            "6-396m": "76.4",
+            "7-396m": "77.5",
+            "8-396m": "70.5"
+        }
+    }
+}
