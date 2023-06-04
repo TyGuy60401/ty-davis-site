@@ -91,15 +91,17 @@ function buildCalendar(divID, useOtherDate=null) {
                 classString = "off-month";
             }
             let fileString = day.getFullYear().toString() + '-' + (day.getMonth() + 1).toString().padStart(2,'0') + '-' + dayNum.toString().padStart(2, '0');
-            if (day.toDateString() == selectedDay.toDateString()) {
-                cell.setAttribute('class', 'selected');
+
+            if (day.toDateString() == selectedDay.toDateString()) { cell.className = 'selected'; }
+            if (day.toDateString() == todayString) { cell.className += ' today'; }
+            let cellLink = document.createElement('a');
+            cellLink.href = '#';
+            cellLink.className = classString;
+            cellLink.onclick = function () {
+                buildLog(fileString)
             }
-            let cellInnerHTML;
-            if (day.toDateString() == todayString) {
-                cell.getAttribute('class')
-                cell.setAttribute('class', cell.getAttribute('class') + ' today');
-            }
-            cell.innerHTML = "<a href='#' class='" + classString + "' onclick=\"buildLog('" + fileString + "')\">" + dayNum + "</a>";
+            cellLink.innerHTML = dayNum;
+            cell.appendChild(cellLink);
 
             day.setDate(dayNum + 1);
         }

@@ -5,7 +5,8 @@ function buildLog(dateString) {
     buildCalendar('calendar-main', selectedDay.toDateString());
     let logMain = document.querySelector('#log-main');
     logMain.innerHTML = "";
-    $.getJSON("./logFiles/" + dateString + ".json", function (data) {
+    let fullString = dateString.substr(0, 7) + "/" + dateString;
+    $.getJSON("./logFiles/" + fullString + ".json", function (data) {
 
         for (let run in data) {
             let thisRun = data[run];
