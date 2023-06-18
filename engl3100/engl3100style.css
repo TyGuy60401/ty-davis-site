@@ -1,0 +1,50 @@
+@media only screen and (max-width: 600px) {
+    #tutorial-main {
+        padding-left: 20px;
+    }
+}
+@media only screen and (min-width: 600px) {
+    #tutorial-main-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: rgb(160, 185, 219);
+        min-height: calc(100vh - 80.88px);
+        /* min-height: calc(100vh - 100px); */
+    }
+    #tutorial-main {
+        background-color: white;
+        border-right: 1px solid rgb(170, 170, 170);
+        border-left: 1px solid rgb(170, 170, 170);
+        width: 70vw;
+        padding-left: 30px;
+        overflow-y: auto;
+        height: calc(100vh - 80.88px);
+    }
+}
+#content a {
+    color: gray;
+}
+
+#header-3100 {
+    position: relative;
+    width: 100%;
+    color: white;
+    background-color: rgb(68, 96, 134);
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    align-items: baseline;
+    /* border-bottom: 8px solid white; */
+    z-index: 10;
+    box-shadow: 0px 4px 8px rgb(106, 111, 117);
+}
+#header-3100 h1 {
+    padding-left: 15px;
+}
+#content {
+    max-width: 90%;
+}
+#content img {
+    max-width: 80%;
+}
