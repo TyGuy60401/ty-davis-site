@@ -1,0 +1,16 @@
+{
+    "run1": {
+        "title": "Big D loop",
+        "total-distance": 11.55,
+        "total-time": "1:26:12",
+        "type": "distance",
+        "description": "We did a little loop down to the Big D park and back and Nate was coughing up a storm after the big uphill."
+    },
+    "run2": {
+        "title": "Little evening double",
+        "total-distance": 4.00,
+        "total-time": "29:58",
+        "type": "distance",
+        "description": "Got the run done while the laundry was in the washer. Maybe that'll be a new weekly gig for me."
+    }
+}
