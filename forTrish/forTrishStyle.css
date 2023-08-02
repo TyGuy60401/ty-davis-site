@@ -1,0 +1,48 @@
+@media only screen and (max-width: 600px) {
+
+}
+@media only screen and (min-width: 600px) {
+    #useful-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: rgb(203,223,219);
+        min-height: calc(100vh - 80.88px);
+        /* min-height: calc(100vh - 100px); */
+    }
+    #useful {
+        background-color: white;
+        border-right: 1px solid rgb(170, 170, 170);
+        border-left: 1px solid rgb(170, 170, 170);
+        min-width: 70vw;
+        padding-left: 30px;
+    }
+    #content {
+        padding: 0px;
+        margin: 0px 0px;
+        width: 40vw;
+    }
+    img.portfolio-img {
+        width: 400px;
+        box-shadow: 10px 10px 10px rgb(170, 170, 170);
+    }
+}
+#useful {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#useful a {
+    color: rgb(70,149,183);
+}
+h1 {
+    max-width: 400px;
+}
+p {
+    font-size: 14pt;
+}
+img {
+    max-width: 100%;
+}
+h3 {
+    font-size: 16pt;
+}
