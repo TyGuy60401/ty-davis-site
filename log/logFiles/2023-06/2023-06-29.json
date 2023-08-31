@@ -1,0 +1,17 @@
+{
+    "run1": {
+        "title": "Classic discovery",
+        "total-distance": 10.28,
+        "total-time": "1:14:59",
+        "elevation": 851,
+        "type": "distance",
+        "description": "Off to Beus and up discovery and back to the stadium for a lap and some strides. Puts me at just over 10 miles."
+    },
+    "run2": {
+        "title": "Run with Trish and Naomi",
+        "total-distance": 3.58,
+        "total-time": "31:46",
+        "type": "double",
+        "description": "Trish and Naomi and I went for a chill run and we ran nice and relaxed for just a few miles. After this run we went and enjoyed some nice Chipotle."
+    }
+}

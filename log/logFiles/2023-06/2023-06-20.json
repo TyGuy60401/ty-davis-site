@@ -1,0 +1,16 @@
+{
+    "run1": {
+        "title": "Morning exploring",
+        "total-distance": 3.91,
+        "total-time": "30:38",
+        "type": "distance double",
+        "description": "Woke up a little too late to get to practice so I did a quick run so that I can get to work on time and finish up my mileage later."
+    },
+    "run2": {
+        "title": "",
+        "total-distance": 8.26,
+        "total-time": "1:02:21",
+        "type": "distance",
+        "description": "Little evening run so that I can get mileage. I did a bunch of random running down little streets and exploring, similar to the morning run. I didn't feel the best but the run wasn't bad."
+    }
+}

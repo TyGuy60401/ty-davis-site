@@ -1,0 +1,17 @@
+{
+    "run1": {
+        "title": "Lower to birdsong",
+        "total-distance": 10.50,
+        "total-time": "1:14:54",
+        "elevation": 871,
+        "type": "distance",
+        "description": "We didn't go too quick on this run, and it's fun to combine runs like that lower and birdsong. The birdsong trail is a little eroded so it's tough to run, but it's not too bad."
+    },
+    "run2": {
+        "title": "Late run",
+        "total-distance": 4.01,
+        "total-time": "28:56",
+        "type": "distance",
+        "description": "Started at the school and finished at the house on 36th. Did a little out and back on pipe and I went down a cool way back through the golf course and the neighborhood to make it back home."
+    }
+}
