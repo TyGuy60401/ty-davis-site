@@ -1,0 +1,25 @@
+#content img {
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px rgb(106, 111, 117);
+    border-radius: 5px;
+}
+.intro {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: none;
+}
+
+#main-link {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 10px;
+}
+.code-block {
+    background-color: rgb(225, 225, 225);
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    padding-top: 0.15em;
+    padding-bottom: 0.15em;
+    border-radius: 0.3em;
+    font-family:'Courier New', Courier, monospace;
+}
