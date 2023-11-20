@@ -145,7 +145,7 @@ input, textarea {
 .splits-table {
     width: max-content;
     min-width: 100%;
-    /* border-collapse: collapse; */
+    border-collapse: collapse;
 }
 .splits-table tr:nth-child(even) {
     background-color: rgb(220, 220, 220);
