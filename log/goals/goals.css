@@ -1,0 +1,279 @@
+@media only screen and (max-width: 600px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    #goals-main {
+        border-top: 1px solid rgb(160, 160, 160);
+        margin-top: 10px;
+        padding-top: 10px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    #dateSelector {
+        background-color: rgb(203, 223, 219);
+    }
+}
+@media only screen and (min-width: 600px) {
+    .wrapper {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        min-height: 100vh;
+        width: 100%;
+        background-color: rgb(203,223,219);
+    }
+    #dateSelector {
+        border-right: solid 1px rgb(160, 160, 160);
+        border-left: solid 1px rgb(160, 160, 160);
+        margin-left: 30px;
+    }
+    #goals-main {
+        border-right: solid 1px rgb(160, 160, 160);
+        border-left: solid 1px rgb(160, 160, 160);
+        max-height: 0px;
+        width: 100%;
+        overflow-y: auto;
+    }
+}
+input, textarea {
+    font-family: inherit;
+}
+#header {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    height: auto;
+}
+#goals-main {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    grid-row-start: 2;
+    grid-column-start: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    min-height: calc(100% - 40px);
+    margin: auto;
+    max-width: 800px;
+}
+.left-align {
+    align-self: baseline;
+    margin-left: 20px;
+}
+#goals-main a {
+    color: gray;
+}
+#goals-main h2 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#goals-main h3 {
+    margin: 0px 0px;
+    font-size: 16pt;
+}
+#goals-main h4 {
+    margin: 0px 0px;
+    padding: none;
+    color: gray;
+}
+#goals-main p {
+    text-decoration: bold;
+    color: rgb(61, 61, 61);
+}
+#goals-main input[type=button] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: gray;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+#goals-main input[type=button]:hover {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: rgb(160, 160, 160);
+}
+.nav-div {
+    order: -1;
+    display: flex;
+    flex-flow: row;
+    gap: 5px;
+    align-self: center;
+}
+.stats-div {
+    display: flex;
+    width: 80%;
+    /* border: rgb(170, 170, 170) solid 1px; */
+    box-shadow: 0px 0px 5px inset rgb(170, 170, 170);
+    border-radius: 20px;
+    align-self: center;
+    padding: 15px;
+    gap: 15px;
+    flex-flow: wrap column;
+}
+.general-stats {
+    gap: 10px;
+    display: flex;
+    flex-flow: row;
+}
+.race-div {
+    align-items: baseline;
+    gap: 10px;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+}
+.table-wrapper{
+    /* border: 1px solid red; */
+    width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+}
+.splits-div {
+    /* margin-left: 4%; */
+    /* border: rgb(170, 170, 170) solid 1px; */
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0px 0px 5px inset rgb(170, 170, 170);
+    padding: 15px;
+    border-radius: 20px;
+}
+.splits-table {
+    width: max-content;
+    min-width: 100%;
+    /* border-collapse: collapse; */
+}
+.splits-table tr:nth-child(even) {
+    background-color: rgb(220, 220, 220);
+}
+.splits-table td {
+    padding-right: 10px;
+}
+.splits-table th {
+    text-align: left;
+    font-size: 18pt;
+}
+.splits-table .col1 {
+    padding-right: 3px;
+    text-align: right;
+}
+.col2 {
+    text-align: left;
+}
+.col3 {
+    min-width: 120px;
+    text-align: center;
+}
+.splits-table td.num {
+    padding-right: 5px;
+    padding-left: 10px;
+    font-size: 8pt;
+}
+.splits-table td.dist {
+    font-weight: bolder;
+}
+.splits-table td.time {
+    min-width: 4em;
+    text-align: center;
+}
+
+
+#dateSelector {
+    padding-top: 20px;
+    grid-row-start: 2;
+    font-size: 14pt;
+    text-align: center;
+    color: rgb(80, 80, 80);
+    background-color: white;
+    min-height: calc(100% - 20px);
+    min-width: 240px;
+    /* max-width: 20vw; */
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+#calendar-main {
+    min-height: 220px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+#calendar-main .month-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.month-buttons-left {
+    display: flex;
+    justify-content: end;
+    width: 50%;
+}
+.month-buttons-right {
+    display: flex;
+    justify-content: start;
+    width: 50%;
+}
+.calendar input {
+    width: 4em;
+    border: none;
+    border-bottom: 1px solid rgb(160, 160, 160);
+}
+.calendar input:focus {
+    outline: none;
+    /* border: none; */
+    border-bottom: 2px solid rgb(120, 120, 120);
+}
+#calendar-main input[type=button] {
+    border-radius: 5px;
+    appearance: none;
+    width: auto;
+    border: none;
+    background-color: rgb(220, 220, 220);
+}
+.calendar input[type=button]:active {
+    background-color: rgb(190, 190, 190);
+}
+.calendar button {
+    margin-left: 5px;
+}
+.calendar td {
+    min-width: 25px;
+    background-color: white;
+    border-radius: 4px;
+}
+.calendar td.today {
+    font-style: italic;
+    /* text-decoration: underline; */
+    color: rgb(70, 149, 183);
+}
+.calendar td.selected {
+    background-color: gray;
+    color: white;
+}
+.calendar td.selected.today {
+    color:rgb(198, 230, 243);
+}
+.calendar {
+    border: gray solid 1px;
+    border-radius: 10px;
+}
+.calendar a:hover {
+    text-decoration: underline;
+}
+.calendar a {
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.on-month {
+    color: inherit;
+}
+.off-month {
+    color: rgb(170, 170, 170);
+}
