@@ -97,6 +97,17 @@ input, textarea {
     -webkit-appearance: none;
     background-color: rgb(160, 160, 160);
 }
+
+.goals-content {
+    width: 100%;
+    justify-self: left;
+}
+.goals-content p {
+    margin: 0px;
+}
+.goals-content a {
+    text-decoration: none;
+}
 .nav-div {
     order: -1;
     display: flex;
