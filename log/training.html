@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
+    <script src="./timeStringFunctions.js"></script>
+    <script src="/src/buildheader.js"></script>
+    <script src="./buildcalendar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="./buildLog.js"></script>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="./trainingstyle.css">
+    <title>Ty Davis Training Log</title>
+</head>
+<body class="training" onload="buildHeader('<a style=\'text-decoration:none;\' href=\'./index.html\'>Training Log</a>'); buildCalendar('calendar-main')">
+    <div class="wrapper">
+        <div id="header"><!-- This is a necessary div. Don't
+            get rid of this --> </div>
+        <div id="dateSelector">
+            <div id="calendar-main"></div>
+        </div>
+        <div id="log-main">
+            <h3>Select a date from the calendar.</h3>
+        </div>
+    </div>
+</body>
+</html>

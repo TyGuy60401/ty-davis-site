@@ -2,27 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
-    <script src="./timeStringFunctions.js"></script>
     <script src="/src/buildheader.js"></script>
-    <script src="./buildcalendar.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="./buildLog.js"></script>
-    <link rel="stylesheet" href="/src/style.css">
-    <link rel="stylesheet" href="./trainingstyle.css">
-    <title>Ty Davis Training Log</title>
+    <link rel="stylesheet" href="/src/style.css"></script>
+    <link rel="stylesheet" href="./goals/goals.css">
+    <title>Weber State Track/XC Goals</title>
 </head>
-<body class="training" onload="buildHeader('Training Log'); buildCalendar('calendar-main')">
+<!-- <body class="training" onload="buildHeader('<a href=\'./index.html\'>Track/XC Goals</a>');"> -->
+<body class="training" onload="buildHeader('<a style=\'text-decoration:none;\' href=\'./index.html\'>Training Log</a>');">
     <div class="wrapper">
-        <div id="header"><!-- This is a necessary div. Don't
-            get rid of this --> </div>
-        <div id="dateSelector">
-            <div id="calendar-main"></div>
-        </div>
-        <div id="log-main">
-            <h3>Select a date from the calendar.</h3>
+        <div id="header"><!-- Essential div don't remove --></div>
+        <div id="goals-main">
+            <h1>Training Log and Goals</h1>
+            <p style="text-align:center;">
+                Go to <a href="./goals/index.html">Goals</a> page.<br>
+                Go to my <a href="./training.html">Training Log</a>.
+            </p>
         </div>
     </div>
 </body>
