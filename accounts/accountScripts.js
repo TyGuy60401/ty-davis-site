@@ -1,6 +1,10 @@
 function logIn() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
+    var errorField = document.getElementById("error-field");
+
+    errorField.innerHTML = "";
+
     var options = {
         method: "POST",
         headers: {
@@ -14,7 +18,16 @@ function logIn() {
     }
     fetch('http://localhost:8000/account/login', options)
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data);
+            if (data["detail"] == "Not found.") {
+                errorField.style.visibility = "visible";
+                errorField.innerHTML = "Username and Password combo are not found."
+            }
+        })
+        .catch( err => {
+            console.log(err)
+        })
 }
 
 function createAccount() {
