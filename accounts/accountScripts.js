@@ -1,3 +1,21 @@
+function logIn() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var options = {
+        method: "POST",
+        headers: {
+            "Accept": "application/json",
+            "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+            "username": username,
+            "password": password,
+        })
+    }
+    fetch('http://localhost:8000/account/login', options)
+        .then(response => response.json())
+        .then(data => console.log(data))
+}
 
 function createAccount() {
     if (checkUsernameAndPassword()) {
