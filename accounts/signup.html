@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ty Davis - Log in</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./accountScripts.js"></script>
+</head>
+<body>
+    <div id="main-content">
+        <!-- <div id="login-form"> -->
+            <h2>ty-davis.com</h2>
+            <h1 style="text-align: center;">Create New Account</h1>
+            <form id="create-account-form">
+                <table>
+                    <tr>
+                        <td class="right-align">Username:</td>
+                        <td><input id="username"></td>
+                    </tr>
+                    <tr>
+                        <td class="right-align">Email:</td>
+                        <td><input id="email" type="email"></td>
+                    </tr>
+                    <tr>
+                        <td class="right-align">Password:</td>
+                        <td><input id="password" type="password"></td>
+                    </tr>
+                    <tr>
+                        <td class="right-align">Confirm Password:</td>
+                        <td><input id="confirm-password" type="password"></td>
+                    </tr>
+                </table>
+            </form>
+            <div id="error-field"></div>
+            <button onclick="createAccount()">Create Account</button>
+
+            <p>Already have an account? <a href='./login.html/'>Log in</a></p>
+        
+        <!-- </div> -->
+    </div>
+</body>
+</html>

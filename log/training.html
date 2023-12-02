@@ -13,6 +13,21 @@
     <link rel="stylesheet" href="/src/style.css">
     <link rel="stylesheet" href="./trainingstyle.css">
     <title>Ty Davis Training Log</title>
+    <script>
+        function testFetch(url) {
+            var fetchMethod = {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-type': 'application/json',
+                    'Authorization': 'Token 73c17b606d2727aebdc21344387d33557c7d59ec'
+                },
+            }
+            fetch(url, fetchMethod)
+                .then(response => response.json())
+                .then( data => console.log(data));
+        }
+    </script>
 </head>
 <body class="training" onload="buildHeader('<a style=\'text-decoration:none;\' href=\'./index.html\'>Training Log</a>'); buildCalendar('calendar-main')">
     <div class="wrapper">
@@ -23,6 +38,7 @@
         </div>
         <div id="log-main">
             <h3>Select a date from the calendar.</h3>
+            <button onclick='testFetch("http://localhost:8000/training/runs/?dateStart=2023-12-01&dateEnd=2023-12-04")'>Click me</button>
         </div>
     </div>
 </body>
