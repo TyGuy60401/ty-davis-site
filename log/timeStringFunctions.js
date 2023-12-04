@@ -18,6 +18,6 @@ function timeStringFromSeconds(seconds, numDecimals=2) {
     if (hour == 0) {
         return min + ':' + secString.padStart(numDecimals + addNum, '0');
     } else {
-        return hour + ':' + min.toString().padStart(2, '0') + ':' + secString;
+        return hour + ':' + min.toString().padStart(2, '0') + ':' + secString.padStart(numDecimals + addNum, '0');
     }
 }

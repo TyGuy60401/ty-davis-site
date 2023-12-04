@@ -127,7 +127,6 @@ function buildCalendar(divID, useOtherDate=null) {
             cellLink.href = '#';
             cellLink.className = classString;
             cellLink.onclick = function () {
-                console.log(fileString)
                 buildLog(fileString)
             }
             cellLink.innerHTML = dayNum;
