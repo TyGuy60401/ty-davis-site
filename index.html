@@ -9,6 +9,7 @@
     <title>Ty Davis</title>
     <link rel="stylesheet" href="src/style.css">
     <script src="src/scrollmove.js"></script>
+    <script src="/accounts/accountScripts.js"></script>
 </head>
 <body class="landing">
     <div id="overlay">
@@ -16,6 +17,7 @@
         Ty Davis's Personal Site
         <br>Coming soon - Scroll
         </h1>
+        <div id="log-in-info"></div>
         <p>Links: <br>
             <a href="/usefulInfo/index.html">Useful Info</a><br> 
             <a href="log/index.html">Training Log</a><br>
@@ -32,5 +34,35 @@
         <img class="scrollimg" id="midmountain-desktop" src="imgs/middlemountain.webp"/>
         <img class="scrollimg" id="foreground-desktop" src="imgs/foreground.webp"/>
     </div> 
+    <script>
+        console.log("Hi there!");
+        let logInDiv = document.getElementById("log-in-info");
+        let authToken = localStorage.getItem('authToken');
+        if (authToken) {
+            console.log("There is a token");
+            fetch('http://localhost:8000/account/test_token', {
+                method: 'GET',
+                headers: makeHeader(token=authToken)
+            }).then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    if (data['detail'] == 'Invalid token.') {
+                        localStorage.removeItem('authToken');
+                        location.reload();
+                        return;
+                    }
+                    let content = `
+                    <p>
+                        Currently logged in as <b style='color: white;'><a href='/accounts/profile.html'>${data['username']}</a></b><br>
+                        <a onclick="logOut()" href="#">Log out</a>
+                    </p>
+                    `
+                    logInDiv.innerHTML = content
+                });
+        } else {
+            console.log("No token found!")
+            logInDiv.innerHTML = "<a href='/accounts/login.html'>Log In</a>"
+        }
+    </script>
 </body>
 </html>

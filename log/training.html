@@ -10,20 +10,18 @@
     <script src="./buildcalendar.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="./buildLog.js"></script>
+    <script src="/accounts/accountScripts.js"></script>
     <link rel="stylesheet" href="/src/style.css">
     <link rel="stylesheet" href="./trainingstyle.css">
     <title>Ty Davis Training Log</title>
     <script>
-        function testFetch(url) {
+        function testFetch(route) {
+            let token = localStorage.getItem('authToken');
             var fetchMethod = {
                 method: 'GET',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-type': 'application/json',
-                    'Authorization': 'Token 73c17b606d2727aebdc21344387d33557c7d59ec'
-                },
+                headers: makeHeader(token),
             }
-            fetch(url, fetchMethod)
+            fetch(backendURL + route, fetchMethod)
                 .then(response => response.json())
                 .then( data => console.log(data));
         }
@@ -38,7 +36,7 @@
         </div>
         <div id="log-main">
             <h3>Select a date from the calendar.</h3>
-            <button onclick='testFetch("http://localhost:8000/training/runs/?dateStart=2023-12-01&dateEnd=2023-12-04")'>Click me</button>
+            <button onclick='testFetch("training/runs/?dateStart=2023-12-01&dateEnd=2023-12-04")'>Click me</button>
         </div>
     </div>
 </body>

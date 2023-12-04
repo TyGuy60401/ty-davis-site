@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ty Davis - Log in</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./accountScripts.js"></script>
+</head>
+<body>
+    <div id="main-content">
+        <!-- <div id="login-form"> -->
+            <h2><a href="/" style="text-decoration: none;">ty-davis.com</a></h2>
+            <h1 style="text-align: center;">Profile</h1>
+            <div id="user-info"></div>
+            <button onclick="logOut()">Log Out</button>
+
+        
+        <!-- </div> -->
+    </div>
+    <script>
+        let userInfo = document.getElementById('user-info');
+        let token = localStorage.getItem('authToken');
+        if (!token) {
+            userInfo.innerHTML = `
+            <p> You are not logged in. 
+                <a href="./login.html">Log In</a> here.</p>
+            `
+        } else {
+            fetch(backendURL + 'account/test_token', {
+                method: 'GET',
+                headers: makeHeader(token)
+            }).then(response => response.json())
+                .then(data => {
+                    let content = `
+                        <p> You are logged in as <b>${data['username']}</b>.
+                    `
+                    userInfo.innerHTML = content;
+                })
+        }
+    </script>
+</body>
+</html>

@@ -1,3 +1,17 @@
+var backendURL = 'http://localhost:8000/'
+
+
+function makeHeader(token=null, contentType='application/json', accept='application/json') {
+    let headers = {
+        'Content-type': contentType,
+        'Accept': accept,
+    }
+    if (token) {
+        headers.Authorization = `Token ${token}`;
+    }
+    return headers;
+}
+
 function logIn() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
@@ -23,6 +37,10 @@ function logIn() {
             if (data["detail"] == "Not found.") {
                 errorField.style.visibility = "visible";
                 errorField.innerHTML = "Username and Password combo are not found."
+            } else {
+                console.log(data["token"]);
+                localStorage.setItem('authToken', data['token']);
+                window.location.replace('/');
             }
         })
         .catch( err => {
@@ -48,10 +66,16 @@ function createAccount() {
             })
         }
         console.log(options);
-        fetch('http://localhost:8000/account/signup', options)
+        fetch(backendURL + 'account/signup', options)
             .then(response => response.json())
             .then(data => console.log(data));
     }
+}
+
+function logOut() {
+    let token = localStorage.removeItem('authToken');
+    location.reload();
+    return;
 }
 
 function checkUsernameAndPassword() {
