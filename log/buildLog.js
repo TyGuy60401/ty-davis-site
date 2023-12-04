@@ -114,9 +114,7 @@ function buildLog(dateString) {
             splitsDiv.appendChild(splitsTable);
 
             splits.sort((a, b) => (a.id - b.id))
-            // console.log(splits)
             let offset = splits[0].id - 1;
-            console.log(offset);
             splits.forEach(split => {
                 let row = splitsTable.insertRow();
                 if (split.units == 'set') {
