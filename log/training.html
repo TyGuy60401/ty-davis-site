@@ -27,7 +27,8 @@
         }
     </script>
 </head>
-<body class="training" onload="buildHeader('<a style=\'text-decoration:none;\' href=\'./index.html\'>Training Log</a>'); buildCalendar('calendar-main')">
+<body class="training" onload="buildHeader('<a style=\'text-decoration:none;\' href=\'./index.html\'>Training Log</a>'); buildCalendar('calendar-main', '2023-05-16')">
+<!-- <body class="training" onload="buildHeader('<a style=\'text-decoration:none;\' href=\'./index.html\'>Training Log</a>'); buildCalendar('calendar-main'"> -->
     <div class="wrapper">
         <div id="header"><!-- This is a necessary div. Don't
             get rid of this --> </div>
@@ -36,7 +37,7 @@
         </div>
         <div id="log-main">
             <h3>Select a date from the calendar.</h3>
-            <button onclick='testFetch("training/runs/?dateStart=2023-05-01&dateEnd=2023-12-04")'>Click me</button>
+            <!-- <button onclick='testFetch(`training/runs/?dateStart=${sessionStorage.getItem("earliestDate")}&dateEnd=${sessionStorage.getItem("latestDate")}`)'>Click me</button> -->
         </div>
     </div>
 </body>

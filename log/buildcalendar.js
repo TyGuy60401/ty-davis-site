@@ -59,13 +59,42 @@ function buildCalendar(divID, useOtherDate=null) {
     day.setDate(1);
     dayOfWeek = day.getDay();
     day.setDate(1-dayOfWeek);
+    let oldEarliestDate = sessionStorage.getItem('earliestDate');
+    let earliestDate = `${day.getFullYear().toString()}-${(day.getMonth() + 1).toString().padStart(2, '0')}-${(day.getDate()).toString().padStart(2, '0')}`
+    sessionStorage.setItem("earliestDate", earliestDate);
     
     let numRows = 5;
     day.setDate(day.getDate() + 35);
+    let maxDay = new Date(day);
+    maxDay.setDate(maxDay.getDate() - 1)
+    sessionStorage.setItem("latestDate", `${maxDay.getFullYear().toString()}-${(maxDay.getMonth() + 1).toString().padStart(2, '0')}-${(maxDay.getDate()).toString().padStart(2, '0')}`);
     if (day.getMonth() == currentMonth) {
         numRows = 6;
+        maxDay = new Date(day);
+        maxDay.setDate(maxDay.getDate() + 6);
+        sessionStorage.setItem("latestDate", `${maxDay.getFullYear().toString()}-${(maxDay.getMonth() + 1).toString().padStart(2, '0')}-${(maxDay.getDate()).toString().padStart(2, '0')}`);
     }
     day.setDate(day.getDate() - 35);
+    if (earliestDate != oldEarliestDate) {
+        fetch(`http://localhost:8000/training/runs/?dateStart=${sessionStorage.getItem('earliestDate')}&dateEnd=${sessionStorage.getItem('latestDate')}`,{
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': `Token ${localStorage.getItem('authToken')}`
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data['runs']);
+                data['runs'].forEach((run) => {
+                    sessionStorage.setItem('run'+run.id.toString(), JSON.stringify(run))
+                })
+                data['splits'].forEach((split) => {
+                    sessionStorage.setItem('split'+split.id.toString(), JSON.stringify(split))
+                })
+            });
+    }
     
 
     for (var ii=0; ii<numRows; ii++) {
@@ -98,6 +127,7 @@ function buildCalendar(divID, useOtherDate=null) {
             cellLink.href = '#';
             cellLink.className = classString;
             cellLink.onclick = function () {
+                console.log(fileString)
                 buildLog(fileString)
             }
             cellLink.innerHTML = dayNum;

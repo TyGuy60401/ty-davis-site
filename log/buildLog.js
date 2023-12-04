@@ -6,7 +6,21 @@ function buildLog(dateString) {
     let logMain = document.querySelector('#log-main');
     logMain.innerHTML = "";
     let fullString = dateString.substr(0, 7) + "/" + dateString;
-    $.getJSON("./logFiles/" + fullString + ".json", function (data) {
+    // console.log(Object.keys(sessionStorage));
+
+
+
+    let data = [];
+    Object.keys(sessionStorage).forEach((item) => {
+        if (item.includes('run')) {
+            let run_obj = JSON.parse(sessionStorage[item])
+            if (run_obj.date == dateString) {
+                data.push(run_obj)
+                console.log(run_obj);
+            }
+        }
+    })
+    // $.getJSON("./logFiles/" + fullString + ".json", function (data) {
 
         for (let run in data) {
             let thisRun = data[run];
@@ -14,15 +28,15 @@ function buildLog(dateString) {
             // Let's get some info
             let titleData = thisRun['title'];
             let typeData = thisRun['type'];
-            let totalTimeData = thisRun['total-time'];
-            let totalDistanceData = thisRun['total-distance'];
-            let volumeDistanceData = thisRun['volume-distance'];
-            let volumeTimeData = thisRun['volume-time'];
-            let avgPaceData = thisRun['avg-pace'];
+            let totalTimeData = thisRun['total_time'];
+            let totalDistanceData = thisRun['total_distance'];
+            let volumeDistanceData = thisRun['volume_distance'];
+            let volumeTimeData = thisRun['volume_time'];
+            let avgPaceData = thisRun['avg_pace'];
             let elevationData = thisRun['elevation'];
-            let resultsData = thisRun['results-link'];
+            let resultsData = thisRun['results_link'];
             let descriptionData = thisRun['description'];
-            let splitsData = thisRun['splits'];
+            // let splitsData = thisRun['splits'];
 
             // Show the title:
             let title = document.createElement('h2');
@@ -118,45 +132,45 @@ function buildLog(dateString) {
                 });
             }
         }
-    }).fail( function() {
-        noLogMessage = document.createElement('h3');
-        noLogMessage.innerHTML = "There is no training log file for this date.";
-        logMain.appendChild(noLogMessage);
-        console.log('File not found');
+    // }).fail( function() {
+    //     noLogMessage = document.createElement('h3');
+    //     noLogMessage.innerHTML = "There is no training log file for this date.";
+    //     logMain.appendChild(noLogMessage);
+    //     console.log('File not found');
 
-    }).complete( function() {
-        logMain.setAttribute('style', 'align-items: start;');
-        // Show the nav div:
-        let navDiv = document.createElement('div');
-        navDiv.className = 'nav-div';
-        let dateElement = document.createElement('h4');
-        dateElement.style = 'width:8em; text-align:center;';
-        dateElement.innerHTML = dateFromDateString(dateString).toDateString();
+    // }).complete( function() {
+    //     logMain.setAttribute('style', 'align-items: start;');
+    //     // Show the nav div:
+    //     let navDiv = document.createElement('div');
+    //     navDiv.className = 'nav-div';
+    //     let dateElement = document.createElement('h4');
+    //     dateElement.style = 'width:8em; text-align:center;';
+    //     dateElement.innerHTML = dateFromDateString(dateString).toDateString();
 
-        let yearString = selectedDay.getFullYear().toString();
-        let monthString = (selectedDay.getMonth() + 1).toString().padStart(2, '0');
-        let dayString;
-        let prevButton = document.createElement('input');
-        prevButton.type = "button";
-        prevButton.defaultValue = "<<";
-        prevButton.onclick = function () {
-            dayString = (selectedDay.getDate() - 1).toString().padStart(2, '0');
-            buildLog(yearString + '-' + monthString + '-' + dayString);
-        }
-        let nextButton = document.createElement('input');
-        nextButton.type = "button";
-        nextButton.defaultValue = ">>";
-        nextButton.onclick = function () {
-            dayString = (selectedDay.getDate() + 1).toString().padStart(2, '0');
-            buildLog(yearString + '-' + monthString + '-' + dayString);
-        }
+    //     let yearString = selectedDay.getFullYear().toString();
+    //     let monthString = (selectedDay.getMonth() + 1).toString().padStart(2, '0');
+    //     let dayString;
+    //     let prevButton = document.createElement('input');
+    //     prevButton.type = "button";
+    //     prevButton.defaultValue = "<<";
+    //     prevButton.onclick = function () {
+    //         dayString = (selectedDay.getDate() - 1).toString().padStart(2, '0');
+    //         buildLog(yearString + '-' + monthString + '-' + dayString);
+    //     }
+    //     let nextButton = document.createElement('input');
+    //     nextButton.type = "button";
+    //     nextButton.defaultValue = ">>";
+    //     nextButton.onclick = function () {
+    //         dayString = (selectedDay.getDate() + 1).toString().padStart(2, '0');
+    //         buildLog(yearString + '-' + monthString + '-' + dayString);
+    //     }
 
-        navDiv.appendChild(prevButton);
-        navDiv.append(dateElement);
-        navDiv.appendChild(nextButton);
-        logMain.appendChild(navDiv);
+    //     navDiv.appendChild(prevButton);
+    //     navDiv.append(dateElement);
+    //     navDiv.appendChild(nextButton);
+    //     logMain.appendChild(navDiv);
 
-    });
+    // });
 }
 function dateFromDateString(dateString) {
     let numStrings = dateString.split('-');
