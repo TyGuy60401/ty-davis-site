@@ -25,9 +25,9 @@ to data in another table which contains all split information
 
 ### runs
 
-runID  |title  |date   |elevation | total-distance |total-time |avg-pace   |type       |description|volume-time|volume-distance|results-link   |workoutID  |workout-type    |user
--------|-------|-------|----------|----------------|-----------|-----------|-----------|-----------|-----------|---------------|---------------|-----------|---|---
-PK int |string |date   |int (feet)| float (miles)  |int (sec)  |int (sec)  |string     |longString |int (sec)  |float (meters) |string         |int        |string |ForeignKey (int)
+runID  |title  |date   |elevation | total-distance |total-time |avg-pace      |type       |description|volume-time|volume-distance|volume-units|results-link   |workoutID  |workout-type    |user
+-------|-------|-------|----------|----------------|-----------|--------------|-----------|-----------|-----------|---------------|------------|---------------|-----------|---|---
+PK int |string |date   |int (feet)| float (miles)  |int (sec)  |int (sec/mi)  |string     |longString |int (sec)  |float          |string      |string         |int        |string |ForeignKey (int)
 
 
 ### splits
