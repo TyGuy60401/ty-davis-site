@@ -2,7 +2,7 @@ body {
     width: 100%;
     margin: 0px;
     padding: 0px;
-    font-family: 'Bahnschrift Light', 'Bahnschrift', 'Bahnschrift SemiBold', 'sans-serif';
+    font-family: 'Bahnschrift Light', 'Bahnschrift', 'Bahnschrift SemiBold', sans-serif;
     position: absolute;
     height: 100px;
 }

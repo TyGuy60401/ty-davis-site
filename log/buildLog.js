@@ -6,7 +6,6 @@ function buildLog(dateString) {
     let logMain = document.querySelector('#log-main');
     logMain.innerHTML = "";
     let fullString = dateString.substr(0, 7) + "/" + dateString;
-    // console.log(Object.keys(sessionStorage));
 
 
 

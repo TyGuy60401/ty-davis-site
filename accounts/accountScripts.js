@@ -73,7 +73,8 @@ function createAccount() {
 }
 
 function logOut() {
-    let token = localStorage.removeItem('authToken');
+    localStorage.clear();
+    sessionStorage.clear();
     location.reload();
     return;
 }

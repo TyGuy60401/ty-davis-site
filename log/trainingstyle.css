@@ -243,7 +243,7 @@ input, textarea {
 }
 .calendar a {
     text-decoration: none;
-    font-weight: bold;
+    /* font-weight: bold; */
     border-radius: 10px;
 }
 .on-month {

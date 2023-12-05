@@ -10,7 +10,6 @@ function buildHeader(subtitleText) {
         let noUser = '<a href=/accounts/login.html>Log In</a>'
         userInfo.innerHTML = noUser;
         let token = localStorage.getItem('authToken');
-        console.log("We're doing something")
         if (token) {
             fetch('http://localhost:8000/account/test_token', {
                 method: "GET",

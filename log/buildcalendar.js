@@ -76,17 +76,13 @@ function buildCalendar(divID, useOtherDate=null) {
     }
     day.setDate(day.getDate() - 35);
     if (earliestDate != oldEarliestDate) {
-        fetch(`http://localhost:8000/training/runs/?dateStart=${sessionStorage.getItem('earliestDate')}&dateEnd=${sessionStorage.getItem('latestDate')}`,{
+        fetch(`${backendURL}training/runs/?dateStart=${sessionStorage.getItem('earliestDate')}&dateEnd=${sessionStorage.getItem('latestDate')}`,{
             method: 'GET',
-            headers: {
-                'Content-type': 'application/json',
-                'Accept': 'application/json',
-                'Authorization': `Token ${localStorage.getItem('authToken')}`
-            }
+            headers: makeHeader(localStorage.getItem('authToken'))
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data['runs']);
+                // console.log(data['runs']);
                 data['runs'].forEach((run) => {
                     sessionStorage.setItem('run'+run.id.toString(), JSON.stringify(run))
                 })
@@ -108,11 +104,28 @@ function buildCalendar(divID, useOtherDate=null) {
     let dayNum;
     let classString;
     let dayMonth;
+
+    let runKeys = [];
+    Object.keys(sessionStorage).forEach( key => {
+        if (key.includes('run')) {
+            runKeys.push(key.toString());
+        }
+    })
+    // console.log(runKeys);
+    let runDates = [];
+    runKeys.forEach(key => {
+        let runObj = JSON.parse(sessionStorage.getItem(key));
+        runDates.push(runObj.date);
+    })
+    
+    Object.values(sessionStorage)
     for (var i=0, row; row = calendarTable.rows[i]; i++) {
         for (var j=0, cell; cell = row.cells[j]; j++) {
             dayNum = day.getDate();
             dayMonth = day.getMonth();
             day.setHours(0, 0, 0, 0);
+            let tempDateString = `${day.getFullYear()}-${(day.getMonth()+1).toString().padStart(2, '0')}-${(day.getDate()).toString().padStart(2, '0')}`
+            // console.log(tempDateString);
 
             if (dayMonth == currentMonth) {
                 classString = "on-month";
@@ -124,12 +137,18 @@ function buildCalendar(divID, useOtherDate=null) {
             if (day.toDateString() == selectedDay.toDateString()) { cell.className = 'selected'; }
             if (day.toDateString() == todayString) { cell.className += ' today'; }
             let cellLink = document.createElement('a');
+            let inner_day;
+            if (runDates.includes(tempDateString)) {
+                inner_day = '<b>' + dayNum.toString() + '</b>';
+            } else {
+                inner_day = dayNum.toString();
+            }
             cellLink.href = '#';
             cellLink.className = classString;
             cellLink.onclick = function () {
                 buildLog(fileString)
             }
-            cellLink.innerHTML = dayNum;
+            cellLink.innerHTML = inner_day;
             cell.appendChild(cellLink);
 
             day.setDate(dayNum + 1);

@@ -26,6 +26,7 @@
             userInfo.innerHTML = `
             <p> You are not logged in. 
                 <a href="./login.html">Log In</a> here.</p>
+            <p>Don't have an account? <a href='./signup.html'>Sign Up</a> here.</p>
             `
         } else {
             fetch(backendURL + 'account/test_token', {
