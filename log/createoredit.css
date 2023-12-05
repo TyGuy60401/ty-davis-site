@@ -1,0 +1,21 @@
+.right-align {
+    text-align: right;
+}
+.left-align {
+    text-align: left;
+}
+.break>td {
+    padding-bottom: 5pt;
+}
+.small {
+    font-size: smaller;
+}
+/* table tr td:nth-child(2) {
+    border: 1px solid red;
+} */
+input[type=number] {
+    width: 7em;
+}
+/* table, th, td {
+    border: 1px solid black;
+} */
