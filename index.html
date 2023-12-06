@@ -48,6 +48,7 @@
                     console.log(data)
                     if (data['detail'] == 'Invalid token.') {
                         localStorage.removeItem('authToken');
+                        sessionStorage.clear();
                         location.reload();
                         return;
                     }

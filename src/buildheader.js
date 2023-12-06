@@ -22,6 +22,7 @@ function buildHeader(subtitleText) {
             .then(data => {
               if (data['detail'] == 'Invalid token.') {
                 localStorage.removeItem('authToken');
+                // sessionStorage.clear();
                 userInfo.innerHTML = noUser;
               } else {
                 userInfo.innerHTML = '<b><a href="/accounts/profile.html" style="text-decoration: none;">' + data['username'] + '</a></b>';
