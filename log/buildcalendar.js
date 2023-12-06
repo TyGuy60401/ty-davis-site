@@ -75,120 +75,133 @@ function buildCalendar(divID, useOtherDate=null) {
         sessionStorage.setItem("latestDate", `${maxDay.getFullYear().toString()}-${(maxDay.getMonth() + 1).toString().padStart(2, '0')}-${(maxDay.getDate()).toString().padStart(2, '0')}`);
     }
     day.setDate(day.getDate() - 35);
-    if (earliestDate != oldEarliestDate) {
-        fetch(`${backendURL}training/runs/?dateStart=${sessionStorage.getItem('earliestDate')}&dateEnd=${sessionStorage.getItem('latestDate')}`,{
-            method: 'GET',
-            headers: makeHeader(localStorage.getItem('authToken'))
+    // if (earliestDate != oldEarliestDate) {
+    fetch(`${backendURL}training/runs/?dateStart=${sessionStorage.getItem('earliestDate')}&dateEnd=${sessionStorage.getItem('latestDate')}`, {
+        method: 'GET',
+        headers: makeHeader(localStorage.getItem('authToken'))
+    })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            return Promise.reject(response);
         })
-            .then(response => response.json())
-            .then(data => {
-                // console.log(data['runs']);
-                data['runs'].forEach((run) => {
-                    sessionStorage.setItem('run'+run.id.toString(), JSON.stringify(run))
-                })
-                data['splits'].forEach((split) => {
-                    sessionStorage.setItem('split'+split.id.toString(), JSON.stringify(split))
-                })
-            });
-    }
-    
+        .then(data => {
+            // console.log(data['runs']);
+            data['runs'].forEach((run) => {
+                sessionStorage.setItem('run' + run.id.toString(), JSON.stringify(run))
+            })
+            data['splits'].forEach((split) => {
+                sessionStorage.setItem('split' + split.id.toString(), JSON.stringify(split))
+            })
+        }).catch(error => {
+            console.log('lets build a calendar?')
+            console.log(error);
+        }).finally(() => {
 
-    for (var ii=0; ii<numRows; ii++) {
-        calendarTable.insertRow();
-        row = calendarTable.rows[ii];
-        for (var jj=0; jj<7; jj++) {
-            row.insertCell();
-        }
-    }
-
-    let dayNum;
-    let classString;
-    let dayMonth;
-
-    let runKeys = [];
-    Object.keys(sessionStorage).forEach( key => {
-        if (key.includes('run')) {
-            runKeys.push(key.toString());
-        }
-    })
-    // console.log(runKeys);
-    let runDates = [];
-    runKeys.forEach(key => {
-        let runObj = JSON.parse(sessionStorage.getItem(key));
-        runDates.push(runObj.date);
-    })
-    
-    Object.values(sessionStorage)
-    for (var i=0, row; row = calendarTable.rows[i]; i++) {
-        for (var j=0, cell; cell = row.cells[j]; j++) {
-            dayNum = day.getDate();
-            dayMonth = day.getMonth();
-            day.setHours(0, 0, 0, 0);
-            let tempDateString = `${day.getFullYear()}-${(day.getMonth()+1).toString().padStart(2, '0')}-${(day.getDate()).toString().padStart(2, '0')}`
-            // console.log(tempDateString);
-
-            if (dayMonth == currentMonth) {
-                classString = "on-month";
-            } else {
-                classString = "off-month";
+            const URLParams = new URLSearchParams(window.location.search);
+            if (URLParams.get('date')) {
+                buildLog(URLParams.get('date'), false);
             }
-            let fileString = day.getFullYear().toString() + '-' + (day.getMonth() + 1).toString().padStart(2,'0') + '-' + dayNum.toString().padStart(2, '0');
 
-            if (day.toDateString() == selectedDay.toDateString()) { cell.className = 'selected'; }
-            if (day.toDateString() == todayString) { cell.className += ' today'; }
-            let cellLink = document.createElement('a');
-            let inner_day;
-            if (runDates.includes(tempDateString)) {
-                inner_day = '<b>' + dayNum.toString() + '</b>';
-            } else {
-                inner_day = dayNum.toString();
+
+
+            for (var ii = 0; ii < numRows; ii++) {
+                calendarTable.insertRow();
+                row = calendarTable.rows[ii];
+                for (var jj = 0; jj < 7; jj++) {
+                    row.insertCell();
+                }
             }
-            cellLink.href = '?date=' + fileString;
-            cellLink.className = classString;
-            // cellLink.onclick = function () {
-            //     buildLog(fileString)
-            // }
-            cellLink.innerHTML = inner_day;
-            cell.appendChild(cellLink);
 
-            day.setDate(dayNum + 1);
+            let dayNum;
+            let classString;
+            let dayMonth;
+
+            let runKeys = [];
+            Object.keys(sessionStorage).forEach(key => {
+                if (key.includes('run')) {
+                    runKeys.push(key.toString());
+                }
+            })
+            // console.log(runKeys);
+            let runDates = [];
+            runKeys.forEach(key => {
+                let runObj = JSON.parse(sessionStorage.getItem(key));
+                runDates.push(runObj.date);
+            })
+
+            // Object.values(sessionStorage)
+            for (var i = 0, row; row = calendarTable.rows[i]; i++) {
+                for (var j = 0, cell; cell = row.cells[j]; j++) {
+                    dayNum = day.getDate();
+                    dayMonth = day.getMonth();
+                    day.setHours(0, 0, 0, 0);
+                    let tempDateString = `${day.getFullYear()}-${(day.getMonth() + 1).toString().padStart(2, '0')}-${(day.getDate()).toString().padStart(2, '0')}`
+                    // console.log(tempDateString);
+
+                    if (dayMonth == currentMonth) {
+                        classString = "on-month";
+                    } else {
+                        classString = "off-month";
+                    }
+                    let fileString = day.getFullYear().toString() + '-' + (day.getMonth() + 1).toString().padStart(2, '0') + '-' + dayNum.toString().padStart(2, '0');
+
+                    if (day.toDateString() == selectedDay.toDateString()) { cell.className = 'selected'; }
+                    if (day.toDateString() == todayString) { cell.className += ' today'; }
+                    let cellLink = document.createElement('a');
+                    let inner_day;
+                    if (runDates.includes(tempDateString)) {
+                        inner_day = '<b>' + dayNum.toString() + '</b>';
+                    } else {
+                        inner_day = dayNum.toString();
+                    }
+                    cellLink.href = '?date=' + fileString;
+                    cellLink.className = classString;
+                    cellLink.onclick = function () {
+                        // selectedDay.setDate(dayNum.date);
+                    //     buildLog(fileString)
+                    }
+                    cellLink.innerHTML = inner_day;
+                    cell.appendChild(cellLink);
+
+                    day.setDate(dayNum + 1);
+                }
+
+            }
+            // Adding the month nav buttons
+            let buttonsDiv = document.createElement('div');
+            let buttonDivLeft = document.createElement('div');
+            let buttonDivRight = document.createElement('div');
+            buttonsDiv.className = 'month-buttons';
+            buttonDivLeft.className = 'month-buttons-left';
+            buttonDivRight.className = 'month-buttons-right';
+            parentDiv.appendChild(buttonsDiv);
+            buttonsDiv.appendChild(buttonDivLeft);
+            buttonsDiv.appendChild(buttonDivRight);
+
+            let lastMonthButton = document.createElement('input');
+            lastMonthButton.type = "button";
+            day.setMonth(day.getMonth() - 2);
+            let prevMonthString = day.toDateString();
+            lastMonthButton.defaultValue = day.toLocaleString('default', { month: 'long' }) + " <";
+            lastMonthButton.onclick = function () {
+                buildCalendar(divID, prevMonthString);
+            };
+            buttonDivLeft.appendChild(lastMonthButton);
+
+            let nextMonthButton = document.createElement('input');
+            nextMonthButton.type = "button";
+            day.setMonth(day.getMonth() + 2);
+            let nextMonthString = day.toDateString();
+            nextMonthButton.defaultValue = "> " + day.toLocaleString('default', { month: 'long' });
+            nextMonthButton.onclick = function () {
+                buildCalendar(divID, nextMonthString);
+            }
+
+            buttonDivRight.appendChild(nextMonthButton);
+
         }
-
-    }
-    // Adding the month nav buttons
-    let buttonsDiv = document.createElement('div');
-    let buttonDivLeft = document.createElement('div');
-    let buttonDivRight = document.createElement('div');
-    buttonsDiv.className = 'month-buttons';
-    buttonDivLeft.className = 'month-buttons-left';
-    buttonDivRight.className = 'month-buttons-right';
-    parentDiv.appendChild(buttonsDiv);
-    buttonsDiv.appendChild(buttonDivLeft);
-    buttonsDiv.appendChild(buttonDivRight);
-
-    let lastMonthButton = document.createElement('input');
-    lastMonthButton.type = "button";
-    day.setMonth(day.getMonth() - 2);
-    let prevMonthString = day.toDateString();
-    lastMonthButton.defaultValue = day.toLocaleString('default', { month: 'long'}) + " <";
-    lastMonthButton.onclick = function () { 
-        buildCalendar(divID, prevMonthString);
-    };
-    buttonDivLeft.appendChild(lastMonthButton);
-
-    let nextMonthButton = document.createElement('input');
-    nextMonthButton.type = "button";
-    day.setMonth(day.getMonth() + 2);
-    let nextMonthString = day.toDateString();
-    nextMonthButton.defaultValue = "> " + day.toLocaleString('default', { month: 'long'});
-    nextMonthButton.onclick = function () {
-        buildCalendar(divID, nextMonthString);
-    }
-
-    buttonDivRight.appendChild(nextMonthButton);
-
-    const URLParams = new URLSearchParams(window.location.search);
-    if (URLParams.get('date')) {
-        buildLog(URLParams.get('date'), false);
-    }
+        );
+    // }
 }

@@ -181,14 +181,14 @@ function buildLog(dateString, buildNewCalendar=true) {
     prevButton.defaultValue = "<<";
     prevButton.onclick = function () {
         dayString = (selectedDay.getDate() - 1).toString().padStart(2, '0');
-        buildLog(yearString + '-' + monthString + '-' + dayString);
+        window.location.assign('./training.html?date=' + yearString + '-' + monthString + '-' + dayString);
     }
     let nextButton = document.createElement('input');
     nextButton.type = "button";
     nextButton.defaultValue = ">>";
     nextButton.onclick = function () {
         dayString = (selectedDay.getDate() + 1).toString().padStart(2, '0');
-        buildLog(yearString + '-' + monthString + '-' + dayString);
+        window.location.assign('./training.html?date=' + yearString + '-' + monthString + '-' + dayString);
     }
 
     navDiv.appendChild(prevButton);

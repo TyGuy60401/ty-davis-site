@@ -22,17 +22,44 @@ function fillCreateOrEditForm() {
             document.getElementById('create-edit-title').innerHTML = "Edit Run";
             let run = data['run'];
             run['total_time'] = timeStringFromSeconds(run['total_time'], 0);
-            run['volume_time'] = timeStringFromSeconds(run['volume_time'], 0);
+            if (run['volume_time']) {
+                run['volume_time'] = timeStringFromSeconds(run['volume_time'], 0);
+            }
             Object.keys(run).forEach( key => {
                 if (form[key]) {
                     form[key].value = data['run'][key];
                     console.log(key, data['run'][key]);
                 }
             })
+            deleteButton = document.getElementById('delete-button');
+            deleteButton.style.visibility = 'visible';
         }).catch(error => {
             console.log(error);
         });
     }
+}
+
+function deleteRun() {
+    const URLParams = new URLSearchParams(window.location.search);
+    id = URLParams.get('id');
+    fetch(`${backendURL}training/runs/`, {
+        method: 'DELETE',
+        headers: makeHeader(localStorage.getItem('authToken')),
+        body: JSON.stringify({'id': id})
+    }).then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+        return Promise.reject(response);
+    }).then( data => {
+        console.log(data);
+        sessionStorage.clear();
+        window.location.replace(`./training.html?date=${data['date']}`)
+        // It has been deleted
+    }).catch( error => {
+        console.log(error);
+        // It wasn't deleted
+    })
 }
 
 function submitForm() {
@@ -173,7 +200,8 @@ function handleForm(event) {
                     noticeText.innerHTML = "Run successfully saved.";
                     sessionStorage.clear();
                     // window.location.replace(`./createoreditrun.html/?id=${data['id']}`);
-                    window.location.replace(`./createoreditrun.html?id=${data['id']}`);
+                    // window.location.replace(`./createoreditrun.html?id=${data['id']}`);
+                    window.location.assign(`./training.html?date=${runObject['date']}`)
                 }
             }).catch( error => {
                 console.log("error:")
