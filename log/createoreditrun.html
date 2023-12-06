@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/src/buildheader.js"></script>
+    <script src="./timeStringFunctions.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="./createOrEditForm.js"></script>
     <script src="/accounts/accountScripts.js"></script>
@@ -13,11 +14,12 @@
     <title>Weber State Track/XC Goals</title>
 </head>
 <!-- <body class="training" onload="buildHeader('<a href=\'./index.html\'>Track/XC Goals</a>');"> -->
-<body class="training" onload="buildHeader('<a style=\'text-decoration:none;\' href=\'./index.html\'>Training Log</a>'); fillCreateForm();">
+<body class="training" onload="buildHeader('<a style=\'text-decoration:none;\' href=\'./index.html\'>Training Log</a>'); fillCreateOrEditForm();">
     <div class="wrapper">
         <div id="header"><!-- Essential div don't remove --></div>
         <div id="goals-main">
-            <h1>Create Run</h1>
+            <h1 id="create-edit-title">Create Run</h1>
+            <p class="notice-text" id="notice-text"></p>
             <form id="create-run" autocomplete="off" onsubmit="submitForm()">
                 <table class="edit-create-table">
                     <tr>
@@ -59,7 +61,7 @@
                     </tr>
                     <tr>
                         <td colspan="3">
-                            <textarea id="description" cols="55" rows="5"></textarea>
+                            <textarea id="description" cols="55" rows="8"></textarea>
                         </td>
                     </tr>
                 
@@ -98,7 +100,7 @@
                 <table class="ce-splits-table">
                 </table>
                 <!-- <input type="submit" id="submit"> -->
-                <button onclick="submitForm()">Submit</button>
+                <button onclick="submitForm()">Save</button>
             </form>
         </div>
     </div>

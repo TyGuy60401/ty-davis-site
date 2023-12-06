@@ -1,6 +1,6 @@
 // var backendURL = 'http://localhost:8000/'
 // var backendURL =  'http://192.168.1.195:8000/'
-var backendURL = 'http://dev.ty-davis.com/';
+var backendURL = 'https://dev.ty-davis.com/';
 
 
 function makeHeader(token=null, contentType='application/json', accept='application/json') {
@@ -18,6 +18,8 @@ function logIn() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     var errorField = document.getElementById("error-field");
+    sessionStorage.clear();
+    localStorage.clear();
 
     errorField.innerHTML = "";
 
@@ -55,6 +57,8 @@ function createAccount() {
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
         var email = document.getElementById("email").value;
+        sessionStorage.clear();
+        localStorage.clear();
         var options = {
             method: "POST",
             headers: {

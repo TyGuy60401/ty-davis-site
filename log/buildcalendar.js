@@ -143,11 +143,11 @@ function buildCalendar(divID, useOtherDate=null) {
             } else {
                 inner_day = dayNum.toString();
             }
-            cellLink.href = '#';
+            cellLink.href = '?date=' + fileString;
             cellLink.className = classString;
-            cellLink.onclick = function () {
-                buildLog(fileString)
-            }
+            // cellLink.onclick = function () {
+            //     buildLog(fileString)
+            // }
             cellLink.innerHTML = inner_day;
             cell.appendChild(cellLink);
 
@@ -186,4 +186,9 @@ function buildCalendar(divID, useOtherDate=null) {
     }
 
     buttonDivRight.appendChild(nextMonthButton);
+
+    const URLParams = new URLSearchParams(window.location.search);
+    if (URLParams.get('date')) {
+        buildLog(URLParams.get('date'), false);
+    }
 }

@@ -13,6 +13,17 @@
 /* table tr td:nth-child(2) {
     border: 1px solid red;
 } */
+h1 {
+    padding: 0px;
+    margin: 0px;
+}
+.notice-text {
+    color: gray;
+    font-size: smaller;
+    padding-bottom: 15px;
+    margin: 0px;
+    font-style: italic;
+}
 input[type=number] {
     width: 7em;
 }

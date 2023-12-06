@@ -111,6 +111,15 @@ input, textarea {
     gap: 15px;
     flex-flow: wrap column;
 }
+.title-edit-div {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 5fr 1fr;
+    align-items: center;
+}
+.edit-button {
+    height: max-content;
+}
 .general-stats {
     gap: 10px;
     display: flex;

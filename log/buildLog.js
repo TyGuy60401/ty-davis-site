@@ -1,8 +1,10 @@
-function buildLog(dateString) {
+function buildLog(dateString, buildNewCalendar=true) {
     dateNums = dateString.split('-');
     selectedDay = new Date(dateNums[0], dateNums[1] - 1, dateNums[2]);
     selectedDay.setHours(0, 0, 0, 0);
-    buildCalendar('calendar-main', selectedDay.toDateString());
+    if (buildNewCalendar) {
+        buildCalendar('calendar-main', selectedDay.toDateString());
+    }
     let logMain = document.querySelector('#log-main');
     logMain.innerHTML = "";
     let fullString = dateString.substr(0, 7) + "/" + dateString;
@@ -36,12 +38,26 @@ function buildLog(dateString) {
         let resultsData = thisRun['results_link'];
         let descriptionData = thisRun['description'];
         let workoutID = thisRun['workoutID']
+        let runID = thisRun['id'];
         // let splitsData = thisRun['splits'];
 
-        // Show the title:
+        // Show the title and edit button:
+        let titleEditDiv = document.createElement('div');
+        titleEditDiv.className = 'title-edit-div';
         let title = document.createElement('h2');
         title.innerHTML = titleData;
-        logMain.appendChild(title);
+        titleEditDiv.appendChild(title);
+
+        // Make the Edit Run button
+        let editButton = document.createElement('input');
+        editButton.type = 'button';
+        editButton.className = 'edit-button';
+        editButton.defaultValue = "Edit Run";
+        editButton.onclick = () => {
+            window.location.assign(`/log/createoreditrun.html?id=${runID}`);
+        }
+        titleEditDiv.appendChild(editButton);
+        logMain.appendChild(titleEditDiv);
 
         // Show the stats
         let statsDiv = document.createElement('div');

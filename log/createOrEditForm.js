@@ -1,7 +1,38 @@
-function fillCreateForm() {
+function fillCreateOrEditForm() {
     let dateField = document.getElementById("date");
     let today = new Date();
     dateField.valueAsDate = today;
+    let form = document.forms["create-run"];
+
+    const queryString = window.location.search;
+    const URLParams = new URLSearchParams(queryString);
+    if (URLParams.get('id')) {
+        console.log("We're editing today")
+        fetch(`${backendURL}training/runs/?id=${URLParams.get('id')}`, {
+            method: 'GET',
+            headers: makeHeader(localStorage.getItem('authToken')),
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            return Promise.reject(response);
+        })
+        .then(data => {
+            document.getElementById('create-edit-title').innerHTML = "Edit Run";
+            let run = data['run'];
+            run['total_time'] = timeStringFromSeconds(run['total_time'], 0);
+            run['volume_time'] = timeStringFromSeconds(run['volume_time'], 0);
+            Object.keys(run).forEach( key => {
+                if (form[key]) {
+                    form[key].value = data['run'][key];
+                    console.log(key, data['run'][key]);
+                }
+            })
+        }).catch(error => {
+            console.log(error);
+        });
+    }
 }
 
 function submitForm() {
@@ -105,27 +136,97 @@ function handleForm(event) {
         let urlField = document.getElementById("bad-results_link");
         urlField.innerHTML = "Invalid URL";
     }
-    if (doSubmitForm) {
+    if (!doSubmitForm) {
+        event.preventDefault();
+    } else {
+        const URLParams = new URLSearchParams(window.location.search);
         let runObject = {};
         Object.keys(fieldNames).forEach(key => {
             runObject[key] = form[key].value;
+            form[key].disabled = true;
         })
         Object.keys(otherFieldNames).forEach(key => {
             if (form[key]) {
                 console.log(form[key]);
                 runObject[key] = form[key].value;
+                form[key].disabled = true;
             }
         })
         console.log(runObject);
-        fetch(backendURL + 'training/runs/', {
-            method: 'POST',
-            headers: makeHeader(localStorage.getItem('authToken')),
-            body: JSON.stringify(runObject),
-        })
-            .then(response => response.json())
-            .then(data => console.log(data));
-    } else {
         event.preventDefault();
+        let noticeText = document.getElementById('notice-text');
+        if (!URLParams.get('id')) {
+            fetch(`${backendURL}training/runs/`, {
+                method: 'POST',
+                headers: makeHeader(localStorage.getItem('authToken')),
+                body: JSON.stringify(runObject),
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                return Promise.reject(response);
+            })
+            .then(data => {
+                console.log(data);
+                if (data['detail'] == "Run Saved") {
+                    noticeText.innerHTML = "Run successfully saved.";
+                    sessionStorage.clear();
+                    // window.location.replace(`./createoreditrun.html/?id=${data['id']}`);
+                    window.location.replace(`./createoreditrun.html?id=${data['id']}`);
+                }
+            }).catch( error => {
+                console.log("error:")
+                console.log(error);
+                Object.keys(fieldNames).forEach(key => {
+                    form[key].disabled = false;
+                })
+                Object.keys(otherFieldNames).forEach(key => {
+                    if (form[key]) {
+                        form[key].disabled = false;
+                    }
+                })
+                noticeText.innerHTML = "Run couldn't be saved at this time."
+                if (error.type == 'cors') {
+                    noticeText.innerHTML += "<br>Are you logged in?"
+                }
+            });
+
+        } else {
+            runObject['id'] = URLParams.get('id');
+            fetch(`${backendURL}training/runs/`, {
+                method: 'PUT',
+                headers: makeHeader(localStorage.getItem('authToken')),
+                body: JSON.stringify(runObject),
+            })
+            .then( response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                return Promise.reject(response);
+            }).then( data => {
+                console.log("data");
+                sessionStorage.clear();
+                window.location.assign(`./training.html?date=${runObject['date']}`);
+            }).catch( error => {
+
+                console.log("error:")
+                console.log(error);
+                Object.keys(fieldNames).forEach(key => {
+                    form[key].disabled = false;
+                })
+                Object.keys(otherFieldNames).forEach(key => {
+                    if (form[key]) {
+                        form[key].disabled = false;
+                    }
+                })
+                noticeText.innerHTML = "Run couldn't be saved at this time."
+                if (error.type == 'cors') {
+                    noticeText.innerHTML += "<br>Are you logged in?"
+                }
+
+            });
+        }
     }
 }
 
