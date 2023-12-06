@@ -10,6 +10,8 @@ function buildCalendar(divID, useOtherDate=null) {
         day = new Date(selectedDay);
         day.setDate(1);
         // day = new Date(Date.parse)
+    } else {
+        day = new Date();
     }
 
     if (useOtherDate == 'true') {
