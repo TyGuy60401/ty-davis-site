@@ -1,15 +1,24 @@
 selectedDay = new Date(2001, 5, 4);
 function buildCalendar(divID, useOtherDate=null) {
+    const URLParams = new URLSearchParams(window.location.search);
     let parentDiv = document.querySelector('#'+divID);
     let day;
     let todayString = new Date().toDateString();
+
+    if (URLParams.get('date')) {
+        selectedDay = new Date(Date.parse(URLParams.get('date')));
+        day = new Date(selectedDay);
+        day.setDate(1);
+        // day = new Date(Date.parse)
+    }
 
     if (useOtherDate == 'true') {
         let monthVal = document.querySelector('#' + divID + '-month-input').value;
         let yearVal = document.querySelector('#' + divID + '-year-input').value;
         day = new Date(Date.parse(monthVal + ' 1 ' + yearVal));
     } else if (useOtherDate == null) {
-        day = new Date();
+        // day = new Date();
+        // day = selectedDay;
     } else {
         day = new Date(Date.parse(useOtherDate));
     }
@@ -99,7 +108,6 @@ function buildCalendar(divID, useOtherDate=null) {
             console.log(error);
         }).finally(() => {
 
-            const URLParams = new URLSearchParams(window.location.search);
             if (URLParams.get('date')) {
                 buildLog(URLParams.get('date'), false);
             }
