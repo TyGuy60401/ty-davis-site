@@ -252,3 +252,6 @@ input, textarea {
 .off-month {
     color: rgb(170, 170, 170);
 }
+#description {
+    white-space: pre-line;
+}

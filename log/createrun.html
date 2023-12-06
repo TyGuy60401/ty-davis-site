@@ -5,38 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/src/buildheader.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="./createOrEditForm.js"></script>
+    <script src="/accounts/accountScripts.js"></script>
     <link rel="stylesheet" href="/src/style.css"></script>
     <link rel="stylesheet" href="./goals/goals.css">
     <link rel="stylesheet" href="./createoredit.css">
     <title>Weber State Track/XC Goals</title>
 </head>
 <!-- <body class="training" onload="buildHeader('<a href=\'./index.html\'>Track/XC Goals</a>');"> -->
-<body class="training" onload="buildHeader('<a style=\'text-decoration:none;\' href=\'./index.html\'>Training Log</a>');">
+<body class="training" onload="buildHeader('<a style=\'text-decoration:none;\' href=\'./index.html\'>Training Log</a>'); fillCreateForm();">
     <div class="wrapper">
         <div id="header"><!-- Essential div don't remove --></div>
         <div id="goals-main">
             <h1>Create Run</h1>
-            <form id="create-run" autocomplete="off">
+            <form id="create-run" autocomplete="off" onsubmit="submitForm()">
                 <table class="edit-create-table">
                     <tr>
                         <td class="right-align"><label for="date">Date:</label></td>
-                        <td colspan="2"><input type="date"></td>
+                        <td colspan="2"><input type="date" id="date"></td>
                     </tr>
+                    <tr><td></td><td id="bad-date" class="bad-form" colspan="2"></td></tr>
                     <tr>
                         <td class="right-align"><label for="title">Title:</label></td>
                         <td colspan="2"><input id="title" size="30"></td>
                     </tr>
+                    <tr><td></td><td id="bad-title" class="bad-form" colspan="2"></td></tr>
                     <tr class="break"><td>&nbsp;</td></tr>
                     <tr>
                         <td class="right-align"><label for="total_distance">Distance:</label></td>
-                        <td><input id="total_distance" type="number"></td>
+                        <td><input id="total_distance" type="number" step="0.001"></td>
                         <td>miles</td>
                     </tr>
+                    <tr><td></td><td id="bad-total_distance" class="bad-form" colspan="2"></td></tr>
                     <tr>
                         <td class="right-align"><label for="total_time">Total Time:</label></td>
                         <td><input id="total_time" size="10"></td>
                         <td class="small" class="left-align">(hh:mm:ss) or (mm:ss)</td>
                     </tr>
+                    <tr><td></td><td id="bad-total_time" class="bad-form" colspan="2"></td></tr>
                     <tr>
                         <td class="right-align"><label for="elevation">Elevation:</label></td>
                         <td><input id="elevation" type="number"></td>
@@ -44,25 +50,34 @@
                     </tr>
                     <tr>
                         <td class="right-align"><label for="type">Run Type:</label></td>
-                        <td colspan="2"><input id="type" size="20"></td>
+                        <td colspan="2"><input id="run_type" size="20"></td>
                     </tr>
                     <tr class="break"><td>&nbsp;</td></tr>
-                </table>
-                <label for="description">Description:</label><br>
-                <textarea id="description" cols="40" rows="5"></textarea>
-                <table class="edit-create-table">
+                <!-- </table> -->
+                    <tr>
+                        <td colspan="3"><label for="description">Description:</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <textarea id="description" cols="55" rows="5"></textarea>
+                        </td>
+                    </tr>
+                
+
+                <!-- <table class="edit-create-table"> -->
                     <tr class="break"><td>&nbsp;</td></tr>
                     <tr>
                         <td class="right-align"><label for="results_link">Results Link:</label></td>
-                        <td colspan="2"><input id="results_link" type=url></td>
+                        <td colspan="2"><input id="results_link"></td>
                     </tr>
+                    <tr><td></td><td id="bad-results_link" class="bad-form" colspan="2"></td></tr>
                     <tr class="break"><td>&nbsp;</td></tr>
                     <tr>
                         <td class="right-align"><label for="workout_type">Workout Type:</label></td>
                         <td colspan="2"><input id="workout_type"></td>
                     </tr>
                     <tr>
-                        <td class="right-align"><label for="volume_distance">Total Volume Distance:</label></td>
+                        <td class="right-align"><label for="volume_distance">Volume Distance:</label></td>
                         <td><input id="volume_distance" type=number></td>
                         <td>
                             <input list="volume_units" size="3">
@@ -73,12 +88,19 @@
                             </datalist>
                         </td>
                     </tr>
+                    <tr>
+                        <td class="right-align"><label for="volume_time">Volume Time:</label></td>
+                        <td><input id="volume_time" size="10"></td>
+                        <td class="small" class="left-align">(hh:mm:ss) or (mm:ss)</td>
+                    </tr>
+                    <tr><td></td><td id="bad-volume_time" class="bad-form" colspan="2"></td></tr>
                 </table>
                 <table class="ce-splits-table">
                 </table>
+                <!-- <input type="submit" id="submit"> -->
+                <button onclick="submitForm()">Submit</button>
             </form>
         </div>
     </div>
-    <script src="./fillCreateForm.js"></script>
 </body>
 </html>

@@ -16,6 +16,10 @@
 input[type=number] {
     width: 7em;
 }
+.bad-form {
+    color: red;
+    font-size: smaller;
+}
 /* table, th, td {
     border: 1px solid black;
 } */

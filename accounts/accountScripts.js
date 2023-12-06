@@ -1,4 +1,5 @@
-var backendURL = 'http://localhost:8000/'
+// var backendURL = 'http://localhost:8000/'
+var backendURL =  'http://192.168.1.195:8000/'
 
 
 function makeHeader(token=null, contentType='application/json', accept='application/json') {
@@ -30,7 +31,7 @@ function logIn() {
             "password": password,
         })
     }
-    fetch('http://localhost:8000/account/login', options)
+    fetch(`${backendURL}account/login`, options)
         .then(response => response.json())
         .then(data => {
             console.log(data);

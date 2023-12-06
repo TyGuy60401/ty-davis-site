@@ -40,7 +40,7 @@
         let authToken = localStorage.getItem('authToken');
         if (authToken) {
             console.log("There is a token");
-            fetch('http://localhost:8000/account/test_token', {
+            fetch(`${backendURL}account/test_token`, {
                 method: 'GET',
                 headers: makeHeader(token=authToken)
             }).then(response => response.json())

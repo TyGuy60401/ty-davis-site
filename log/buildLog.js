@@ -84,6 +84,7 @@ function buildLog(dateString) {
 
         // Show the description:
         let description = document.createElement('p');
+        description.id = 'description';
         description.innerHTML = descriptionData;
         logMain.appendChild(description);
 

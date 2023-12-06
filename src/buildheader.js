@@ -11,7 +11,7 @@ function buildHeader(subtitleText) {
         userInfo.innerHTML = noUser;
         let token = localStorage.getItem('authToken');
         if (token) {
-            fetch('http://localhost:8000/account/test_token', {
+            fetch(`${backendURL}account/test_token`, {
                 method: "GET",
                 headers: {
                   'Content-type': 'application/json',
