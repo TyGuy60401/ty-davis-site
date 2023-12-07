@@ -8,7 +8,7 @@ function buildCalendar(divID, useOtherDate=null) {
     if (URLParams.get('date')) {
         selectedDay = new Date(Date.parse(URLParams.get('date')));
         day = new Date(selectedDay);
-        day.setDate(1);
+        // day.setDate(1);
         // day = new Date(Date.parse)
     } else {
         day = new Date();
@@ -167,8 +167,11 @@ function buildCalendar(divID, useOtherDate=null) {
                         inner_day = dayNum.toString();
                     }
                     cellLink.href = '?date=' + fileString;
+                    cellLink.href = '#';
                     cellLink.className = classString;
                     cellLink.onclick = function () {
+                        window.history.pushState({}, "", `./training.html?date=${fileString}`);
+                        buildCalendar('calendar-main');
                         // selectedDay.setDate(dayNum.date);
                     //     buildLog(fileString)
                     }
