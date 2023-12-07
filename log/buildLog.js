@@ -184,7 +184,9 @@ function buildLog(dateString, buildNewCalendar=true) {
         prevDay.setDate(prevDay.getDate() - 1)
         dayString = (prevDay.getDate()).toString().padStart(2, '0');
         let tempMonthString = (prevDay.getMonth() + 1).toString().padStart(2, '0');
-        window.location.assign('./training.html?date=' + yearString + '-' + tempMonthString + '-' + dayString);
+        window.history.pushState({}, "", `./training.html?date=${yearString}-${tempMonthString}-${dayString}`);
+        buildCalendar('calendar-main');
+        // window.location.assign('./training.html?date=' + yearString + '-' + tempMonthString + '-' + dayString);
     }
     let nextButton = document.createElement('input');
     nextButton.type = "button";
@@ -194,7 +196,8 @@ function buildLog(dateString, buildNewCalendar=true) {
         nextDay.setDate(nextDay.getDate() + 1);
         dayString = (nextDay.getDate()).toString().padStart(2, '0');
         let tempMonthString = (nextDay.getMonth() + 1).toString().padStart(2, '0');
-        window.location.assign('./training.html?date=' + yearString + '-' + tempMonthString + '-' + dayString);
+        window.history.pushState({}, "", `./training.html?date=${yearString}-${tempMonthString}-${dayString}`);
+        buildCalendar('calendar-main');
     }
 
     navDiv.appendChild(prevButton);
