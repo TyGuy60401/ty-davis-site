@@ -31,6 +31,38 @@ input[type=number] {
     color: red;
     font-size: smaller;
 }
+#splits-table-wrapper {
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 10px gray;
+    width: max-content;
+    height: max-content;
+}
+.ce-splits-table {
+    border-collapse: collapse;
+    box-sizing: border-box;
+    width: fit-content;
+    min-width: 200px;
+    margin: 20px;
+    font-weight: normal;
+}
+.splits-specifier {
+    width: 4em;
+    text-align: right;
+}
+.set-break {
+    text-align: center;
+}
+.splits-units {
+    width: 4em;
+    font-size: 8pt;
+}
+.splits-value {
+    width: 4em;
+}
+.splits-even {
+    background-color: lightgray;
+}
 /* table, th, td {
     border: 1px solid black;
 } */
