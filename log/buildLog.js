@@ -39,6 +39,8 @@ function buildLog(dateString, buildNewCalendar=true) {
         let descriptionData = thisRun['description'];
         let workoutID = thisRun['workoutID']
         let runID = thisRun['id'];
+        let tags = thisRun['run_type'];
+        console.log(tags);
         // let splitsData = thisRun['splits'];
 
         // Show the title and edit button:
@@ -58,6 +60,19 @@ function buildLog(dateString, buildNewCalendar=true) {
         }
         titleEditDiv.appendChild(editButton);
         logMain.appendChild(titleEditDiv);
+
+        // Show any tags
+        tagsDiv = document.createElement('div');
+        tagsDiv.className = 'log-tags';
+        tagsArray = tags.split(' ');
+        tagsArray.forEach((tag) => {
+            console.log(tag);
+            tagSpan = document.createElement('span');
+            tagSpan.innerHTML = tag;
+            tagsDiv.appendChild(tagSpan);
+        })
+        logMain.appendChild(tagsDiv);
+
 
         // Show the stats
         let statsDiv = document.createElement('div');

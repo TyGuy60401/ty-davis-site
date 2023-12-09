@@ -149,11 +149,12 @@ function buildCalendar(divID, useOtherDate=null) {
                     day.setHours(0, 0, 0, 0);
                     let tempDateString = `${day.getFullYear()}-${(day.getMonth() + 1).toString().padStart(2, '0')}-${(day.getDate()).toString().padStart(2, '0')}`
                     // console.log(tempDateString);
+                    classString = "calendar-link"
 
                     if (dayMonth == currentMonth) {
-                        classString = "on-month";
+                        classString += " on-month";
                     } else {
-                        classString = "off-month";
+                        classString += " off-month";
                     }
                     let fileString = day.getFullYear().toString() + '-' + (day.getMonth() + 1).toString().padStart(2, '0') + '-' + dayNum.toString().padStart(2, '0');
 
@@ -166,8 +167,8 @@ function buildCalendar(divID, useOtherDate=null) {
                     } else {
                         inner_day = dayNum.toString();
                     }
-                    cellLink.href = '?date=' + fileString;
-                    cellLink.href = '#';
+                    // cellLink.href = '?date=' + fileString;
+                    // cellLink.href = '#';
                     cellLink.className = classString;
                     cellLink.onclick = function () {
                         window.history.pushState({}, "", `./training.html?date=${fileString}`);

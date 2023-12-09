@@ -93,6 +93,15 @@ input, textarea {
     -webkit-appearance: none;
     background-color: rgb(160, 160, 160);
 }
+.log-tags span {
+    background-color: lightgray;
+    margin: 3px;
+    padding: 3px;
+    border-radius: 8px;
+}
+.log-tags {
+    margin-bottom: 10pt;
+}
 .nav-div {
     order: -1;
     display: flex;
@@ -254,6 +263,9 @@ input, textarea {
     text-decoration: none;
     /* font-weight: bold; */
     border-radius: 10px;
+}
+.calendar-link:hover {
+    cursor: pointer;
 }
 .on-month {
     color: inherit;

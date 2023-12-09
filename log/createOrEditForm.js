@@ -9,7 +9,7 @@ function fillCreateOrEditForm() {
     const URLParams = new URLSearchParams(queryString);
     let run = null;
     let splits = null;
-    // if (URLParams.get('id')) {
+    if (URLParams.get('id')) {
         fetch(`${backendURL}training/runs/?id=${URLParams.get('id')}`, {
             method: 'GET',
             headers: makeHeader(localStorage.getItem('authToken')),
@@ -30,24 +30,23 @@ function fillCreateOrEditForm() {
             }
             Object.keys(run).forEach( key => {
                 if (form[key]) {
+                    console.log(form[key]);
                     form[key].value = data['run'][key];
                     // console.log(key, data['run'][key]);
                 }
             })
-            deleteButton = document.getElementById('delete-button');
+            let deleteButton = document.getElementById('delete-button');
             deleteButton.style.visibility = 'visible';
-            discardChangesButton = document.getElementById('discard-changes-button');
+            let discardChangesButton = document.getElementById('discard-changes-button');
             discardChangesButton.style.visibility = 'visible';
         }).catch(error => {
             console.log(error);
         }).finally( () => {
-            // console.log(run);
             buildSplitsTable(splits);
-            // document.getElementById('splits-table-wrapper').innerHTML = buildSplitsTable(splits);
-
-
         });
-    // }
+    } else {
+        buildSplitsTable([]);
+    }
 }
 
 function buildSplitsTable(splits) {
@@ -74,11 +73,12 @@ function buildSplitsTable(splits) {
             i++;
             let row = document.createElement('tr');
             let smallCol = document.createElement('td');
+            smallCol.className = 'splits-delete-button';
             let xButton = document.createElement('input');
             xButton.type = 'button';
             let removeItem = i;
             function removeRow(row) {
-                let newSplits = splits;
+                let newSplits = buildSplitsFromTable();
                 newSplits.splice(removeItem - 1, 1);
                 buildSplitsTable(newSplits);
             }
@@ -108,13 +108,15 @@ function buildSplitsTable(splits) {
                 numberCol.innerHTML = i - offset;
                 specifierCol.innerHTML = val.specifier;
                 specifierCol.className = 'splits-specifier';
+                specifierCol.id = `splits-specifier-${i.toString().padStart(2, '0')}`;
                 specifierCol.contentEditable = true;
-                unitsCol.defaultValue = val.units;
+                unitsCol.value = val.units;
                 unitsCol.setAttribute('list', 'volume_units');
                 // unitsCol.list = 'units-list';
                 unitsCol.className = 'splits-units';
                 valueCol.innerHTML = timeStringFromSeconds(val.value, 1);
                 valueCol.className = 'splits-value';
+                valueCol.id = `splits-value-${i.toString().padStart(2, '0')}`;
                 valueCol.contentEditable = true;
 
                 row.appendChild(numberCol);
@@ -132,23 +134,34 @@ function buildSplitsTable(splits) {
         let xButton = document.createElement('input');
         xButton.type = 'button';
         let clickedString = `Clicked the + button`
-        function addRowTest() {
-            let newSplits = splits;
-            newSplits.push({
-                'id': 100,
-                'workoutID': 100,
-                'specifier': 1000,
-                'units': 'km',
-                'value': 100,
-            })
+        function addRow() {
+            let newSplits = buildSplitsFromTable();
+            let newSplit;
+            if (newSplits.length > 0) {
+                newSplit = newSplits.at(-1);
+            } else {
+                newSplit = {
+                    'id': 100,
+                    'workoutID': 100,
+                    'specifier': 1000,
+                    'units': 'km',
+                    'value': 100,
+                }
+            }
+            console.log(newSplit);
+            newSplits.push(newSplit);
             console.log(newSplits);
             buildSplitsTable(newSplits);
         }
-        xButton.onclick = addRowTest;
+        xButton.onclick = addRow;
         xButton.defaultValue = '+';
+        let lastColDesc = document.createElement('td')
+        lastColDesc.innerHTML = 'Add new row';
+        lastColDesc.colSpan = 3;
         lastCol.appendChild(xButton)
 
         lastRow.appendChild(lastCol);
+        lastRow.appendChild(lastColDesc);
         splitsTable.appendChild(lastRow);
         let newSplits = splits;
         
@@ -160,6 +173,7 @@ function buildSplitsTable(splits) {
     // return content.toString();
     return splitsTable.toString();
 }
+
 function discardChanges(date) {
     const URLParams = new URLSearchParams(window.location.search);
     id = URLParams.get('id');
@@ -178,6 +192,53 @@ function discardChanges(date) {
             console.log(error);
             // window.location.replace(`./training.html`);
         })
+}
+
+function buildSplitsFromTable() {
+    let splitsTable = document.getElementById('ce-splits-table');
+    if (!splitsTable) {
+        return [];
+    }
+    let newSplits = [];
+    for (let i = 1; i < splitsTable.childNodes.length; i++) {
+        let newSplit = {};
+        newSplit.id = null;
+        let valueCell = document.getElementById(`splits-value-${i.toString().padStart(2, '0')}`);
+        if (valueCell) {
+            newSplit.value = secondsFromTimeString(valueCell.innerHTML);
+            let specifierCell = document.getElementById(`splits-specifier-${i.toString().padStart(2, '0')}`);
+            newSplit.specifier = parseFloat(specifierCell.innerHTML);
+
+            let unitsCell = document.getElementById(`volume_units-${i.toString().padStart(2, '0')}`);
+            newSplit.units = unitsCell.value;
+
+        } else {
+            newSplit.value = 0;
+            newSplit.specifier = 800;
+            newSplit.units = 'set';
+        }
+        newSplits.push(newSplit);
+    }
+    console.log(newSplits);
+
+    // console.log(splitsTable.childNodes);
+    // splitsTable.childNodes.forEach( row => {
+    //     console.log(row);
+    //     row.childNodes.forEach( cell => {
+    //         console.log(cell);
+    //     })
+    // })
+    // splitsTable.rows.forEach(row => {
+    //     console.log(row);
+    // })
+    return newSplits;
+    return [{
+        'id': 100,
+        'workoutID': 100,
+        'specifier': 1000,
+        'units': 'km',
+        'value': 100,
+    }];
 }
 
 function deleteRun() {
@@ -225,7 +286,7 @@ function handleForm(event) {
         'run_type': 'Run Type',
         'description': 'Description',
         'workout_type': 'Workout Type',
-        'volume_distance': 'Volume Distance',
+        'volume_specifier': 'Volume Specifier',
         'volume_units': 'Volume Units',
         'volume_time': 'Volume Time',
     }
@@ -304,6 +365,10 @@ function handleForm(event) {
         let urlField = document.getElementById("bad-results_link");
         urlField.innerHTML = "Invalid URL";
     }
+
+    // handling the splitsTable object
+    
+
     if (!doSubmitForm) {
         event.preventDefault();
     } else {
@@ -316,6 +381,7 @@ function handleForm(event) {
         Object.keys(otherFieldNames).forEach(key => {
             if (form[key]) {
                 // console.log(form[key]);
+                console.log(form[key].value);
                 runObject[key] = form[key].value;
                 form[key].disabled = true;
             }
@@ -323,6 +389,7 @@ function handleForm(event) {
         // console.log(runObject);
         event.preventDefault();
         let noticeText = document.getElementById('notice-text');
+        // posting a new run
         if (!URLParams.get('id')) {
             fetch(`${backendURL}training/runs/`, {
                 method: 'POST',
@@ -361,6 +428,7 @@ function handleForm(event) {
                 }
             });
 
+        // editing a current run
         } else {
             runObject['id'] = URLParams.get('id');
             fetch(`${backendURL}training/runs/`, {

@@ -46,6 +46,9 @@ input[type=number] {
     margin: 20px;
     font-weight: normal;
 }
+.splits-delete-button {
+    font-size: x-small;
+}
 .splits-specifier {
     width: 4em;
     text-align: right;
@@ -58,6 +61,7 @@ input[type=number] {
     font-size: 8pt;
 }
 .splits-value {
+    text-align: center;
     width: 4em;
 }
 .splits-even {
