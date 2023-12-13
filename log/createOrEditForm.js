@@ -135,6 +135,9 @@ function buildSplitsTable(splits) {
         xButton.type = 'button';
         let clickedString = `Clicked the + button`
         function addRow() {
+            if (!checkSplitsTable()) {
+                return
+            }
             let newSplits = buildSplitsFromTable();
             let newSplit;
             if (newSplits.length > 0) {
@@ -172,6 +175,24 @@ function buildSplitsTable(splits) {
     content.innerHTML = 'hi there <b>bold</b> again'
     // return content.toString();
     return splitsTable.toString();
+}
+function checkSplitsTable() {
+    let allGood = true;
+    let newSplits = buildSplitsFromTable();
+    if (newSplits.length == 0) {
+        return true;
+    }
+    newSplits.forEach(split => {
+        console.log(split);
+        if (!isFinite(split.specifier)) {
+            console.log("Is NaN")
+            allGood = false;
+        }
+    })
+    if (allGood) {
+        return true;
+    }
+    return false;
 }
 
 function discardChanges(date) {
@@ -221,24 +242,7 @@ function buildSplitsFromTable() {
     }
     console.log(newSplits);
 
-    // console.log(splitsTable.childNodes);
-    // splitsTable.childNodes.forEach( row => {
-    //     console.log(row);
-    //     row.childNodes.forEach( cell => {
-    //         console.log(cell);
-    //     })
-    // })
-    // splitsTable.rows.forEach(row => {
-    //     console.log(row);
-    // })
     return newSplits;
-    return [{
-        'id': 100,
-        'workoutID': 100,
-        'specifier': 1000,
-        'units': 'km',
-        'value': 100,
-    }];
 }
 
 function deleteRun() {
@@ -386,7 +390,7 @@ function handleForm(event) {
                 form[key].disabled = true;
             }
         })
-        // console.log(runObject);
+        console.log(runObject);
         event.preventDefault();
         let noticeText = document.getElementById('notice-text');
         // posting a new run

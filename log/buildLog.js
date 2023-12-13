@@ -62,16 +62,18 @@ function buildLog(dateString, buildNewCalendar=true) {
         logMain.appendChild(titleEditDiv);
 
         // Show any tags
-        tagsDiv = document.createElement('div');
-        tagsDiv.className = 'log-tags';
-        tagsArray = tags.split(' ');
-        tagsArray.forEach((tag) => {
-            console.log(tag);
-            tagSpan = document.createElement('span');
-            tagSpan.innerHTML = tag;
-            tagsDiv.appendChild(tagSpan);
-        })
-        logMain.appendChild(tagsDiv);
+        if (tags) {
+            tagsDiv = document.createElement('div');
+            tagsDiv.className = 'log-tags';
+            tagsArray = tags.split(' ');
+            tagsArray.forEach((tag) => {
+                console.log(tag);
+                tagSpan = document.createElement('span');
+                tagSpan.innerHTML = tag;
+                tagsDiv.appendChild(tagSpan);
+            })
+            logMain.appendChild(tagsDiv);
+        }
 
 
         // Show the stats
