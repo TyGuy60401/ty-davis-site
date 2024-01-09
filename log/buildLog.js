@@ -132,6 +132,7 @@ function buildLog(dateString, buildNewCalendar=true) {
                     }
                 }
             })
+            console.log(splits);
 
 
             let splitsDiv = document.createElement('div');
@@ -147,7 +148,6 @@ function buildLog(dateString, buildNewCalendar=true) {
             splitsDiv.appendChild(splitsTable);
 
             splits.sort((a, b) => (a.id - b.id))
-            let offset = splits[0].id - 1;
             splits.forEach(split => {
                 let row = splitsTable.insertRow();
                 if (split.units == 'set') {
@@ -156,7 +156,6 @@ function buildLog(dateString, buildNewCalendar=true) {
                     setBreakCell.innerHTML = "Set Break";
                     setBreakCell.colSpan = 3;
                     setBreakCell.style = "text-align: center;"
-                    offset++;
                     return;
                 }
                 let splitNum = row.insertCell();
@@ -167,7 +166,7 @@ function buildLog(dateString, buildNewCalendar=true) {
                 splitDist.className = 'dist';
                 splitTime.className = 'time';
 
-                splitNum.innerHTML = split.id - offset;
+                splitNum.innerHTML = split.splitIndex;
                 splitDist.innerHTML = split.specifier + split.units;
                 splitTime.innerHTML = timeStringFromSeconds(split.value, 1);
             })

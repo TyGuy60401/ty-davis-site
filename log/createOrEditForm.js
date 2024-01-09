@@ -371,6 +371,17 @@ function handleForm(event) {
     }
 
     // handling the splitsTable object
+    doSubmitForm = false;
+    let splitsTable = document.getElementById("ce-splits-table");
+    
+    for (i=0; i<splitsTable.rows.length; i++) {
+        console.log(splitsTable.rows[i])
+        console.log(splitsTable.rows[i])
+        console.log(splitsTable.rows[i])
+        console.log(splitsTable.rows[i])
+        // console.log(splitsTable.rows[i])
+    }
+    
     
 
     if (!doSubmitForm) {
