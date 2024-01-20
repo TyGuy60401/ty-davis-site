@@ -372,15 +372,38 @@ function handleForm(event) {
 
     // handling the splitsTable object
     doSubmitForm = false;
+    event.preventDefault();
     let splitsTable = document.getElementById("ce-splits-table");
     
+    let splitsSubmission = [];
+    let numSetBreaks = 0;
     for (i=0; i<splitsTable.rows.length; i++) {
-        console.log(splitsTable.rows[i])
-        console.log(splitsTable.rows[i])
-        console.log(splitsTable.rows[i])
-        console.log(splitsTable.rows[i])
-        // console.log(splitsTable.rows[i])
+        let arrayTD = splitsTable.rows[i].getElementsByTagName("td");
+        let splitIndex = i + 1
+        if (arrayTD[1].innerHTML == 'Add new row') {
+            break;
+        }
+        else if (arrayTD[1].innerHTML == 'Set Break') {
+            // It's a set break!
+            numSetBreaks ++;
+            splitsSubmission.push({
+                "specifier": 0,
+                "units": "set",
+                "value": 0,
+                "splitIndex": splitIndex,
+            })
+            continue;
+        } else {
+            splitsSubmission.push({
+                "specifier": arrayTD[2].innerHTML,
+                "units": splitsTable.rows[i].getElementsByTagName("select")[0].value,
+                "value": secondsFromTimeString(arrayTD[3].innerHTML),
+                "splitIndex": splitIndex,
+            })
+        }
     }
+    console.log(splitsSubmission);
+
     
     
 
