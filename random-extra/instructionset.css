@@ -27,6 +27,7 @@ table td, th, tr {
     border: none;
     text-align: center;
     border-radius: 3px;
+    transition: all 0.2s;
 }
 p { color: black; }
 .boring-link a {
@@ -34,7 +35,6 @@ p { color: black; }
     color: blue;
 }
 .main-table td:hover {
-    transition: 0.1s;
     background-color: #dddddd;
 }
 #up-button {
@@ -50,5 +50,4 @@ p { color: black; }
 #up-button:hover {
     border-radius: 12px;
     background-color: #aaa;
-    /* transition: 0.8s; */
 }
