@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/src/buildheader.js"></script>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="./usefulstyle.css">
+    <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
+    <title>XC Tools - Pace Calculator</title>
+</head>
+<body onload="buildHeader('<a style=\'text-decoration:none;\' href=\'./index.html\'>XC Tools</a>')">
+    <div id="header"></div>
+    <div id="useful-wrapper">
+        <div id="useful">
+            <h1>Pace Calculator</h1>
+            <form>
+                <table>
+                    <tr>
+                        <td><label for="distance">Distance:</label></td>
+                        <td><input id="distance" type="number"></td>
+                        <td><select id="unit" name="unit">
+                                <option value="m">m</option>
+                                <option value="km">km</option>
+                                <option value="mi">mi</option>
+                            </select>
+                    </tr>
+                    <tr>
+                        <td><label for="time">Time:</label></td>
+                        <td><input id="time" type="text"></td>
+                        <td>(hh:mm:ss or mm:ss)</td>
+                    </tr>
+                    <tr>
+                        <td><label for="pace">Pace:</label></td>
+                        <td><input id="pace" type="text"></td>
+                    </tr>
+                </table>
+            </form>
+            <script src='./pace-calculator.js'>
+                let distInput = document.getElementById("distance");
+                distInput.addEventListener('input', function (evt) {
+                    console.log(this.value);
+                })
+            </script>
+        </div>
+    </div>
+</body>
+</html>
