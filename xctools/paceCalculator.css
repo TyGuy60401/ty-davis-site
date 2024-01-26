@@ -1,0 +1,10 @@
+.table-header {
+    font-weight: bold;
+    text-align: center;
+}
+.dist-cell {
+    text-align: right;
+}
+.unit-cell {
+    min-width: 2em;
+}
