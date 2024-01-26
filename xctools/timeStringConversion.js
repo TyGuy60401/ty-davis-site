@@ -2,8 +2,8 @@ const MILE_STRINGS = ['mi', 'mile', 'miles']
 const KM_STRINGS = ['km', 'kilometer', 'kilometre']
 const METER_STRINGS = ['m', 'meter', 'metre']
 
-const KM_CONVERSION = 1.60934
-const METER_CONVERSION = 1609.34
+const KM_CONVERSION = 1.609344
+const METER_CONVERSION = 1609.344
 
 
 function secToString(sec) {
@@ -30,28 +30,29 @@ function stringToSec(s) {
         return sec;
 }
 
-function paceFromTime(t, d, u='mi') {
+function paceFromTimeDist(t, d, u='mi') {
         let sec = stringToSec(t);
+        console.log(sec);
         let paceSec;
         if (MILE_STRINGS.includes(u)) {
-                paceSec = d
+                paceSec = sec / d;
         } else if (KM_STRINGS.includes(u)) {
-                paceSec = sec * KM_CONVERSION / d
+                paceSec = sec * KM_CONVERSION / d;
         } else if (METER_STRINGS.includes(u)) {
-                paceSec = sec * METER_CONVERSION / d
+                paceSec = sec * METER_CONVERSION / d;
         }
         let pace = secToString(paceSec);
         return pace;
 }
 
-function timeFromPace(p, d, u='mi') {
+function timeFromPaceDist(p, d, u='mi') {
         let distMiles;
         if (MILE_STRINGS.includes(u)) {
                 distMiles = d;
         } else if (KM_STRINGS.includes(u)) {
                 distMiles = d / KM_CONVERSION;
         } else if (METER_STRINGS.includes(u)) {
-                distMiles = d / M_CONVRESION;
+                distMiles = d / METER_CONVERSION;
         }
 
         let paceSec = p;
@@ -60,14 +61,21 @@ function timeFromPace(p, d, u='mi') {
         }
         
         let totalSec = paceSec * distMiles;
-        return totalSec;
+        return secToString(totalSec);
+}
+
+function distFromTimePace(t, p) {
+        let paceSec = stringToSec(p);
+        let totalMiles = 1 / paceSec * stringToSec(t);
+        return totalMiles * METER_CONVERSION;
+
 }
 
 function getSplits(t, d, u='mi', intvl=undefined) {
         intvl = intvl ? intvl : {'dist': 400, 'unit': 'm'};
-        let pace = stringToSec(paceFromTime(t, d, u=u));
+        let pace = stringToSec(paceFromTimeDist(t, d, u=u));
 
-        let splitTime;
+        let splitTime = pace * intvl.dist;
         if (MILE_STRINGS.includes(intvl.unit)) {
                 unit = 'mi';
         } else if (KM_STRINGS.includes(intvl.unit)) {

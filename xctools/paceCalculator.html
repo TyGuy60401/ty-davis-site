@@ -16,6 +16,7 @@
     <div id="useful-wrapper">
         <div id="useful">
             <h1>Pace Calculator</h1>
+            <p>Fill two of the three cells below and when you click calculate, the third one will automatically be populated.</p>
             <form>
                 <table>
                     <tr>
@@ -35,9 +36,10 @@
                     <tr>
                         <td><label for="pace">Pace:</label></td>
                         <td><input id="pace" type="text"></td>
+                        <td>(hh:mm:ss or mm:ss) (min/mile)</td>
                     </tr>
                 </table>
-                <br>
+                <span class="error-area" id="error-area" style="visibility:invisible;"></span><br>
                 <table>
                     <tr>
                         <td><label for="splitDist">Interval Distance:</label></td>
@@ -49,13 +51,11 @@
                             </select></td>
                 </table>
             </form>
-            <div id="splitsTableDiv">
-                <table id="splitsTable">
-                </table>
-            </div>
-            <button onclick="fillSplits()">Calculate Splits</button><br>
+            <button onclick="calculate()">Calculate</button><br>
+            <span class="error-area" id="error-area-2" style="visibility:invisible;"></span><br>
+            <div id="splitsTableDiv" style="display:none"></div>
 
-            <button onclick="testStuff()">Test Stuff</button><br>
+            <!-- <button onclick="testStuff()">Test Stuff</button><br> -->
             <script src='./paceCalculator.js'></script>
             <script src='./timeStringConversion.js'></script>
         </div>
