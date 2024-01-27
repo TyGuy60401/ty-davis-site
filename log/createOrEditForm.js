@@ -1,8 +1,8 @@
 function fillCreateOrEditForm() {
-    let dateField = document.getElementById("date");
-    let today = new Date();
+    const dateField = document.getElementById("date");
+    const today = new Date();
     dateField.valueAsDate = today;
-    let form = document.forms["create-run"];
+    const form = document.forms["create-run"];
 
 
     const queryString = window.location.search;
@@ -22,22 +22,22 @@ function fillCreateOrEditForm() {
         })
         .then(data => {
             document.getElementById('create-edit-title').innerHTML = "Edit Run";
-            run = data['run'];
-            splits = data['splits'];
-            run['total_time'] = timeStringFromSeconds(run['total_time'], 0);
-            if (run['volume_time']) {
-                run['volume_time'] = timeStringFromSeconds(run['volume_time'], 0);
+            run = data.run;
+            splits = data.splits;
+            run.total_time = timeStringFromSeconds(run.total_time, 0);
+            if (run.volume_time) {
+                run.volume_time = timeStringFromSeconds(run.volume_time, 0);
             }
             Object.keys(run).forEach( key => {
                 if (form[key]) {
                     console.log(form[key]);
-                    form[key].value = data['run'][key];
+                    form[key].value = data.run[key];
                     // console.log(key, data['run'][key]);
                 }
             })
-            let deleteButton = document.getElementById('delete-button');
+            const deleteButton = document.getElementById('delete-button');
             deleteButton.style.visibility = 'visible';
-            let discardChangesButton = document.getElementById('discard-changes-button');
+            const discardChangesButton = document.getElementById('discard-changes-button');
             discardChangesButton.style.visibility = 'visible';
         }).catch(error => {
             console.log(error);
@@ -50,16 +50,16 @@ function fillCreateOrEditForm() {
 }
 
 function buildSplitsTable(splits) {
-    let splitsTable = document.createElement('table');
+    const splitsTable = document.createElement('table');
     splitsTable.id = 'ce-splits-table';
     splitsTable.className = 'ce-splits-table';
     // splitsTable.contentEditable = true;
     // make the units list
-    let unitsList = document.createElement('datalist');
+    const unitsList = document.createElement('datalist');
     unitsList.id = 'units-list';
-    let units = ['m', 'km', 'mi'];
+    const units = ['m', 'km', 'mi'];
     for (let i = 0; i < units.length; i++) {
-        let unitOption = document.createElement('option');
+        const unitOption = document.createElement('option');
         unitOption.value = units[i];
         unitsList.appendChild(unitOption);
     }
@@ -71,14 +71,14 @@ function buildSplitsTable(splits) {
         let offset = 0;
         Object.values(splits).forEach(val => {
             i++;
-            let row = document.createElement('tr');
-            let smallCol = document.createElement('td');
+            const row = document.createElement('tr');
+            const smallCol = document.createElement('td');
             smallCol.className = 'splits-delete-button';
-            let xButton = document.createElement('input');
+            const xButton = document.createElement('input');
             xButton.type = 'button';
-            let removeItem = i;
+            const removeItem = i;
             function removeRow(row) {
-                let newSplits = buildSplitsFromTable();
+                const newSplits = buildSplitsFromTable();
                 newSplits.splice(removeItem - 1, 1);
                 buildSplitsTable(newSplits);
             }
@@ -87,23 +87,23 @@ function buildSplitsTable(splits) {
             smallCol.appendChild(xButton)
             // smallCol.innerHTML = '<input type=button>&times;</input>'
             row.appendChild(smallCol);
-            if (val.units == 'set') {
-                let bigCol = document.createElement('td');
+            if (val.units === 'set') {
+                const bigCol = document.createElement('td');
                 bigCol.colSpan = 10;
                 bigCol.className = 'set-break';
                 bigCol.innerHTML = 'Set Break';
                 row.appendChild(bigCol);
                 offset++;
             } else {
-                if (i % 2 == 0) {
+                if (i % 2 === 0) {
                     row.className = 'splits-even';
                 }
-                let numberCol = document.createElement('td');
-                let specifierCol = document.createElement('td');
-                let unitsCol = document.getElementById('volume_units').cloneNode(true);
+                const numberCol = document.createElement('td');
+                const specifierCol = document.createElement('td');
+                const unitsCol = document.getElementById('volume_units').cloneNode(true);
                 unitsCol.id = `${volume_units.id}-${i.toString().padStart(2, '0')}`
                 // let unitsCol = document.createElement('input');
-                let valueCol = document.createElement('td');
+                const valueCol = document.createElement('td');
 
                 numberCol.innerHTML = i - offset;
                 specifierCol.innerHTML = val.specifier;
@@ -129,26 +129,26 @@ function buildSplitsTable(splits) {
             // console.log(val.specifier);
         })
         // Create default row
-        let lastRow = document.createElement('tr');
-        let lastCol = document.createElement('td');
-        let xButton = document.createElement('input');
+        const lastRow = document.createElement('tr');
+        const lastCol = document.createElement('td');
+        const xButton = document.createElement('input');
         xButton.type = 'button';
-        let clickedString = `Clicked the + button`
+        const clickedString = 'Clicked the + button'
         function addRow() {
             if (!checkSplitsTable()) {
                 return
             }
-            let newSplits = buildSplitsFromTable();
+            const newSplits = buildSplitsFromTable();
             let newSplit;
             if (newSplits.length > 0) {
                 newSplit = newSplits.at(-1);
             } else {
                 newSplit = {
-                    'id': 100,
-                    'workoutID': 100,
-                    'specifier': 1000,
-                    'units': 'km',
-                    'value': 100,
+                    id: 100,
+                    workoutID: 100,
+                    specifier: 1000,
+                    units: 'm',
+                    value: 180,
                 }
             }
             console.log(newSplit);
@@ -158,7 +158,7 @@ function buildSplitsTable(splits) {
         }
         xButton.onclick = addRow;
         xButton.defaultValue = '+';
-        let lastColDesc = document.createElement('td')
+        const lastColDesc = document.createElement('td')
         lastColDesc.innerHTML = 'Add new row';
         lastColDesc.colSpan = 3;
         lastCol.appendChild(xButton)
@@ -166,10 +166,10 @@ function buildSplitsTable(splits) {
         lastRow.appendChild(lastCol);
         lastRow.appendChild(lastColDesc);
         splitsTable.appendChild(lastRow);
-        let newSplits = splits;
+        const newSplits = splits;
         
     }
-    let content = document.createElement('p');
+    const content = document.createElement('p');
     document.getElementById('splits-table-wrapper').innerHTML = '';
     document.getElementById('splits-table-wrapper').appendChild(splitsTable);
     content.innerHTML = 'hi there <b>bold</b> again'
@@ -178,13 +178,13 @@ function buildSplitsTable(splits) {
 }
 function checkSplitsTable() {
     let allGood = true;
-    let newSplits = buildSplitsFromTable();
-    if (newSplits.length == 0) {
+    const newSplits = buildSplitsFromTable();
+    if (newSplits.length === 0) {
         return true;
     }
     newSplits.forEach(split => {
         console.log(split);
-        if (!isFinite(split.specifier)) {
+        if (!Number.isFinite(split.specifier)) {
             console.log("Is NaN")
             allGood = false;
         }
@@ -208,7 +208,7 @@ function discardChanges(date) {
         return Promise.reject(response);
     })
         .then(data => {
-            window.location.replace(`./training.html?date=${data['run']['date']}`)
+            window.location.replace(`./training.html?date=${data.run.date}`)
         }).catch( error => {
             console.log(error);
             // window.location.replace(`./training.html`);
@@ -216,21 +216,21 @@ function discardChanges(date) {
 }
 
 function buildSplitsFromTable() {
-    let splitsTable = document.getElementById('ce-splits-table');
+    const splitsTable = document.getElementById('ce-splits-table');
     if (!splitsTable) {
         return [];
     }
-    let newSplits = [];
+    const newSplits = [];
     for (let i = 1; i < splitsTable.childNodes.length; i++) {
-        let newSplit = {};
+        const newSplit = {};
         newSplit.id = null;
-        let valueCell = document.getElementById(`splits-value-${i.toString().padStart(2, '0')}`);
+        const valueCell = document.getElementById(`splits-value-${i.toString().padStart(2, '0')}`);
         if (valueCell) {
             newSplit.value = secondsFromTimeString(valueCell.innerHTML);
-            let specifierCell = document.getElementById(`splits-specifier-${i.toString().padStart(2, '0')}`);
+            const specifierCell = document.getElementById(`splits-specifier-${i.toString().padStart(2, '0')}`);
             newSplit.specifier = parseFloat(specifierCell.innerHTML);
 
-            let unitsCell = document.getElementById(`volume_units-${i.toString().padStart(2, '0')}`);
+            const unitsCell = document.getElementById(`volume_units-${i.toString().padStart(2, '0')}`);
             newSplit.units = unitsCell.value;
 
         } else {
@@ -251,7 +251,7 @@ function deleteRun() {
     fetch(`${backendURL}training/runs/`, {
         method: 'DELETE',
         headers: makeHeader(localStorage.getItem('authToken')),
-        body: JSON.stringify({'id': id})
+        body: JSON.stringify({id: id})
     }).then(response => {
         if (response.ok) {
             return response.json();
@@ -260,7 +260,7 @@ function deleteRun() {
     }).then( data => {
         console.log(data);
         sessionStorage.clear();
-        window.location.replace(`./training.html?date=${data['date']}`)
+        window.location.replace(`./training.html?date=${data.date}`)
         // It has been deleted
     }).catch( error => {
         console.log(error);
@@ -269,51 +269,51 @@ function deleteRun() {
 }
 
 function submitForm() {
-    let form = document.getElementById("create-run");
+    const form = document.getElementById("create-run");
     form.addEventListener('submit', handleForm);
     console.log("Submitting form");
 }
 
 function handleForm(event) {
-    let form = document.forms["create-run"];
+    const form = document.forms["create-run"];
     let doSubmitForm = true;
 
-    let fieldNames = {
-        'date': 'Date',
-        'title': 'Title',
-        'total_distance': 'Total Distance',
-        'total_time': 'Total Time',
-        'results_link': 'Results Link',
+    const fieldNames = {
+        date: 'Date',
+        title: 'Title',
+        total_distance: 'Total Distance',
+        total_time: 'Total Time',
+        results_link: 'Results Link',
     }
-    let otherFieldNames = {
-        'elevation': 'Elevation',
-        'run_type': 'Run Type',
-        'description': 'Description',
-        'workout_type': 'Workout Type',
-        'volume_specifier': 'Volume Specifier',
-        'volume_units': 'Volume Units',
-        'volume_time': 'Volume Time',
+    const otherFieldNames = {
+        elevation: 'Elevation',
+        run_type: 'Run Type',
+        description: 'Description',
+        workout_type: 'Workout Type',
+        volume_specifier: 'Volume Specifier',
+        volume_units: 'Volume Units',
+        volume_time: 'Volume Time',
     }
 
     function notEmpty(id_string) {
-        let except = ['results_link'];
+        const except = ['results_link'];
         if (except.includes(id_string)) { return; }
         if (!form[id_string].value) {
             console.log(`${id_string} is null`);
-            let badField = document.getElementById(`bad-${id_string}`);
+            const badField = document.getElementById(`bad-${id_string}`);
             badField.innerHTML = `${fieldNames[id_string]} cannot be empty.`
             doSubmitForm = false;
         }
     }
     Object.keys(fieldNames).forEach(key => {
-        let tempBadField = document.getElementById(`bad-${key}`);
+        const tempBadField = document.getElementById(`bad-${key}`);
         tempBadField.innerHTML = "";
     });
     Object.keys(fieldNames).forEach(key => {
         notEmpty(key)
     });
 
-    let totalTimeField = form["total_time"];
+    const totalTimeField = form.total_time;
     if (totalTimeField.value) {
         let timeMessage = null;
         for (let i = 0; i < totalTimeField.value.length; i++) {
@@ -328,12 +328,12 @@ function handleForm(event) {
         }
         if (timeMessage) {
             doSubmitForm = false;
-            let badTimeField = document.getElementById("bad-total_time");
+            const badTimeField = document.getElementById("bad-total_time");
             badTimeField.innerHTML = timeMessage;
         }
     }
 
-    let volumeTimeField = form["volume_time"];
+    const volumeTimeField = form.volume_time;
     if (volumeTimeField.value) {
         let volumeTimeMessage = null;
         for (let i = 0; i < volumeTimeField.value.length; i++) {
@@ -350,68 +350,66 @@ function handleForm(event) {
         }
         if (volumeTimeMessage) {
             doSubmitForm = false;
-            let badVolumeTimeField = document.getElementById("bad-volume_time");
+            const badVolumeTimeField = document.getElementById("bad-volume_time");
             badVolumeTimeField.innerHTML = volumeTimeMessage;
         }
     }
 
-    if (form["results_link"].value) {
-        if (!checkIfUrl(form["results_link"].value)) {
+    if (form.results_link.value) {
+        if (!checkIfUrl(form.results_link.value)) {
             console.log("Bad URL");
             doSubmitForm = false;
-            let urlField = document.getElementById("bad-results_link");
+            const urlField = document.getElementById("bad-results_link");
             urlField.innerHTML = "Invalid URL";
         }
     }
-    if (form["results_link"].value && !checkIfUrl(form["results_link"].value)) {
+    if (form.results_link.value && !checkIfUrl(form.results_link.value)) {
         console.log("Bad URL");
         doSubmitForm = false;
-        let urlField = document.getElementById("bad-results_link");
+        const urlField = document.getElementById("bad-results_link");
         urlField.innerHTML = "Invalid URL";
     }
 
     // handling the splitsTable object
     doSubmitForm = false;
     event.preventDefault();
-    let splitsTable = document.getElementById("ce-splits-table");
+    const splitsTable = document.getElementById("ce-splits-table");
     
-    let splitsSubmission = [];
+    const splitsSubmission = [];
     let numSetBreaks = 0;
     for (i=0; i<splitsTable.rows.length; i++) {
-        let arrayTD = splitsTable.rows[i].getElementsByTagName("td");
-        let splitIndex = i + 1
-        if (arrayTD[1].innerHTML == 'Add new row') {
+        const arrayTD = splitsTable.rows[i].getElementsByTagName("td");
+        const splitIndex = i + 1
+        if (arrayTD[1].innerHTML === 'Add new row') {
             break;
         }
-        else if (arrayTD[1].innerHTML == 'Set Break') {
+        if (arrayTD[1].innerHTML === 'Set Break') {
             // It's a set break!
             numSetBreaks ++;
             splitsSubmission.push({
-                "specifier": 0,
-                "units": "set",
-                "value": 0,
-                "splitIndex": splitIndex,
+                specifier: 0,
+                units: "set",
+                value: 0,
+                splitIndex: splitIndex,
             })
             continue;
-        } else {
-            splitsSubmission.push({
-                "specifier": arrayTD[2].innerHTML,
-                "units": splitsTable.rows[i].getElementsByTagName("select")[0].value,
-                "value": secondsFromTimeString(arrayTD[3].innerHTML),
-                "splitIndex": splitIndex,
-            })
         }
+        splitsSubmission.push({
+            specifier: arrayTD[2].innerHTML,
+            units: splitsTable.rows[i].getElementsByTagName("select")[0].value,
+            value: secondsFromTimeString(arrayTD[3].innerHTML),
+            splitIndex: splitIndex,
+        })
+        
     }
     console.log(splitsSubmission);
 
-    
-    
 
     if (!doSubmitForm) {
         event.preventDefault();
     } else {
         const URLParams = new URLSearchParams(window.location.search);
-        let runObject = {};
+        const runObject = {};
         Object.keys(fieldNames).forEach(key => {
             runObject[key] = form[key].value;
             form[key].disabled = true;
@@ -426,7 +424,7 @@ function handleForm(event) {
         })
         console.log(runObject);
         event.preventDefault();
-        let noticeText = document.getElementById('notice-text');
+        const noticeText = document.getElementById('notice-text');
         // posting a new run
         if (!URLParams.get('id')) {
             fetch(`${backendURL}training/runs/`, {
@@ -442,12 +440,12 @@ function handleForm(event) {
             })
             .then(data => {
                 console.log(data);
-                if (data['detail'] == "Run Saved") {
+                if (data.detail === "Run Saved") {
                     noticeText.innerHTML = "Run successfully saved.";
                     sessionStorage.clear();
                     // window.location.replace(`./createoreditrun.html/?id=${data['id']}`);
                     // window.location.replace(`./createoreditrun.html?id=${data['id']}`);
-                    window.location.assign(`./training.html?date=${runObject['date']}`)
+                    window.location.assign(`./training.html?date=${runObject.date}`)
                 }
             }).catch( error => {
                 console.log("error:")
@@ -461,14 +459,14 @@ function handleForm(event) {
                     }
                 })
                 noticeText.innerHTML = "Run couldn't be saved at this time."
-                if (error.type == 'cors') {
+                if (error.type === 'cors') {
                     noticeText.innerHTML += "<br>Are you logged in?"
                 }
             });
 
         // editing a current run
         } else {
-            runObject['id'] = URLParams.get('id');
+            runObject.id = URLParams.get('id');
             fetch(`${backendURL}training/runs/`, {
                 method: 'PUT',
                 headers: makeHeader(localStorage.getItem('authToken')),
@@ -482,7 +480,7 @@ function handleForm(event) {
             }).then( data => {
                 console.log("data");
                 sessionStorage.clear();
-                window.location.assign(`./training.html?date=${runObject['date']}`);
+                window.location.assign(`./training.html?date=${runObject.date}`);
             }).catch( error => {
 
                 console.log("error:")
@@ -496,7 +494,7 @@ function handleForm(event) {
                     }
                 })
                 noticeText.innerHTML = "Run couldn't be saved at this time."
-                if (error.type == 'cors') {
+                if (error.type === 'cors') {
                     noticeText.innerHTML += "<br>Are you logged in?"
                 }
 
