@@ -427,9 +427,9 @@ function handleForm(event) {
         })
         
     }
-    console.log('Splits submission here:');
     console.log(splitsSubmission);
-
+    const testingRightNow = false;
+    event.preventDefault();
 
     if (!doSubmitForm) {
         event.preventDefault();
@@ -448,16 +448,22 @@ function handleForm(event) {
                 form[key].disabled = true;
             }
         })
-        console.log("Run object here:");
-        console.log(runObject);
-        event.preventDefault();
+        console.log("Complete object here:");
+        // console.log(runObject);
+        let completeObject = {run: runObject, splits: splitsSubmission};
+        console.log(completeObject);
+        if (testingRightNow) {
+            event.preventDefault();
+            return;
+        }
+        // event.preventDefault();
         const noticeText = document.getElementById('notice-text');
         // posting a new run
         if (!URLParams.get('id')) {
             fetch(`${backendURL}training/runs/`, {
                 method: 'POST',
                 headers: makeHeader(localStorage.getItem('authToken')),
-                body: JSON.stringify(runObject),
+                body: JSON.stringify(completeObject),
             })
             .then(response => {
                 if (response.ok) {
