@@ -50,6 +50,7 @@ function fillCreateOrEditForm() {
 }
 
 function buildSplitsTable(splits) {
+    console.log(splits);
     const splitsTable = document.createElement('table');
     splitsTable.id = 'ce-splits-table';
     splitsTable.className = 'ce-splits-table';
@@ -89,7 +90,7 @@ function buildSplitsTable(splits) {
             row.appendChild(smallCol);
             if (val.units === 'set') {
                 const bigCol = document.createElement('td');
-                bigCol.colSpan = 10;
+                bigCol.colSpan = 4;
                 bigCol.className = 'set-break';
                 bigCol.innerHTML = 'Set Break';
                 row.appendChild(bigCol);
@@ -124,6 +125,12 @@ function buildSplitsTable(splits) {
                 row.appendChild(unitsCol);
                 row.appendChild(valueCol);
             }
+            const checkBoxCol = document.createElement('td');
+            const checkBox = document.createElement('input');
+            checkBox.type = "checkbox";
+            checkBox.checked = val.units === 'set';
+            checkBoxCol.appendChild(checkBox);
+            row.appendChild(checkBoxCol);
 
             splitsTable.appendChild(row);
             // console.log(val.specifier);
