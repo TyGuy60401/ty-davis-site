@@ -396,8 +396,8 @@ function handleForm(event) {
     }
 
     // handling the splitsTable object
-    doSubmitForm = false;
-    event.preventDefault();
+    doSubmitForm = true;
+    // event.preventDefault();
     const splitsTable = document.getElementById("ce-splits-table");
     
     const splitsSubmission = [];
@@ -427,6 +427,7 @@ function handleForm(event) {
         })
         
     }
+    console.log('Splits submission here:');
     console.log(splitsSubmission);
 
 
@@ -447,6 +448,7 @@ function handleForm(event) {
                 form[key].disabled = true;
             }
         })
+        console.log("Run object here:");
         console.log(runObject);
         event.preventDefault();
         const noticeText = document.getElementById('notice-text');
