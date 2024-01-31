@@ -125,10 +125,21 @@ function buildSplitsTable(splits) {
                 row.appendChild(unitsCol);
                 row.appendChild(valueCol);
             }
+            // Add a checkbox for each row
             const checkBoxCol = document.createElement('td');
             const checkBox = document.createElement('input');
             checkBox.type = "checkbox";
             checkBox.checked = val.units === 'set';
+            checkBox.id = `splits-set-box-${i.toString().padStart(2, '0')}`
+            checkBox.addEventListener('change', function() {
+                console.log('It has been changed!')
+                if (!checkSplitsTable()) {
+                    return
+                }
+                let newSplits = buildSplitsFromTable();
+                buildSplitsTable(newSplits);
+                console.log(newSplits); 
+            });
             checkBoxCol.appendChild(checkBox);
             row.appendChild(checkBoxCol);
 
@@ -158,9 +169,9 @@ function buildSplitsTable(splits) {
                     value: 180,
                 }
             }
-            console.log(newSplit);
+            // console.log(newSplit);
             newSplits.push(newSplit);
-            console.log(newSplits);
+            // console.log(newSplits);
             buildSplitsTable(newSplits);
         }
         xButton.onclick = addRow;
@@ -232,13 +243,20 @@ function buildSplitsFromTable() {
         const newSplit = {};
         newSplit.id = null;
         const valueCell = document.getElementById(`splits-value-${i.toString().padStart(2, '0')}`);
-        if (valueCell) {
+        const setBox = document.getElementById(`splits-set-box-${i.toString().padStart(2, '0')}`)
+        if (!setBox.checked) {
+            if (!valueCell) {
+                newSplit.value = 180;
+                newSplit.specifier = 1000;
+                newSplit.units = 'm';
+            } else {
             newSplit.value = secondsFromTimeString(valueCell.innerHTML);
             const specifierCell = document.getElementById(`splits-specifier-${i.toString().padStart(2, '0')}`);
             newSplit.specifier = parseFloat(specifierCell.innerHTML);
 
             const unitsCell = document.getElementById(`volume_units-${i.toString().padStart(2, '0')}`);
             newSplit.units = unitsCell.value;
+            }
 
         } else {
             newSplit.value = 0;
@@ -247,7 +265,7 @@ function buildSplitsFromTable() {
         }
         newSplits.push(newSplit);
     }
-    console.log(newSplits);
+    // console.log(newSplits);
 
     return newSplits;
 }
