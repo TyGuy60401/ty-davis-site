@@ -67,7 +67,7 @@ function buildSplitsTable(splits) {
     // build the splits table
     // console.log(splits);
     if (splits) {
-        splits.sort((a, b) => (a.id - b.id))
+        splits.sort((a, b) => (a.splitIndex - b.splitIndex))
         let i = 0;
         let offset = 0;
         Object.values(splits).forEach(val => {
@@ -136,7 +136,7 @@ function buildSplitsTable(splits) {
                 if (!checkSplitsTable()) {
                     return
                 }
-                let newSplits = buildSplitsFromTable();
+                const newSplits = buildSplitsFromTable();
                 buildSplitsTable(newSplits);
                 console.log(newSplits); 
             });
@@ -450,7 +450,7 @@ function handleForm(event) {
         })
         console.log("Complete object here:");
         // console.log(runObject);
-        let completeObject = {run: runObject, splits: splitsSubmission};
+        const completeObject = {run: runObject, splits: splitsSubmission};
         console.log(completeObject);
         if (testingRightNow) {
             event.preventDefault();
@@ -503,7 +503,7 @@ function handleForm(event) {
             fetch(`${backendURL}training/runs/`, {
                 method: 'PUT',
                 headers: makeHeader(localStorage.getItem('authToken')),
-                body: JSON.stringify(runObject),
+                body: JSON.stringify(completeObject),
             })
             .then( response => {
                 if (response.ok) {

@@ -148,7 +148,7 @@ function buildLog(dateString, buildNewCalendar=true) {
             logMain.appendChild(splitsDiv);
             splitsDiv.appendChild(splitsTable);
 
-            splits.sort((a, b) => (a.id - b.id))
+            splits.sort((a, b) => (a.splitIndex - b.splitIndex))
             let numSetBreaks = 0;
             splits.forEach(split => {
                 let row = splitsTable.insertRow();
