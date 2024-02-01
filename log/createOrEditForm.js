@@ -1,7 +1,7 @@
 function fillCreateOrEditForm() {
     const dateField = document.getElementById("date");
     const today = new Date();
-    dateField.valueAsDate = today;
+    dateField.value = `${today.getFullYear()}-${(today.getMonth() + 1).toString().padStart(2, '0')}-${today.getDate().toString().padStart(2, '0')}`;
     const form = document.forms["create-run"];
 
 
