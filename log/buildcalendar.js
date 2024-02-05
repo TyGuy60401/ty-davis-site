@@ -14,7 +14,7 @@ function buildCalendar(divID, useOtherDate=null) {
         day = new Date();
     }
 
-    if (useOtherDate == 'true') {
+    if (useOtherDate === 'true') {
         let monthVal = document.querySelector('#' + divID + '-month-input').value;
         let yearVal = document.querySelector('#' + divID + '-year-input').value;
         day = new Date(Date.parse(monthVal + ' 1 ' + yearVal));
@@ -24,6 +24,7 @@ function buildCalendar(divID, useOtherDate=null) {
     } else {
         day = new Date(Date.parse(useOtherDate));
     }
+    day.setTime(day.getTime() + 1000 * 60 * 60 * (24 - day.getHours()));
 
     parentDiv.innerHTML = "<table class='calendar'></table>";
     let calendarTable = parentDiv.firstElementChild;
