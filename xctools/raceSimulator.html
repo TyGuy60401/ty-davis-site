@@ -6,20 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/src/buildheader.js"></script>
     <link rel="stylesheet" href="/src/style.css">
-    <link rel="stylesheet" href="./usefulstyle.css">
+    <link rel="stylesheet" href="./styles/usefulstyle.css">
+    <link rel="stylesheet" href="./styles/raceSimulator.css">
     <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
-    <title>XC Tools</title>
+    <title>XC Tools - Race Simulator</title>
 </head>
 <body onload="buildHeader('<a style=\'text-decoration:none;\' href=\'./index.html\'>XC Tools</a>')">
     <div id="header"></div>
     <div id="useful-wrapper">
         <div id="useful">
-            <h1>Some useful tools</h1>
-            <nav>
-                <a href="./paceCalculator.html">Pace Calculator</a><br>
-                <a href="./raceSimulator.html">Race Simulator</a>
-            </nav>
+            <h1>Race Simulator</h1>
+            <canvas id="race-sim-canvas" width="800" height="500">Race simulator</canvas>
         </div>
     </div>
+    <script src="./scripts/raceSimulator.js"></script>
 </body>
 </html>
