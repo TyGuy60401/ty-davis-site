@@ -30,13 +30,17 @@ let numFinished = 0;
 // the time bar
 const timeBar = document.getElementById("time-bar");
 let timeBarBeingClicked = false;
-timeBar.addEventListener("mousedown", (event) => {
+function timeBarDown() {
     timeBarBeingClicked = true;
     manageAnimation();
-})
-timeBar.addEventListener("mouseup", (event) => {
+}
+function timeBarUp() {
     timeBarBeingClicked = false;
-})
+}
+timeBar.addEventListener("mousedown", timeBarDown);
+timeBar.addEventListener("touchstart", timeBarDown);
+timeBar.addEventListener("mouseup", timeBarUp);
+timeBar.addEventListener("touchend", timeBarUp);
 
 let userPause = true;
 canvas.addEventListener("click", (event) => {
