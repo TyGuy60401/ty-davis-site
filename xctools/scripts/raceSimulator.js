@@ -16,7 +16,7 @@ const runnerPathArcLength = (innerRadius + laneWidth/2) * Math.PI
 const runnerPathTotalLength = runnerPathArcLength * 2 + straightLength * 2
 
 const runnerRadius = 10;
-const timeInterval = 0.016667; // speeed
+let timeInterval = 0.016667; // speeed
 
 // global state
 let globalTime = 0;
@@ -46,6 +46,12 @@ let userPause = true;
 canvas.addEventListener("click", (event) => {
     userPause = !userPause;
 })
+
+// the speed bar
+const speedBar = document.getElementById("speed-bar");
+const speedView = document.getElementById("speed-view");
+
+
 
 
 // text stuff
@@ -219,6 +225,9 @@ function drawScreen() {
 
 function manageAnimation() {
     drawScreen();
+
+    timeInterval = parseInt(speedBar.value) / 60;
+    speedView.innerHTML = speedBar.value;
     const progressTime = !timeBarBeingClicked && globalTime < maxGlobalTime && !userPause;
 
     if (!timeBarBeingClicked) {
@@ -258,7 +267,6 @@ function getDataFromJson() {
             maxGlobalTime = Math.max(...runnerTimes) + 1;
             timeBar.max = maxGlobalTime;
             timeBar.style.width = `${canvas.width}px`;
-            
         });
 }
 getDataFromJson();
