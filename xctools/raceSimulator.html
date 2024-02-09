@@ -18,7 +18,11 @@
         <div id="useful">
             <h1>Race Simulator</h1>
             <p>This is the Big Sky Conference 10k from 2023</p>
-            <canvas id="race-sim-canvas" width="800" height="500">Race simulator</canvas>
+            <div id="race-sim-div">
+                <canvas id="race-sim-canvas" width="800" height="500">Race simulator</canvas><br>
+                <input type="range" min="0" max="100" value="0" class="slider" id="time-bar">
+            </div>
+            <h2>Race Stats</h2>
         </div>
     </div>
     <script src="./scripts/raceSimulator.js"></script>

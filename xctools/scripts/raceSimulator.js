@@ -16,12 +16,32 @@ const runnerPathArcLength = (innerRadius + laneWidth/2) * Math.PI
 const runnerPathTotalLength = runnerPathArcLength * 2 + straightLength * 2
 
 const runnerRadius = 10;
-const timeInterval = 0.125; // speeed
+const timeInterval = 0.016667; // speeed
 
 // global state
 let globalTime = 0;
+let progressTime = true;
+let maxGlobalTime = 3000;
+
 let runnerData;
 let raceEvent;
+let numFinished = 0;
+
+// the time bar
+const timeBar = document.getElementById("time-bar");
+let timeBarBeingClicked = false;
+timeBar.addEventListener("mousedown", (event) => {
+    timeBarBeingClicked = true;
+    manageAnimation();
+})
+timeBar.addEventListener("mouseup", (event) => {
+    timeBarBeingClicked = false;
+})
+
+let userPause = true;
+canvas.addEventListener("click", (event) => {
+    userPause = !userPause;
+})
 
 
 // text stuff
@@ -75,7 +95,7 @@ function drawTrack() {
 
 function positionFromTime(splits) {
     
-    const runnerRadius = innerRadius + laneWidth/2;
+    const runnerPathRadius = innerRadius + laneWidth/2;
     startPos = {x: ctr.x + straightLength/2, y: ctr.y + innerRadius + laneWidth/2};
     splitNum = 0;
     let splitTime = globalTime;
@@ -96,10 +116,15 @@ function positionFromTime(splits) {
     } else {
         ratio = 0;
         finished = true;
+        numFinished += 1;
     }
 
     if (finished) {
-        return {x: ctr.x, y: ctr.y};
+        const finishedPos = {
+            x: ctr.x + runnerRadius * 2 + numFinished * runnerRadius * 3,
+            y: ctr.y - innerRadius + runnerRadius * 2
+        }
+        return finishedPos;
     }
     // This is for if there is a different starting point for 
     // different events
@@ -118,28 +143,37 @@ function positionFromTime(splits) {
     if (quadrant === 0) {
         const ratio2 = (ratio - 0) / (runnerPathArcLength/runnerPathTotalLength);
         const theta = ratio2 * Math.PI + Math.PI/2
-        const pos = {x: runnerRadius * -Math.cos(theta) + ctr.x + straightLength/2, y: runnerRadius * Math.sin(theta) + ctr.y};
+        const pos = {x: runnerPathRadius * -Math.cos(theta) + ctr.x + straightLength/2, y: runnerPathRadius * Math.sin(theta) + ctr.y};
         return pos;
     }
     if (quadrant === 1) {
         const ratio2 = (ratio - trackPortions[1]) / (straightLength/runnerPathTotalLength);
-        const pos = {x: ctr.x + straightLength/2 - ratio2 * straightLength, y: ctr.y - runnerRadius};
+        const pos = {x: ctr.x + straightLength/2 - ratio2 * straightLength, y: ctr.y - runnerPathRadius};
         return pos;
     } 
     if (quadrant === 2) {
         const ratio2 = (ratio - trackPortions[2]) / (runnerPathArcLength/runnerPathTotalLength);
         const theta = ratio2 * Math.PI + Math.PI/2
-        const pos = {x: runnerRadius * Math.cos(theta) + ctr.x - straightLength/2, y: runnerRadius * -Math.sin(theta) + ctr.y};
+        const pos = {x: runnerPathRadius * Math.cos(theta) + ctr.x - straightLength/2, y: runnerPathRadius * -Math.sin(theta) + ctr.y};
         return pos;
     }
     const ratio2 = (ratio - trackPortions[3]) / (straightLength/runnerPathTotalLength);
-    const pos = {x: ctr.x - straightLength/2 + ratio2 * straightLength, y: ctr.y + runnerRadius};
+    const pos = {x: ctr.x - straightLength/2 + ratio2 * straightLength, y: ctr.y + runnerPathRadius};
     return pos;
+}
+
+function drawRunners() {
+    numFinished = 0;
+    drawRunnersExact();
+
+}
+
+function drawRunnersBoid() {
+
 }
 
 function drawRunnersExact() {
     for (const runner of runnerData.splits) {
-        // console.log(runner);
         pos = positionFromTime(runner.splits);
         const initials = `${runner.firstname[0]}${runner.lastname[0]}`
 
@@ -150,22 +184,12 @@ function drawRunnersExact() {
         ctx.fillStyle = backgroundGradient;
         ctx.textBaseline = 'middle';
         ctx.textAlign = 'center';
-        ctx.font = `${runnerRadius * 1.5}px sans-serif`;
-        ctx.fillText(initials, pos.x, pos.y);
+        ctx.font = `${runnerRadius * 1.4}px sans-serif`;
+        ctx.fillText(initials, pos.x, pos.y + runnerRadius/7);
         
     }
 }
 
-function getDataFromJson() {
-    fetch('/xctools/data/10ksplits.json')
-        .then(response => response.json())
-        .then( (data) => {
-            console.log(data);
-            runnerData = data;
-            raceEvent = runnerData.event;
-            console.log(raceEvent);
-        });
-}
 
 function drawInfo() {
     ctx.beginPath();
@@ -185,20 +209,55 @@ function drawScreen() {
     drawTrack();
 
     drawInfo();
-    drawRunnersExact();
+    drawRunners();
 }
 
-getDataFromJson();
 
 function manageAnimation() {
     drawScreen();
-    globalTime += timeInterval;
+    const progressTime = !timeBarBeingClicked && globalTime < maxGlobalTime && !userPause;
 
-    if (globalTime > 3000) {
+    if (!timeBarBeingClicked) {
+        timeBar.value = globalTime;
+    } else {
+        globalTime = parseFloat(timeBar.value);
+    }
+    if (progressTime) {
+        globalTime += timeInterval;
+    }
+
+    if (globalTime > maxGlobalTime) {
+        console.log('requesting frames');
         return;
     }
     requestAnimationFrame(manageAnimation);
+
+    console.log("running");
 }
 
-setTimeout( () => requestAnimationFrame(manageAnimation), 500);
+function getDataFromJson() {
+    fetch('/xctools/data/10ksplits.json')
+        .then(response => response.json())
+        .then( (data) => {
+            runnerData = data;
+            raceEvent = runnerData.event;
+            const runnerTimes = [];
+
+            for (const runner of runnerData.splits) {
+                let runnerTotalTime = 0;
+                for (const split of runner.splits) {
+                    // console.log(split.seconds, split.seconds == null);
+                    runnerTotalTime += Number.isNaN(split.seconds) ? 0 : split.seconds;
+                }
+                runnerTimes.push(runnerTotalTime);
+            }
+            maxGlobalTime = Math.max(...runnerTimes) + 1;
+            timeBar.max = maxGlobalTime;
+            timeBar.style.width = `${canvas.width}px`;
+            
+        });
+}
+getDataFromJson();
+
+setTimeout(() => requestAnimationFrame(manageAnimation), 500);
 // setTimeout(() => drawRunnersExact(), 500);
