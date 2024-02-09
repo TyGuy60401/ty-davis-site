@@ -1,0 +1,14 @@
+{
+    "event": {
+        "distance": 10000,
+        "startPos": 0
+    },
+    "splits": [
+        {
+            "lastname": "Davis",
+            "firstname": "Ty",
+            "split01": "74.85"
+        }
+    ]
+    
+}
