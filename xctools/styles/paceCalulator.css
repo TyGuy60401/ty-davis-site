@@ -1,0 +1,31 @@
+.table-header {
+    font-weight: bold;
+    text-align: center;
+}
+.dist-cell {
+    text-align: right;
+}
+.unit-cell {
+    min-width: 2em;
+}
+.num-cell {
+    font-size: 8pt;
+}
+
+#splitsTableDiv table {
+    border-collapse: collapse;
+}
+#splitsTableDiv {
+    width: max-content;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 7px #aaa;
+}
+#splitsTableDiv tr:nth-child(even) {
+    background-color: #DDD;
+}
+.error-area {
+    color: red;
+    font-size: 10pt;
+}
