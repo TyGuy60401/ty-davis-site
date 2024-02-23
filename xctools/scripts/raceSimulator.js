@@ -131,6 +131,8 @@ function getRunnerStatusFromSplits(splits) {
     const currentProgress = splitNum + ratio;
 
     if (finished) {
+        // runnerInfo.finished = true;
+        // return runnerInfo;
         return {pos: {x: 0, y: 0}, finished: true, finishedPlace: finishedPlace};
     }
     const runnerInfo = {
@@ -155,23 +157,23 @@ function getRunnerStatusFromSplits(splits) {
     if (quadrant === 0) {
         const ratio2 = (ratio - 0) / (runnerPathArcLength/runnerPathTotalLength);
         const theta = ratio2 * Math.PI + Math.PI/2
-        const pos = {x: runnerPathRadius * -Math.cos(theta) + ctr.x + straightLength/2, y: runnerPathRadius * Math.sin(theta) + ctr.y};
-        return {pos: pos, finished: false, finishedPlace: finishedPlace};
+        runnerInfo.pos = {x: runnerPathRadius * -Math.cos(theta) + ctr.x + straightLength/2, y: runnerPathRadius * Math.sin(theta) + ctr.y};
+        return runnerInfo;
     }
     if (quadrant === 1) {
         const ratio2 = (ratio - trackPortions[1]) / (straightLength/runnerPathTotalLength);
-        const pos = {x: ctr.x + straightLength/2 - ratio2 * straightLength, y: ctr.y - runnerPathRadius};
-        return {pos: pos, finished: false, finishedPlace: finishedPlace};
+        runnerInfo.pos = {x: ctr.x + straightLength/2 - ratio2 * straightLength, y: ctr.y - runnerPathRadius};
+        return runnerInfo;
     } 
     if (quadrant === 2) {
         const ratio2 = (ratio - trackPortions[2]) / (runnerPathArcLength/runnerPathTotalLength);
         const theta = ratio2 * Math.PI + Math.PI/2
-        const pos = {x: runnerPathRadius * Math.cos(theta) + ctr.x - straightLength/2, y: runnerPathRadius * -Math.sin(theta) + ctr.y};
-        return {pos: pos, finished: false, finishedPlace: finishedPlace};
+        runnerInfo.pos = {x: runnerPathRadius * Math.cos(theta) + ctr.x - straightLength/2, y: runnerPathRadius * -Math.sin(theta) + ctr.y};
+        return runnerInfo;
     }
     const ratio2 = (ratio - trackPortions[3]) / (straightLength/runnerPathTotalLength);
-    const pos = {x: ctr.x - straightLength/2 + ratio2 * straightLength, y: ctr.y + runnerPathRadius};
-    return {pos: pos, finished: false, finishedPlace: finishedPlace};
+    runnerInfo.pos = {x: ctr.x - straightLength/2 + ratio2 * straightLength, y: ctr.y + runnerPathRadius};
+    return runnerInfo;
 }
 
 function drawRunners() {
@@ -182,15 +184,15 @@ function drawRunners() {
         const runnerInfo = {
             pos: runnerStatus.pos,
             finished: runnerStatus.finished,
-            place: runnerStatus.place,
+            finishedPlace: runnerStatus.finishedPlace,
             initials: `${runner.firstname[0]}${runner.lastname[0]}`,
         }
         runnerInfos.push(runnerInfo);
     }
     for (const runnerInfo of runnerInfos) {
         if (runnerInfo.finished) {
-            const xPos = ctr.x + runnerRadius * 4 + (runnerInfo.place - 1) % 5 * 3 * runnerRadius;
-            const yPos = ctr.y - innerRadius + runnerRadius * 2 + Math.floor((runnerInfo.place - 1) / 5) * 3 * runnerRadius;
+            const xPos = ctr.x + runnerRadius * 4 + (runnerInfo.finishedPlace - 1) % 5 * 3 * runnerRadius;
+            const yPos = ctr.y - innerRadius + runnerRadius * 2 + Math.floor((runnerInfo.finishedPlace - 1) / 5) * 3 * runnerRadius;
             runnerInfo.pos = {x: xPos, y: yPos};
         }
         drawRunnersExact(runnerInfo);
