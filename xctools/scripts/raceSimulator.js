@@ -103,8 +103,7 @@ function drawTrack() {
     ctx.stroke();
 }
 
-function positionFromTime(splits) {
-    
+function getRunnerStatusFromSplits(splits) {
     const runnerPathRadius = innerRadius + laneWidth/2;
     startPos = {x: ctr.x + straightLength/2, y: ctr.y + innerRadius + laneWidth/2};
     splitNum = 0;
@@ -114,7 +113,7 @@ function positionFromTime(splits) {
             splitNum++;
             splitTime -= split.seconds;
         } else {
-            break
+            break;
         }
     }
 
@@ -128,13 +127,16 @@ function positionFromTime(splits) {
         finished = true;
         numFinished += 1;
     }
+    const finishedPlace = numFinished;
+    const currentProgress = splitNum + ratio;
 
     if (finished) {
-        const finishedPos = {
-            x: ctr.x + runnerRadius * 2 + numFinished * runnerRadius * 3,
-            y: ctr.y - innerRadius + runnerRadius * 2
-        }
-        return finishedPos;
+        return {pos: {x: 0, y: 0}, finished: true, finishedPlace: finishedPlace};
+    }
+    const runnerInfo = {
+        pos: { x: 0, y: 0},
+        finished: false,
+        finishedPlace: finishedPlace
     }
     // This is for if there is a different starting point for 
     // different events
@@ -154,27 +156,45 @@ function positionFromTime(splits) {
         const ratio2 = (ratio - 0) / (runnerPathArcLength/runnerPathTotalLength);
         const theta = ratio2 * Math.PI + Math.PI/2
         const pos = {x: runnerPathRadius * -Math.cos(theta) + ctr.x + straightLength/2, y: runnerPathRadius * Math.sin(theta) + ctr.y};
-        return pos;
+        return {pos: pos, finished: false, finishedPlace: finishedPlace};
     }
     if (quadrant === 1) {
         const ratio2 = (ratio - trackPortions[1]) / (straightLength/runnerPathTotalLength);
         const pos = {x: ctr.x + straightLength/2 - ratio2 * straightLength, y: ctr.y - runnerPathRadius};
-        return pos;
+        return {pos: pos, finished: false, finishedPlace: finishedPlace};
     } 
     if (quadrant === 2) {
         const ratio2 = (ratio - trackPortions[2]) / (runnerPathArcLength/runnerPathTotalLength);
         const theta = ratio2 * Math.PI + Math.PI/2
         const pos = {x: runnerPathRadius * Math.cos(theta) + ctr.x - straightLength/2, y: runnerPathRadius * -Math.sin(theta) + ctr.y};
-        return pos;
+        return {pos: pos, finished: false, finishedPlace: finishedPlace};
     }
     const ratio2 = (ratio - trackPortions[3]) / (straightLength/runnerPathTotalLength);
     const pos = {x: ctr.x - straightLength/2 + ratio2 * straightLength, y: ctr.y + runnerPathRadius};
-    return pos;
+    return {pos: pos, finished: false, finishedPlace: finishedPlace};
 }
 
 function drawRunners() {
     numFinished = 0;
-    drawRunnersExact();
+    const runnerInfos = [];
+    for (const runner of runnerData.splits) {
+        const runnerStatus = getRunnerStatusFromSplits(runner.splits);
+        const runnerInfo = {
+            pos: runnerStatus.pos,
+            finished: runnerStatus.finished,
+            place: runnerStatus.place,
+            initials: `${runner.firstname[0]}${runner.lastname[0]}`,
+        }
+        runnerInfos.push(runnerInfo);
+    }
+    for (const runnerInfo of runnerInfos) {
+        if (runnerInfo.finished) {
+            const xPos = ctr.x + runnerRadius * 4 + (runnerInfo.place - 1) % 5 * 3 * runnerRadius;
+            const yPos = ctr.y - innerRadius + runnerRadius * 2 + Math.floor((runnerInfo.place - 1) / 5) * 3 * runnerRadius;
+            runnerInfo.pos = {x: xPos, y: yPos};
+        }
+        drawRunnersExact(runnerInfo);
+    }
 
 }
 
@@ -182,22 +202,16 @@ function drawRunnersBoid() {
 
 }
 
-function drawRunnersExact() {
-    for (const runner of runnerData.splits) {
-        pos = positionFromTime(runner.splits);
-        const initials = `${runner.firstname[0]}${runner.lastname[0]}`
-
-        ctx.fillStyle = "#cccccc";
-        ctx.beginPath();
-        ctx.arc(pos.x, pos.y, runnerRadius, 0, Math.PI*2);
-        ctx.fill();
-        ctx.fillStyle = backgroundGradient;
-        ctx.textBaseline = 'middle';
-        ctx.textAlign = 'center';
-        ctx.font = `${runnerRadius * 1.4}px sans-serif`;
-        ctx.fillText(initials, pos.x, pos.y + runnerRadius/7);
-        
-    }
+function drawRunnersExact(runnerInfo) {
+    ctx.fillStyle = "#cccccc";
+    ctx.beginPath();
+    ctx.arc(runnerInfo.pos.x, runnerInfo.pos.y, runnerRadius, 0, Math.PI*2);
+    ctx.fill();
+    ctx.fillStyle = backgroundGradient;
+    ctx.textBaseline = 'middle';
+    ctx.textAlign = 'center';
+    ctx.font = `${runnerRadius * 1.4}px sans-serif`;
+    ctx.fillText(runnerInfo.initials, runnerInfo.pos.x, runnerInfo.pos.y + runnerRadius/7);
 }
 
 
@@ -209,7 +223,7 @@ function drawInfo() {
 
     ctx.font = `${textSize}px serif`;
     ctx.fillStyle = backgroundGradient;
-    ctx.fillText(secToString(globalTime, 0), ctr.x - straightLength/2, ctr.y + innerRadius - textSize);
+    ctx.fillText(secToString(globalTime, 0), ctr.x - straightLength/2.1, ctr.y + innerRadius - textSize);
 }
 
 
@@ -245,7 +259,7 @@ function manageAnimation() {
     }
     requestAnimationFrame(manageAnimation);
 
-    console.log("running");
+    // console.log("running");
 }
 
 function getDataFromJson() {
@@ -255,18 +269,32 @@ function getDataFromJson() {
             runnerData = data;
             raceEvent = runnerData.event;
             const runnerTimes = [];
+            const newSplits = [];
 
             for (const runner of runnerData.splits) {
                 let runnerTotalTime = 0;
+                let numLaps = 0;
                 for (const split of runner.splits) {
-                    // console.log(split.seconds, split.seconds == null);
-                    runnerTotalTime += Number.isNaN(split.seconds) ? 0 : split.seconds;
+                    numLaps++;
+                    if (split.seconds == null) {
+                        break;
+                    }
+                    runnerTotalTime += split.seconds;
                 }
                 runnerTimes.push(runnerTotalTime);
+                const newRunner = runner;
+                newRunner.totalTime = runnerTotalTime;
+                newRunner.numLaps = numLaps;
+                newSplits.push(newRunner);
             }
+
             maxGlobalTime = Math.max(...runnerTimes) + 1;
             timeBar.max = maxGlobalTime;
             timeBar.style.width = `${canvas.width}px`;
+            newSplits.sort((a, b) => a.totalTime - b.totalTime);
+            newSplits.sort((a, b) => b.numLaps - a.numLaps);
+            runnerData.splits = newSplits;
+            console.log(runnerData);
         });
 }
 getDataFromJson();

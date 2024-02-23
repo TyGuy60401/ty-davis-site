@@ -1,7 +1,8 @@
 {
     "event": {
         "distance": 10000,
-        "startPos": 0
+        "startPos": 0,
+        "numLaps": 25
     },
     "splits": [
         {
