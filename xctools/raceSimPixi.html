@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/src/buildheader.js"></script>
     <script src="./scripts/timeStringConversion.js"></script>
+    <script src="https://pixijs.download/release/pixi.js"></script>
     <link rel="stylesheet" href="/src/style.css">
     <link rel="stylesheet" href="./styles/usefulstyle.css">
     <link rel="stylesheet" href="./styles/raceSimulator.css">
@@ -17,16 +18,16 @@
     <div id="useful-wrapper">
         <div id="useful">
             <h1>Race Simulator</h1>
-            <p>This is the Big Sky Indoor Track Conference 3k from 2024</p>
-            <p>Heat 1 is white and heat 2 is gray</p>
+            <p>This is the Big Sky Conference 10k from 2023</p>
             <div id="race-sim-div">
-                <canvas id="race-sim-canvas" width="800" height="500">Race simulator</canvas><br>
+                <!-- <canvas id="race-sim-canvas" width="800" height="500">Race simulator</canvas> -->
+                <br>
                 <input type="range" min="0" max="100" value="0" class="slider" id="time-bar"><br>
-                <label for="speedBar">Speed:</label><input type="range" min="1" max="15" value="2" class="slider" id="speed-bar"><span id="speed-view">6</span><br>
+                <label for="speedBar">Speed:</label><input type="range" min="1" max="15" value="6" class="slider" id="speed-bar"><span id="speed-view">6</span><br>
             </div>
             <h2>Race Stats</h2>
         </div>
     </div>
-    <script src="./scripts/raceSimulator.js"></script>
+    <script src="./scripts/raceSimulatorPixi.js"></script>
 </body>
 </html>

@@ -1,0 +1,2956 @@
+{
+    "event": {
+        "distance": 5000,
+        "name": "5000 Meter"
+    },
+    "splits": [
+        {
+            "firstname": "Aaron",
+            "lastname": "Las Heras",
+            "place": "1",
+            "heat": "1",
+            "school": "Northern Arizona",
+            "splits": [
+                {
+                    "seconds": 31.8,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.34,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.68,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.18,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.44,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.23,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.12,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.69,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.5,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.34,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.65,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.68,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.62,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.28,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.7,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.9,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.99,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.35,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.73,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.05,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.93,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.14,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.35,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.08,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 30.47,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Brodey",
+            "lastname": "Hasty",
+            "place": "2",
+            "heat": "1",
+            "school": "Northern Arizona",
+            "splits": [
+                {
+                    "seconds": 32.07,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.35,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.63,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.1,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.56,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.26,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.12,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.67,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.44,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.31,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.61,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.87,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.29,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.54,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.72,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.81,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.49,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.48,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.66,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.68,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.68,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.55,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.58,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.55,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 30.08,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Ben",
+            "lastname": "Perrin",
+            "place": "3",
+            "heat": "1",
+            "school": "Montana State",
+            "splits": [
+                {
+                    "seconds": 31.95,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.73,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.68,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.04,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.59,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.17,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.25,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.53,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.42,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.4,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.73,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.88,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.55,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.3,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.4,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.82,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.28,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.22,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.04,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.84,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 71.09,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.31,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.01,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.57,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 0.18,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Drew",
+            "lastname": "Bosley",
+            "place": "4",
+            "heat": "1",
+            "school": "Northern Arizona",
+            "splits": [
+                {
+                    "seconds": 32.45,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.4,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.79,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 31.99,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.63,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.17,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.19,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.43,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.67,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.24,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.78,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.86,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.59,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.59,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.46,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.19,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.84,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.75,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.85,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.08,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.1,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.68,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.14,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.68,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.54,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Peter",
+            "lastname": "Visser",
+            "place": "5",
+            "heat": "1",
+            "school": "Weber State",
+            "splits": [
+                {
+                    "seconds": 32.42,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.98,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.63,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.73,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.3,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.33,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.93,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.63,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.47,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.81,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.96,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.59,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.26,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.48,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.36,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.31,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.59,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.64,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.59,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.52,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.78,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.73,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.25,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 31.87,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 29.07,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Aidan",
+            "lastname": "Puffer",
+            "place": "6",
+            "heat": "1",
+            "school": "Northern Arizona",
+            "splits": [
+                {
+                    "seconds": 32.96,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.51,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.09,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.56,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.38,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.56,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.06,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.25,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.18,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.83,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.74,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.85,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.01,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.54,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.37,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.44,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.34,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.57,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.37,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.45,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.03,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.34,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.25,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.21,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 31.47,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Zack",
+            "lastname": "Munson",
+            "place": "7",
+            "heat": "1",
+            "school": "Northern Arizona",
+            "splits": [
+                {
+                    "seconds": 32.79,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.45,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.22,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.72,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.22,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.48,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.04,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.37,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.0,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.84,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.7,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.8,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.14,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.53,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.53,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.16,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.53,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.6,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.22,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.51,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.29,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.57,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.27,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.3,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 31.15,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Jack",
+            "lastname": "Scherer",
+            "place": "8",
+            "heat": "1",
+            "school": "Northern Arizona",
+            "splits": [
+                {
+                    "seconds": 32.87,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.2,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.21,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.75,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.26,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.34,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.05,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.32,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.08,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.75,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.9,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.63,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.14,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.63,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.45,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.28,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.01,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.71,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.64,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.11,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.52,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.45,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.14,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.33,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.02,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Matthew",
+            "lastname": "Richtman",
+            "place": "9",
+            "heat": "1",
+            "school": "Montana State",
+            "splits": [
+                {
+                    "seconds": 33.68,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.46,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.15,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.07,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.35,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.5,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.92,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.52,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.12,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.86,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.81,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.77,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.0,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.51,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.47,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.45,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.54,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.8,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.74,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.89,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.77,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.39,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.0,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.75,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.79,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Owen",
+            "lastname": "Smith",
+            "place": "10",
+            "heat": "1",
+            "school": "Montana State",
+            "splits": [
+                {
+                    "seconds": 33.12,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.41,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.26,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.32,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.53,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.62,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.05,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.41,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.16,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.73,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.88,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.64,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.24,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.4,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.47,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.46,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.19,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.85,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.47,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.46,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.23,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.53,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.37,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.48,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.93,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Seth",
+            "lastname": "Babbel",
+            "place": "11",
+            "heat": "1",
+            "school": "Idaho State",
+            "splits": [
+                {
+                    "seconds": 35.04,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.15,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.55,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.12,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.29,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.83,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.6,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.86,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.27,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.76,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.46,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.45,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.89,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.53,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.67,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.02,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.51,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.93,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.38,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.85,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 68.81,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.89,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 32.37,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 30.32,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 0.23,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Taylor",
+            "lastname": "Knight",
+            "place": "12",
+            "heat": "1",
+            "school": "Weber State",
+            "splits": [
+                {
+                    "seconds": 34.27,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.41,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.56,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.49,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.21,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.73,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.56,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.49,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.24,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.8,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.49,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.88,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.68,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.59,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.58,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.42,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.04,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.06,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.65,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.96,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.55,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.64,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.03,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.96,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 31.82,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Wesley",
+            "lastname": "Kallgren",
+            "place": "13",
+            "heat": "1",
+            "school": "Weber State",
+            "splits": [
+                {
+                    "seconds": 33.79,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.12,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.13,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.67,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.4,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.43,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.02,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.53,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.21,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.19,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.02,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.83,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.71,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.09,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.29,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.66,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.42,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.98,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.38,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.31,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.47,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.03,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.37,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.47,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 31.8,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Ty",
+            "lastname": "Davis",
+            "place": "14",
+            "heat": "1",
+            "school": "Weber State",
+            "splits": [
+                {
+                    "seconds": 33.83,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.83,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.45,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.82,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.25,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.66,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.88,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.79,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.17,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.34,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.89,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.83,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.9,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.07,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.94,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.55,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.4,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.61,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.09,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.95,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.51,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.29,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.18,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.76,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.79,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Sam",
+            "lastname": "Fulbright",
+            "place": "15",
+            "heat": "1",
+            "school": "Idaho",
+            "splits": [
+                {
+                    "seconds": 33.81,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.73,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.44,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.5,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.19,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.91,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.55,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.95,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.28,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.43,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.38,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.57,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.35,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.5,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.5,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.63,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.32,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.91,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.26,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.29,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.46,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.11,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.02,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.65,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.19,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Carson",
+            "lastname": "Horspool",
+            "place": "16",
+            "heat": "1",
+            "school": "Weber State",
+            "splits": [
+                {
+                    "seconds": 34.91,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.22,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.3,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.21,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.75,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.03,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.11,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.61,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.25,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.83,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.5,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.36,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.43,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.61,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.66,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.78,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.47,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.81,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.17,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.13,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.74,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.58,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.79,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.09,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.79,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Cam",
+            "lastname": "McChesney",
+            "place": "17",
+            "heat": "1",
+            "school": "Eastern Washington",
+            "splits": [
+                {
+                    "seconds": 34.29,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.13,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.03,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.39,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.16,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.89,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.33,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.43,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.89,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.35,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.37,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.36,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.1,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.76,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.68,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.83,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.56,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.99,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.62,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.84,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 39.0,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 39.73,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 40.01,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 39.53,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.74,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Ben",
+            "lastname": "Saelens",
+            "place": "18",
+            "heat": "1",
+            "school": "Montana State",
+            "splits": [
+                {
+                    "seconds": 34.49,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.56,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.7,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.27,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.71,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.41,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.08,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.56,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.72,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.85,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.43,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.26,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.9,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.99,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.34,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.56,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.14,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.85,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.91,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.8,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.31,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.65,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.02,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.51,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 33.78,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Sam",
+            "lastname": "Smith",
+            "place": "19",
+            "heat": "1",
+            "school": "Montana State",
+            "splits": [
+                {
+                    "seconds": 33.49,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.1,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.12,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.51,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.6,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.31,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.76,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.53,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.74,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.08,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.48,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.19,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.92,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.92,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.76,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.63,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.98,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.85,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.78,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 39.12,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 39.74,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.45,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.57,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.14,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.24,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Jamison",
+            "lastname": "Wilkes",
+            "place": "20",
+            "heat": "1",
+            "school": "Weber State",
+            "splits": [
+                {
+                    "seconds": 34.77,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.12,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.25,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.83,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.69,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.13,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.81,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.62,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.74,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.94,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.29,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.09,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.89,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.77,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.18,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.87,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.75,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.09,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 39.62,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 39.22,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.99,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.91,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.47,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.11,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.98,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Isaac",
+            "lastname": "Rascon",
+            "place": "21",
+            "heat": "1",
+            "school": "Northern Colorado",
+            "splits": [
+                {
+                    "seconds": 34.18,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.17,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": 34.83,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.17,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.43,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.26,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.16,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.52,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.25,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.78,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.36,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.16,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.86,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.24,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.77,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.02,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.85,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.14,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.27,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.5,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.37,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": 38.4,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": 37.59,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": 36.89,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": 35.2,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        },
+        {
+            "firstname": "Corey",
+            "lastname": "Gorgas",
+            "place": "--",
+            "heat": "1",
+            "school": "Northern Arizona",
+            "splits": [
+                {
+                    "seconds": null,
+                    "index": 0,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 1,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 2,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 3,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 4,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 5,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 6,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 7,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 8,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 9,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 10,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 11,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 12,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 13,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 14,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 15,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 16,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 17,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 18,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 19,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 20,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 21,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 22,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 23,
+                    "distance": 200
+                },
+                {
+                    "seconds": null,
+                    "index": 24,
+                    "distance": 200
+                }
+            ]
+        }
+    ]
+}

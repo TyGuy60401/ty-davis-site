@@ -16,7 +16,7 @@ const runnerPathArcLength = (innerRadius + laneWidth/2) * Math.PI
 const runnerPathTotalLength = runnerPathArcLength * 2 + straightLength * 2
 
 const runnerRadius = 10;
-let timeInterval = 0.016667; // speeed
+let timeInterval = 0.016667; // speeed 
 
 // global state
 let globalTime = 0;
@@ -37,6 +37,7 @@ function timeBarDown() {
 function timeBarUp() {
     timeBarBeingClicked = false;
 }
+
 timeBar.addEventListener("mousedown", timeBarDown);
 timeBar.addEventListener("touchstart", timeBarDown);
 timeBar.addEventListener("mouseup", timeBarUp);
@@ -50,8 +51,6 @@ canvas.addEventListener("click", (event) => {
 // the speed bar
 const speedBar = document.getElementById("speed-bar");
 const speedView = document.getElementById("speed-view");
-
-
 
 
 // text stuff
@@ -180,12 +179,14 @@ function drawRunners() {
     numFinished = 0;
     const runnerInfos = [];
     for (const runner of runnerData.splits) {
+        // console.log(runner.heat);
         const runnerStatus = getRunnerStatusFromSplits(runner.splits);
         const runnerInfo = {
             pos: runnerStatus.pos,
             finished: runnerStatus.finished,
             finishedPlace: runnerStatus.finishedPlace,
             initials: `${runner.firstname[0]}${runner.lastname[0]}`,
+            heat: runner.heat ? runner.heat : 1,
         }
         runnerInfos.push(runnerInfo);
     }
@@ -205,7 +206,13 @@ function drawRunnersBoid() {
 }
 
 function drawRunnersExact(runnerInfo) {
-    ctx.fillStyle = "#cccccc";
+    const heat = parseInt(runnerInfo.heat);
+    if (heat === 1) {
+        ctx.fillStyle = "#cccccc";
+    } else if (heat === 2) {
+        ctx.fillStyle = "#aaaaaa";
+    }
+    // ctx.fillStyle = "#cccccc";
     ctx.beginPath();
     ctx.arc(runnerInfo.pos.x, runnerInfo.pos.y, runnerRadius, 0, Math.PI*2);
     ctx.fill();
@@ -264,8 +271,13 @@ function manageAnimation() {
     // console.log("running");
 }
 
+let FILE_NAME = '/xctools/data/10ksplits.json'
+FILE_NAME = '/xctools/data/IndoorBigSky24_3k.json'
+// FILE_NAME = '/xctools/data/IndoorBigSky24_5k.json'
+// FILE_NAME = '/xctools/data/IndoorBigSky24_mile.json'
+
 function getDataFromJson() {
-    fetch('/xctools/data/10ksplits.json')
+    fetch(FILE_NAME)
         .then(response => response.json())
         .then( (data) => {
             runnerData = data;

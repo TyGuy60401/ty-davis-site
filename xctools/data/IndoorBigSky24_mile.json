@@ -1,0 +1,1233 @@
+{
+    "event": {
+        "distance": 1609.344,
+        "name": "1 Mile"
+    },
+    "splits": [
+        {
+            "firstname": "Nico",
+            "lastname": "Young",
+            "place": "1",
+            "heat": "2",
+            "school": "Northern Arizona",
+            "splits": [
+                {
+                    "seconds": 33.36,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.7,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.4,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.24,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.13,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 29.94,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 27.47,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 25.93,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Aaron",
+            "lastname": "Las Heras",
+            "place": "2",
+            "heat": "2",
+            "school": "Northern Arizona",
+            "splits": [
+                {
+                    "seconds": 33.41,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.45,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.37,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.81,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 29.71,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 29.92,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 27.78,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 27.77,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Theo",
+            "lastname": "Quax",
+            "place": "3",
+            "heat": "2",
+            "school": "Northern Arizona",
+            "splits": [
+                {
+                    "seconds": 32.63,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.0,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.65,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.47,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.24,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.33,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 27.69,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 27.43,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Rob",
+            "lastname": "McManus",
+            "place": "4",
+            "heat": "2",
+            "school": "Montana State",
+            "splits": [
+                {
+                    "seconds": 32.99,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.32,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.28,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.95,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.66,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.71,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 28.91,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 28.1,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Levi",
+            "lastname": "Taylor",
+            "place": "5",
+            "heat": "2",
+            "school": "Montana State",
+            "splits": [
+                {
+                    "seconds": 32.54,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.0,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.52,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.39,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.96,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.33,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 28.92,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 28.46,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Kang",
+            "lastname": "Nyoak",
+            "place": "6",
+            "heat": "2",
+            "school": "Northern Arizona",
+            "splits": [
+                {
+                    "seconds": 32.69,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.49,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.82,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.28,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.41,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.61,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 29.35,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 28.64,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Peter",
+            "lastname": "Visser",
+            "place": "7",
+            "heat": "2",
+            "school": "Weber State",
+            "splits": [
+                {
+                    "seconds": 32.28,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.37,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.27,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.83,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.62,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.43,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 29.65,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 29.46,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Kelton",
+            "lastname": "Gagnon",
+            "place": "8",
+            "heat": "2",
+            "school": "Weber State",
+            "splits": [
+                {
+                    "seconds": 32.5,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.29,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.26,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.65,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.26,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.98,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 29.71,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 28.52,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Sam",
+            "lastname": "Ells",
+            "place": "9",
+            "heat": "2",
+            "school": "Montana State",
+            "splits": [
+                {
+                    "seconds": 32.82,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.14,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.68,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.67,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.61,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.37,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 29.17,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 28.82,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Shea",
+            "lastname": "Mattson",
+            "place": "10",
+            "heat": "1",
+            "school": "Idaho",
+            "splits": [
+                {
+                    "seconds": 31.29,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.45,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.45,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.76,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.95,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.84,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.27,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.76,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Cade",
+            "lastname": "Smith",
+            "place": "11",
+            "heat": "1",
+            "school": "Idaho State",
+            "splits": [
+                {
+                    "seconds": 31.73,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.99,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.0,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.82,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.22,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.52,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.88,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.66,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Caleb",
+            "lastname": "Easton",
+            "place": "12",
+            "heat": "2",
+            "school": "Northern Arizona",
+            "splits": [
+                {
+                    "seconds": 33.1,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.4,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.89,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.37,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.84,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.86,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.06,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.97,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Lane",
+            "lastname": "Cole",
+            "place": "13",
+            "heat": "1",
+            "school": "Montana",
+            "splits": [
+                {
+                    "seconds": 31.31,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.74,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.42,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.85,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.04,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.54,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.26,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.17,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Hanokh",
+            "lastname": "Gailson",
+            "place": "14",
+            "heat": "1",
+            "school": "Weber State",
+            "splits": [
+                {
+                    "seconds": 30.88,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.6,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.38,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.71,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.08,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.79,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.84,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 33.5,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Cooper",
+            "lastname": "Morris",
+            "place": "15",
+            "heat": "1",
+            "school": "Montana",
+            "splits": [
+                {
+                    "seconds": 31.85,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.97,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.6,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.08,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.32,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 33.03,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.77,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.06,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Brandon",
+            "lastname": "Moreno",
+            "place": "16",
+            "heat": "1",
+            "school": "Sacramento St.",
+            "splits": [
+                {
+                    "seconds": 31.45,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.91,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.33,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.09,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.72,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 33.44,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 33.82,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.01,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Abdi",
+            "lastname": "Ibrahim",
+            "place": "17",
+            "heat": "1",
+            "school": "Portland State",
+            "splits": [
+                {
+                    "seconds": 32.0,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.95,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.15,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.92,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.24,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.86,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 33.05,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.76,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Truman",
+            "lastname": "Thompson",
+            "place": "18",
+            "heat": "1",
+            "school": "Montana",
+            "splits": [
+                {
+                    "seconds": 31.58,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.06,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.95,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.55,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 33.1,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 34.28,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 33.56,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.21,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Tim",
+            "lastname": "Stevens",
+            "place": "19",
+            "heat": "2",
+            "school": "Idaho",
+            "splits": [
+                {
+                    "seconds": 32.97,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.43,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.07,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.94,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.0,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.15,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.94,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 35.34,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Joe",
+            "lastname": "Corbridge",
+            "place": "20",
+            "heat": "1",
+            "school": "Weber State",
+            "splits": [
+                {
+                    "seconds": 31.8,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.49,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.65,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 33.0,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 33.58,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 34.22,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 33.61,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.53,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Shane",
+            "lastname": "Gard",
+            "place": "21",
+            "heat": "1",
+            "school": "Idaho",
+            "splits": [
+                {
+                    "seconds": 30.7,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 30.69,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.29,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.67,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.67,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 34.5,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 34.58,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 34.36,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Harvey",
+            "lastname": "Cramb",
+            "place": "22",
+            "heat": "2",
+            "school": "Montana State",
+            "splits": [
+                {
+                    "seconds": 32.93,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.34,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.66,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.74,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.13,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.43,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 34.16,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 36.15,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Bryce",
+            "lastname": "Anderson",
+            "place": "23",
+            "heat": "1",
+            "school": "Weber State",
+            "splits": [
+                {
+                    "seconds": 31.93,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.26,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 31.48,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.22,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 33.02,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 34.41,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 35.24,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 36.09,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Abdi",
+            "lastname": "Abade",
+            "place": "24",
+            "heat": "1",
+            "school": "Portland State",
+            "splits": [
+                {
+                    "seconds": 32.8,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.15,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 32.73,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 33.79,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 35.62,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 36.19,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 36.64,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 35.06,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        },
+        {
+            "firstname": "Amir",
+            "lastname": "Ahmed",
+            "place": "25",
+            "heat": "1",
+            "school": "Portland State",
+            "splits": [
+                {
+                    "seconds": 33.14,
+                    "index": 0,
+                    "distance": 209
+                },
+                {
+                    "seconds": 33.48,
+                    "index": 1,
+                    "distance": 209
+                },
+                {
+                    "seconds": 35.08,
+                    "index": 2,
+                    "distance": 209
+                },
+                {
+                    "seconds": 36.79,
+                    "index": 3,
+                    "distance": 209
+                },
+                {
+                    "seconds": 39.02,
+                    "index": 4,
+                    "distance": 209
+                },
+                {
+                    "seconds": 37.98,
+                    "index": 5,
+                    "distance": 209
+                },
+                {
+                    "seconds": 37.46,
+                    "index": 6,
+                    "distance": 209
+                },
+                {
+                    "seconds": 34.4,
+                    "index": 7,
+                    "distance": 209
+                }
+            ]
+        }
+    ]
+}
