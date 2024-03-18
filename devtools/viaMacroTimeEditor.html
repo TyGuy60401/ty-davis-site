@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/src/buildheader.js"></script>
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="./styles/usefulstyle.css">
+    <link rel="stylesheet" href="./styles/paceCalculator.css">
+    <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
+    <title>Dev Tools - Via Macro Time Editor</title>
+    <style>
+        #results-box {
+            position: relative;
+            font-family: consolas;
+            background-color: #eee;
+            min-width: 200px;
+            width: 40%;
+            min-height: 150px;
+            border-radius: 10px;
+            padding: 8px;
+        }
+        #copy-button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+        #results {
+            width: 87%;
+        }
+   </style>
+
+</head>
+<body onload="buildHeader('<a style=\'text-decoration:none;\' href=\'./\'>Dev Tools</a>')">
+    <div id="header"></div>
+    <div id="useful-wrapper">
+        <div id="useful">
+            <h1>Via Macro Time Editor</h1>
+            <p>Paste in your time-recorded macro into the field below, choose a time in ms to replace it with and click convert to receive your output.</p>
+            <p>10 ms seems plenty fast, but I've done some limited testing with 5 ms and it also seemed to work as well.</p>
+            <form>
+                <label for="main-input-text">Macro text:</label><br>
+                <textarea id="main-input-text" name="main-input-text" rows="6" cols="50" placeholder="m{216}y{95} {196}m{77}a{83}c{174}r{89}o ... "></textarea><br>
+                <label for="macro-delay">Macro delay:</label><br>
+                <input type=number id="macro-delay" name="macro-delay" style="width: 5em;" value="10"></input> ms<br>
+            </form>
+            <br>
+            <button onclick="convert()">Convert</button><br>
+            <span class="error-area" id="error-area-2" style="visibility:invisible;"></span><br>
+            <div id="results-box">
+                <button onclick="copyToClipboard()" id="copy-button">Copy</button>
+                <div id="results">Output text here ...</div>
+            </div>
+
+            <!-- <button onclick="testStuff()">Test Stuff</button><br> -->
+            <script>
+                function convert() {
+                    let macroInput = document.getElementById("main-input-text").value;
+                    let macroDelay = document.getElementById("macro-delay").value;
+                    console.log(macroInput);
+                    console.log(macroDelay);
+
+                    const pattern = /{\d+}/g
+                    const fixedResults = macroInput.replace(pattern, `{${macroDelay}}`);
+                    let results = document.getElementById("results");
+                    results.innerHTML = fixedResults;
+                }
+
+                function copyToClipboard() {
+                    let copyText = document.getElementById("results").innerHTML;
+                    navigator.clipboard.writeText(copyText);
+                }
+
+            </script>
+        </div>
+    </div>
+</body>
+</html>
